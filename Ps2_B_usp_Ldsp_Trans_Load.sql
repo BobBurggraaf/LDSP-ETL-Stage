@@ -11,8 +11,6 @@ GO
 CREATE OR ALTER PROCEDURE [dbo].[usp_Ldsp_Trans_Load] 
 AS
 
-SET ANSI_WARNINGS OFF
-
 BEGIN
 
 -- --------------------------
@@ -719,7 +717,6 @@ CREATE TABLE #Prod_Summary (
 
 END
 
-SET ANSI_WARNINGS ON
 
 
 
