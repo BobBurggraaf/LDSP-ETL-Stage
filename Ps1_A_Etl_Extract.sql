@@ -7055,6 +7055,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CreatedBy UNIQUEIDENTIFIER
 			, ModifiedOn DATETIME
 			, ModifiedBy UNIQUEIDENTIFIER
+			, OwnerId UNIQUEIDENTIFIER
+			, Plus_RelatedOpportunity UNIQUEIDENTIFIER
 		' -- Dest_Create_Fields
 		, 'Plus_ConstituentNoteId
 			, Plus_RelatedConstituent
@@ -7069,6 +7071,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CreatedBy
 			, ModifiedOn
 			, ModifiedBy
+			, OwnerId 
+			, Plus_RelatedOpportunity
 		' -- Dest_Insert_Fields
 		, ' ' -- Dest_Where_Statement
 		, 'Plus_ConstituentNoteId UNIQUEIDENTIFIER
@@ -7084,6 +7088,9 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CreatedBy UNIQUEIDENTIFIER
 			, ModifiedOn DATETIME
 			, ModifiedBy UNIQUEIDENTIFIER
+			, OwnerId UNIQUEIDENTIFIER
+			, Plus_RelatedOpportunity UNIQUEIDENTIFIER
+			, Zero NVARCHAR(1) DEFAULT ''0''
 		' -- Ext_Create_Fields
 		, 'Plus_ConstituentNoteId
 			, Plus_RelatedConstituent
@@ -7098,6 +7105,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CreatedBy
 			, ModifiedOn
 			, ModifiedBy
+			, OwnerId 
+			, Plus_RelatedOpportunity
 		' -- Ext_Insert_Fields
 		, 'Plus_ConstituentNoteId
 			, Plus_RelatedConstituent
@@ -7115,6 +7124,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CASE WHEN DATENAME(dy,A.ModifiedOn) BETWEEN D.Mdt_Begin_Date_Number AND D.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.ModifiedOn)
 					ELSE DATEADD(hh,-7,A.ModifiedOn) END AS ModifiedOn
 			, ModifiedBy
+			, OwnerId 
+			, Plus_RelatedOpportunity
 			' -- Ext_Select_Statement
 		, 'Oa_Extract.Plus_ConstituentNoteBase A
 				LEFT JOIN dbo._MDT_Conversion_Dim B ON YEAR(A.Plus_Date) = B.Date_Year
@@ -17779,6 +17790,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Email_Active_Yn  NVARCHAR(1) 
 			, Email_Confirmed_Yn  NVARCHAR(1)
 			, Email_Confidential_Yn  NVARCHAR(1)
+			, Y NVARCHAR(1) DEFAULT ''Y''
 			' -- Ext_Create_Fields
 		, 'ContactId  
 			, Email_Key 
@@ -17816,7 +17828,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			' -- Ext_From_Statement
 		, 'AND A.StateCode != 1
 			INSERT INTO _Email_Dim
-				VALUES(NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+				VALUES(NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 			CREATE NONCLUSTERED INDEX IX_Email_Primary_Yn 
 					ON _Email_Dim(Email_Primary_Yn ASC)
 						INCLUDE (
@@ -18488,6 +18500,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CreatedBy NVARCHAR(100)
 			, ModifiedOn DATE
 			, ModifiedBy NVARCHAR(100)
+			, OwnerId NVARCHAR(100)
+			, Plus_RelatedOpportunity NVARCHAR(100)
 		' -- Ext_Create_Fields
 		, 'Donor_Key
 			, Plus_ConstituentNoteId 
@@ -18495,13 +18509,17 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, CreatedBy
 			, ModifiedOn
 			, ModifiedBy
+			, OwnerId
+			, Plus_RelatedOpportunity
 		' -- Ext_Insert_Fields
 		, 'COALESCE(CONVERT(NVARCHAR(100),A.Plus_RelatedConstituent), CONVERT(NVARCHAR(100),A.Plus_RelatedOrganization)) AS Donor_Key
 			, CONVERT(NVARCHAR(100),A.Plus_ConstituentNoteId) AS Plus_ConstituentNoteId
 			, CONVERT(VARCHAR(10),A.CreatedOn,101) AS CreatedOn	
-			, CONVERT(NVARCHAR(100),A.CreatedBy) AS CreatedBy
+			, COALESCE(CONVERT(NVARCHAR(100),A.CreatedBy),A.[Zero]) AS CreatedBy
 			, CONVERT(VARCHAR(10),A.ModifiedOn,101) AS ModifiedOn
-			, CONVERT(NVARCHAR(100),A.ModifiedBy) AS ModifiedBy
+			, COALESCE(CONVERT(NVARCHAR(100),A.ModifiedBy),A.[Zero]) AS ModifiedBy
+			, COALESCE(CONVERT(NVARCHAR(100),A.OwnerId),A.[Zero]) AS OwnerId
+			, COALESCE(CONVERT(NVARCHAR(100),A.Plus_RelatedOpportunity),A.[Zero]) AS Plus_RelatedOpportunity
 			' -- Ext_Select_Statement
 		, 'Ext_Constituent_Note A
 			' -- Ext_From_Statement
@@ -18869,6 +18887,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Address_Type_Value INT
 			, Address_Printing_Line_3 NVARCHAR(100)
 			, Address_Printing_Line_4 NVARCHAR(100)
+			, Y NVARCHAR(1) DEFAULT ''Y''
 		' -- Ext_Create_Fields
 		, 'ContactId
 			, Address_Key
@@ -19006,7 +19025,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 					) C ON A.New_AddressId = C.New_AddressId LEFT JOIN
 			' -- Ext_From_Statement
 		, 'INSERT INTO _Address_Dim
-			VALUES(NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+			VALUES(NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 			CREATE NONCLUSTERED INDEX IX_Address_Primary_Yn 
 					ON _Address_Dim(Address_Primary_Yn ASC)
 						INCLUDE (
@@ -19276,6 +19295,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Phone_Type_Value INT
 			, Phone_Line_Type_Value INT
 			, Phone_Preferred_Time_Value INT
+			, Y NVARCHAR(1) DEFAULT ''Y''
 			' -- Ext_Create_Fields
 		, 'ContactId
 			, Phone_Key
@@ -19336,7 +19356,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			' -- Ext_From_Statement
 		, 'AND A.StatusCode = 100000002
 			INSERT INTO _Phone_Dim
-				VALUES(NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+				VALUES(NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 			CREATE NONCLUSTERED INDEX IX_Phone_Primary_Yn 
 					ON _Phone_Dim(Phone_Primary_Yn ASC)
 						INCLUDE (
@@ -19445,6 +19465,19 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, New_Inst NVARCHAR(100)
 			, Hier_Name NVARCHAR(100)
 			, ContactId NVARCHAR(100)
+			, [Drop] NVARCHAR(5) DEFAULT ''Drop''
+			, BYU NVARCHAR(5) DEFAULT ''BYU''
+			, BYUI NVARCHAR(5) DEFAULT ''BYUI''
+			, BYUH NVARCHAR(5) DEFAULT ''BYUH''
+			, LDSBC NVARCHAR(5) DEFAULT ''LDSBC''
+			, Y NVARCHAR(1) DEFAULT ''Y''
+			, [All] NVARCHAR(5) DEFAULT ''All''
+			, Solicitations NVARCHAR(20) DEFAULT ''Solicitations''
+			, Institution NVARCHAR(20) DEFAULT ''Institution''
+			, OneAccord NVARCHAR(20) DEFAULT ''OneAccord''
+			, Gift_Acknowledgements NVARCHAR(25) DEFAULT ''Gift Acknowledgements''
+			, Church NVARCHAR(10) DEFAULT ''Church''
+			, PCC NVARCHAR(5) DEFAULT ''PCC''
 			' -- Ext_Create_Fields
 		, 'Drop_Include_Key
 			, Drop_Include_Instit_Hierarchy 
@@ -19512,7 +19545,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 					) I ON A.New_DropIncludesId = I.New_DropIncludesId
 			' -- Ext_From_Statement
 		, 'INSERT INTO _Drop_Include_Dim
-				VALUES(0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+				VALUES(0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 			' -- Ext_Where_Statement	
 		, NULL -- Tier_3_Stage
 		, NULL -- Tier_3_Stage_DateTime
@@ -22188,6 +22221,93 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, 'Ext_System_User
 			' -- Ext_From_Statement
 		, 'Exec dbo.usp_Bio_Strat_Plan_ModifiedBy_Dim_Zero_Key
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+,
+-- --------------------------
+-- _Bio_Strat_Plan_OwnerId_Dim
+-- --------------------------
+	( 4 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Bio_Strat_Plan_OwnerId_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Bio_Strat_Plan_OwnerId_Key NVARCHAR(100) PRIMARY KEY
+			, Bio_Strat_Plan_OwnerId_Full_Name NVARCHAR(200)
+			, Bio_Strat_Plan_OwnerId_First_Name NVARCHAR(64)
+			, Bio_Strat_Plan_OwnerId_Last_Name NVARCHAR(64)
+			, Bio_Strat_Plan_OwnerId_Domain_Name NVARCHAR(1024)
+			' -- Ext_Create_Fields
+		, 'Bio_Strat_Plan_OwnerId_Key
+			, Bio_Strat_Plan_OwnerId_Full_Name
+			, Bio_Strat_Plan_OwnerId_First_Name
+			, Bio_Strat_Plan_OwnerId_Last_Name
+			, Bio_Strat_Plan_OwnerId_Domain_Name
+			' -- Ext_Insert_Fields
+		, 'DISTINCT CONVERT(NVARCHAR(100),SystemUserId) AS Bio_Strat_Plan_OwnerId_Key
+			, FullName AS Bio_Strat_Plan_OwnerId_Full_Name
+			, FirstName AS Bio_Strat_Plan_OwnerId_First_Name
+			, LastName AS Bio_Strat_Plan_OwnerId_Last_Name
+			, DomainName AS Bio_Strat_Plan_OwnerId_Domain_Name   				
+			' -- Ext_Select_Statement
+		, 'Ext_System_User
+			' -- Ext_From_Statement
+		, 'Exec dbo.usp_Bio_Strat_Plan_OwnerId_Dim_Zero_Key
 			' -- Ext_Where_Statement	
 		, NULL -- Tier_3_Stage
 		, NULL -- Tier_3_Stage_DateTime
@@ -25923,6 +26043,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Donor_Contact_Type NVARCHAR(100) 
 			, Donor_Organization_Id NVARCHAR(100)
 			, Zero NVARCHAR(1) DEFAULT ''0''
+			, N NVARCHAR(1) DEFAULT ''N''
+			, Y NVARCHAR(1) DEFAULT ''Y''
 			' -- Ext_Create_Fields
 		, '	Donor_Key      
 			, Activity_Group_Key 
@@ -27801,6 +27923,2338 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, '															
 			' -- Ext_From_Statement_3
 		, '
+			'-- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Primary_Contact_Dim
+-- --------------------------
+	( 7 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Primary_Contact_Dim' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Donor_Key NVARCHAR(100) PRIMARY KEY
+			, Address_Primary_Yn NVARCHAR(1)
+			, Address_Street_1 NVARCHAR(100)
+			, Address_Street_2 NVARCHAR(100)
+			, Address_Street_3 NVARCHAR(100)
+			, Address_City NVARCHAR(100)
+			, Address_County NVARCHAR(100)
+			, Address_County_Code NVARCHAR(10)
+			, Address_County_Id NVARCHAR(100)
+			, Address_State_Province NVARCHAR(50)
+			, Address_State_Code NVARCHAR(100)
+			, Address_Country NVARCHAR(100)
+			, Address_Post_Code_Full NVARCHAR(100)
+			, Address_Post_Code_Last_4 NVARCHAR(15)
+			, Address_Printing_Line_1 NVARCHAR(606)
+			, Address_Printing_Line_2 NVARCHAR(406)
+			, Address_Display NVARCHAR(300)
+			, Address_Quality_Status NVARCHAR(400)
+			, Address_Quality_Status_Value INT
+			, Address_Longitude FLOAT
+			, Address_Latitude FLOAT
+			, Address_Active_Yn NVARCHAR(1)
+			, Address_Confirmed_Yn NVARCHAR(1)
+			, Address_Confidential_Yn NVARCHAR(1)
+			, Address_Type NVARCHAR(400)
+			, Address_Type_Value INT
+			, Address_Printing_Line_3 NVARCHAR(100)
+			, Address_Printing_Line_4 NVARCHAR(100)
+			, Phone_Number NVARCHAR(100)
+			, Phone_Country_Code NVARCHAR(100)
+			, Phone_Extension NVARCHAR(100)
+			, Phone_Active_Yn NVARCHAR(1)
+			, Phone_Confirmed_Yn NVARCHAR(1)
+			, Phone_Primary_Yn NVARCHAR(1)
+			, Phone_Recieve_Text_Yn NVARCHAR(1)
+			, Phone_Confidential_Yn NVARCHAR(1)
+			, Phone_Type NVARCHAR(400)
+			, Phone_Line_Type NVARCHAR(400)
+			, Phone_Preferred_Time NVARCHAR(400)
+			, Phone_Type_Value INT
+			, Phone_Line_Type_Value INT
+			, Phone_Preferred_Time_Value INT
+			, Email_Address NVARCHAR(150)
+			, Email_Primary_Yn NVARCHAR(1)
+			, Email_Type NVARCHAR(400)
+			, Email_Type_Value INT
+			, Email_Active_Yn NVARCHAR(1)
+			, Email_Confirmed_Yn NVARCHAR(1)
+			, Email_Confidential_Yn NVARCHAR(1)
+			' -- Ext_Create_Fields
+		, '	Donor_Key
+			, Address_Primary_Yn
+			, Address_Street_1
+			, Address_Street_2
+			, Address_Street_3
+			, Address_City
+			, Address_County
+			, Address_County_Code
+			, Address_County_Id
+			, Address_State_Province
+			, Address_State_Code
+			, Address_Country
+			, Address_Post_Code_Full
+			, Address_Post_Code_Last_4
+			, Address_Printing_Line_1
+			, Address_Printing_Line_2
+			, Address_Display
+			, Address_Quality_Status
+			, Address_Quality_Status_Value
+			, Address_Longitude
+			, Address_Latitude
+			, Address_Active_Yn
+			, Address_Confirmed_Yn
+			, Address_Confidential_Yn
+			, Address_Type
+			, Address_Type_Value
+			, Address_Printing_Line_3
+			, Address_Printing_Line_4
+			, Phone_Number
+			, Phone_Country_Code
+			, Phone_Extension
+			, Phone_Active_Yn
+			, Phone_Confirmed_Yn
+			, Phone_Primary_Yn
+			, Phone_Recieve_Text_Yn
+			, Phone_Confidential_Yn
+			, Phone_Type
+			, Phone_Line_Type
+			, Phone_Preferred_Time
+			, Phone_Type_Value
+			, Phone_Line_Type_Value
+			, Phone_Preferred_Time_Value
+			, Email_Address
+			, Email_Primary_Yn
+			, Email_Type
+			, Email_Type_Value
+			, Email_Active_Yn
+			, Email_Confirmed_Yn
+			, Email_Confidential_Yn
+			' -- Ext_Insert_Fields
+		, 'A.Donor_Key
+			, B.Address_Primary_Yn
+			, B.Address_Street_1
+			, B.Address_Street_2
+			, B.Address_Street_3
+			, B.Address_City
+			, B.Address_County
+			, B.Address_County_Code
+			, B.Address_County_Id
+			, B.Address_State_Province
+			, B.Address_State_Code
+			, B.Address_Country
+			, B.Address_Post_Code_Full
+			, B.Address_Post_Code_Last_4
+			, B.Address_Printing_Line_1
+			, B.Address_Printing_Line_2
+			, B.Address_Display
+			, B.Address_Quality_Status
+			, B.Address_Quality_Status_Value
+			, B.Address_Longitude
+			, B.Address_Latitude
+			, B.Address_Active_Yn
+			, B.Address_Confirmed_Yn
+			, B.Address_Confidential_Yn
+			, B.Address_Type
+			, B.Address_Type_Value
+			, B.Address_Printing_Line_3
+			, B.Address_Printing_Line_4
+			, C.Phone_Number
+			, C.Phone_Country_Code
+			, C.Phone_Extension
+			, C.Phone_Active_Yn
+			, C.Phone_Confirmed_Yn
+			, C.Phone_Primary_Yn
+			, C.Phone_Recieve_Text_Yn
+			, C.Phone_Confidential_Yn
+			, C.Phone_Type
+			, C.Phone_Line_Type
+			, C.Phone_Preferred_Time
+			, C.Phone_Type_Value
+			, C.Phone_Line_Type_Value
+			, C.Phone_Preferred_Time_Value
+			, D.Email_Address
+			, D.Email_Primary_Yn
+			, D.Email_Type
+			, D.Email_Type_Value
+			, D.Email_Active_Yn
+			, D.Email_Confirmed_Yn
+			, D.Email_Confidential_Yn
+			' -- Ext_Select_Statement
+		, '	_Donor_Key_Dim A
+				LEFT JOIN 
+					(SELECT *
+						FROM
+							(SELECT ROW_NUMBER() OVER(PARTITION BY ContactId ORDER BY ContactId) AS Row_Num
+								, ContactId
+								, Address_Primary_Yn
+								, Address_Street_1
+								, Address_Street_2
+								, Address_Street_3
+								, Address_City
+								, Address_County
+								, Address_County_Code
+								, Address_County_Id
+								, Address_State_Province
+								, Address_State_Code
+								, Address_Country
+								, Address_Post_Code_Full
+								, Address_Post_Code_Last_4
+								, Address_Printing_Line_1
+								, Address_Printing_Line_2
+								, Address_Display
+								, Address_Quality_Status
+								, Address_Quality_Status_Value
+								, Address_Longitude
+								, Address_Latitude
+								, Address_Active_Yn
+								, Address_Confirmed_Yn
+								, Address_Confidential_Yn
+								, Address_Type
+								, Address_Type_Value
+								, Address_Printing_Line_3
+								, Address_Printing_Line_4
+								FROM _Address_Dim
+								WHERE 1 = 1 
+									AND Address_Primary_Yn = [Y]
+							) A
+						WHERE 1 = 1
+							AND Row_Num = 1
+					) B ON A.Donor_Key = B.ContactId
+				LEFT JOIN 
+					(SELECT *
+						FROM
+							(SELECT ROW_NUMBER() OVER(PARTITION BY ContactId ORDER BY ContactId) AS Row_Num
+								, ContactId
+								, Phone_Number
+								, Phone_Country_Code
+								, Phone_Extension
+								, Phone_Active_Yn
+								, Phone_Confirmed_Yn
+								, Phone_Primary_Yn
+								, Phone_Recieve_Text_Yn
+								, Phone_Confidential_Yn
+								, Phone_Type
+								, Phone_Line_Type
+								, Phone_Preferred_Time
+								, Phone_Type_Value
+								, Phone_Line_Type_Value
+								, Phone_Preferred_Time_Value
+								FROM _Phone_Dim 
+								WHERE 1 = 1
+									AND Phone_Primary_Yn = [Y]
+							) A
+						WHERE 1 = 1
+							AND Row_Num = 1
+					) C ON A.Donor_Key = C.ContactId
+				LEFT JOIN 
+					(SELECT *
+						FROM
+							(SELECT ROW_NUMBER() OVER(PARTITION BY ContactId ORDER BY ContactId) AS Row_Num
+								, ContactId
+								, Email_Address
+								, Email_Primary_Yn
+								, Email_Type
+								, Email_Type_Value
+								, Email_Active_Yn
+								, Email_Confirmed_Yn
+								, Email_Confidential_Yn
+								FROM _Email_Dim
+								WHERE 1 = 1 
+									AND Email_Primary_Yn = [Y]
+							) A
+						WHERE 1 = 1
+							AND Row_Num = 1
+					) D ON A.Donor_Key = D.ContactId																
+			' -- Ext_From_Statement
+		, 'AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '														
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '																											
+			' -- Ext_From_Statement_3
+		, '		
+			'-- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Drop_Logic_Dim_1
+-- --------------------------
+	( 7 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Drop_Logic_Dim_1' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' Donor_Key NVARCHAR(100) PRIMARY KEY
+			, Drop_Byu_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'') 
+			, Drop_Byui_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			' -- Ext_Create_Fields
+		, '	Donor_Key
+			, Drop_Byu_Mail_Ag 
+			, Drop_Byui_Mail_Ag
+			, Drop_Byuh_Mail_Ag
+			, Drop_Ldsbc_Mail_Ag
+			, Drop_Byu_Email_Ag
+			, Drop_Byui_Email_Ag
+			, Drop_Byuh_Email_Ag
+			, Drop_Ldsbc_Email_Ag
+			, Drop_Byu_Phone_Ag
+			, Drop_Byui_Phone_Ag
+			, Drop_Byuh_Phone_Ag
+			, Drop_Ldsbc_Phone_Ag
+			, Drop_Byu_Mail_Acknowledgement
+			, Drop_Byui_Mail_Acknowledgement
+			, Drop_Byuh_Mail_Acknowledgement
+			, Drop_Ldsbc_Mail_Acknowledgement
+			, Drop_Byu_Email_Acknowledgement
+			, Drop_Byui_Email_Acknowledgement
+			' -- Ext_Insert_Fields
+		, '	A.Donor_Key
+			, COALESCE(B.Drop_Byu_Mail_Ag,A.[Y]) AS Drop_Byu_Mail_Ag 
+			, COALESCE(C.Drop_Byui_Mail_Ag,A.[Y]) AS Drop_Byui_Mail_Ag
+			, COALESCE(D.Drop_Byuh_Mail_Ag,A.[Y]) AS Drop_Byuh_Mail_Ag
+			, COALESCE(E.Drop_Ldsbc_Mail_Ag,A.[Y]) AS Drop_Ldsbc_Mail_Ag
+			, COALESCE(F.Drop_Byu_Email_Ag,A.[Y]) AS Drop_Byu_Email_Ag
+			, COALESCE(G.Drop_Byui_Email_Ag,A.[Y]) AS Drop_Byui_Email_Ag
+			, COALESCE(H.Drop_Byuh_Email_Ag,A.[Y]) AS Drop_Byuh_Email_Ag
+			, COALESCE(I.Drop_Ldsbc_Email_Ag,A.[Y]) AS Drop_Ldsbc_Email_Ag
+			, COALESCE(J.Drop_Byu_Phone_Ag,A.[Y]) AS Drop_Byu_Phone_Ag
+			, COALESCE(K.Drop_Byui_Phone_Ag,A.[Y]) AS Drop_Byui_Phone_Ag
+			, COALESCE(L.Drop_Byuh_Phone_Ag,A.[Y]) AS Drop_Byuh_Phone_Ag
+			, COALESCE(M.Drop_Ldsbc_Phone_Ag,A.[Y]) AS Drop_Ldsbc_Phone_Ag
+			, COALESCE(N.Drop_Byu_Mail_Acknowledgement,A.[Y]) AS Drop_Byu_Mail_Acknowledgement
+			, COALESCE(O.Drop_Byui_Mail_Acknowledgement,A.[Y]) AS Drop_Byui_Mail_Acknowledgement
+			, COALESCE(P.Drop_Byuh_Mail_Acknowledgement,A.[Y]) AS Drop_Byuh_Mail_Acknowledgement
+			, COALESCE(Q.Drop_Ldsbc_Mail_Acknowledgement,A.[Y]) AS Drop_Ldsbc_Mail_Acknowledgement
+			, COALESCE(R.Drop_Byu_Email_Acknowledgement,A.[Y]) AS Drop_Byu_Email_Acknowledgement
+			, COALESCE(S.Drop_Byui_Email_Acknowledgement,A.[Y]) AS Drop_Byui_Email_Acknowledgement
+			' -- Ext_Select_Statement
+		, '	_Donor_Key_Dim A
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Mail_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Mail_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Mail_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]					
+			' -- Ext_From_Statement
+		, 'AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '										AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) D ON A.Donor_Key = D.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Mail_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) E ON A.Donor_Key = E.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Email_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) F ON A.Donor_Key = F.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Email_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]												 																																						
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '										AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations])
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) G ON A.Donor_Key = G.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Email_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) H ON A.Donor_Key = H.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Email_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)																																									
+			' -- Ext_From_Statement_3
+		, '						) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) I ON A.Donor_Key = I.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Phone_Ag
+						FROM _Donor_Key_Dim A					
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) J ON A.Donor_Key = J.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Phone_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) K ON A.Donor_Key = K.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Phone_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR												 													
+			'-- Ext_From_Statement_4
+		, '										( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations])
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) L ON A.Donor_Key = L.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Phone_Ag
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Solicitations]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) M ON A.Donor_Key = M.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Mail_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) N ON A.Donor_Key = N.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Mail_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1										 												
+			'-- Ext_From_Statement_5
+		, '								AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements])
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) O ON A.Donor_Key = O.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Mail_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) P ON A.Donor_Key = P.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Mail_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]												
+			'-- Ext_From_Statement_6
+		, '										AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) Q ON A.Donor_Key = Q.Donor_Key		
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Email_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) R ON A.Donor_Key = R.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Email_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) S ON A.Donor_Key = S.Donor_Key
+			'-- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Drop_Logic_Dim_2
+-- --------------------------
+	( 7 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Drop_Logic_Dim_2' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' Donor_Key NVARCHAR(100) PRIMARY KEY
+			, Drop_Byuh_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Pcc_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Pcc_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Pcc_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			' -- Ext_Create_Fields
+		, '	Donor_Key
+			, Drop_Byuh_Email_Acknowledgement
+			, Drop_Ldsbc_Email_Acknowledgement
+			, Drop_Byu_Phone_Acknowledgement
+			, Drop_Byui_Phone_Acknowledgement
+			, Drop_Byuh_Phone_Acknowledgement
+			, Drop_Ldsbc_Phone_Acknowledgement
+			, Drop_Church_Mail_Acknowledgement
+			, Drop_Church_Email_Acknowledgement
+			, Drop_Church_Phone_Acknowledgement
+			, Drop_Pcc_Mail_Acknowledgement
+			, Drop_Pcc_Email_Acknowledgement
+			, Drop_Pcc_Phone_Acknowledgement
+			, Drop_Byu_Mail_All
+			, Drop_Byui_Mail_All
+			, Drop_Byuh_Mail_All
+			, Drop_Ldsbc_Mail_All
+			, Drop_Church_Mail_All
+			, Drop_Byu_Email_All
+			, Drop_Byui_Email_All
+			' -- Ext_Insert_Fields
+		, '	A.Donor_Key
+			, COALESCE(T.Drop_Byuh_Email_Acknowledgement,A.[Y]) AS Drop_Byuh_Email_Acknowledgement
+			, COALESCE(U.Drop_Ldsbc_Email_Acknowledgement,A.[Y]) AS Drop_Ldsbc_Email_Acknowledgement
+			, COALESCE(V.Drop_Byu_Phone_Acknowledgement,A.[Y]) AS Drop_Byu_Phone_Acknowledgement
+			, COALESCE(W.Drop_Byui_Phone_Acknowledgement,A.[Y]) AS Drop_Byui_Phone_Acknowledgement
+			, COALESCE(X.Drop_Byuh_Phone_Acknowledgement,A.[Y]) AS Drop_Byuh_Phone_Acknowledgement
+			, COALESCE(Y.Drop_Ldsbc_Phone_Acknowledgement,A.[Y]) AS Drop_Ldsbc_Phone_Acknowledgement
+			, COALESCE(Z.Drop_Church_Mail_Acknowledgement,A.[Y]) AS Drop_Church_Mail_Acknowledgement
+			, COALESCE(AA.Drop_Church_Email_Acknowledgement,A.[Y]) AS Drop_Church_Email_Acknowledgement
+			, COALESCE(AB.Drop_Church_Phone_Acknowledgement,A.[Y]) AS Drop_Church_Phone_Acknowledgement
+			, COALESCE(AC.Drop_Pcc_Mail_Acknowledgement,A.[Y]) AS Drop_Pcc_Mail_Acknowledgement
+			, COALESCE(AD.Drop_Pcc_Email_Acknowledgement,A.[Y]) AS Drop_Pcc_Email_Acknowledgement
+			, COALESCE(AE.Drop_Pcc_Phone_Acknowledgement,A.[Y]) AS Drop_Pcc_Phone_Acknowledgement
+			, COALESCE(AF.Drop_Byu_Mail_All,A.[Y]) AS Drop_Byu_Mail_All
+			, COALESCE(AG.Drop_Byui_Mail_All,A.[Y]) AS Drop_Byui_Mail_All
+			, COALESCE(AH.Drop_Byuh_Mail_All,A.[Y]) AS Drop_Byuh_Mail_All
+			, COALESCE(AI.Drop_Ldsbc_Mail_All,A.[Y]) AS Drop_Ldsbc_Mail_All
+			, COALESCE(AJ.Drop_Church_Mail_All,A.[Y]) AS Drop_Church_Mail_All
+			, COALESCE(AK.Drop_Byu_Email_All,A.[Y]) AS Drop_Byu_Email_All
+			, COALESCE(AL.Drop_Byui_Email_All,A.[Y]) AS Drop_Byui_Email_All
+			' -- Ext_Select_Statement
+		, '	_Donor_Key_Dim A
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Email_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) T ON A.Donor_Key = T.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Email_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) U ON A.Donor_Key = U.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Phone_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]																															
+			' -- Ext_From_Statement
+		, 'AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '										AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) V ON A.Donor_Key = V.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Phone_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) W ON A.Donor_Key = W.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Phone_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) X ON A.Donor_Key = X.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Phone_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]																											
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '										AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) Y ON A.Donor_Key = Y.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Mail_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) Z ON A.Donor_Key = Z.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Email_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())																																							
+			' -- Ext_From_Statement_3
+		, '										AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AA ON A.Donor_Key = AA.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Phone_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AB ON A.Donor_Key = AB.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Pcc_Mail_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [PCC]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AC ON A.Donor_Key = AC.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Pcc_Email_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [PCC]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())															
+			'-- Ext_From_Statement_4
+		, '										AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AD ON A.Donor_Key = AD.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Pcc_Phone_Acknowledgement
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [PCC]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND (_Drop_Include_Dim.Drop_Include_Comm_Type = [All] OR _Drop_Include_Dim.Drop_Include_Comm_Type = [Gift_Acknowledgements]) 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AE ON A.Donor_Key = AE.Donor_Key		
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Mail_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AF ON A.Donor_Key = AF.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Mail_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1										
+			'-- Ext_From_Statement_5
+		, '										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AG ON A.Donor_Key = AG.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Mail_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All]
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All]
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) AH ON A.Donor_Key = AH.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Mail_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All]
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) AI ON A.Donor_Key = AI.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Mail_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN								
+			'-- Ext_From_Statement_6
+		, '						(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All]
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key
+					) AJ ON A.Donor_Key = AJ.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Email_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AK ON A.Donor_Key = AK.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Email_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AL ON A.Donor_Key = AL.Donor_Key				
+			'-- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Drop_Logic_Dim_3
+-- --------------------------
+	( 7 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Drop_Logic_Dim_3' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' Donor_Key NVARCHAR(100) PRIMARY KEY
+			, Drop_Byuh_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			' -- Ext_Create_Fields
+		, '	Donor_Key
+			, Drop_Byuh_Email_All
+			, Drop_Ldsbc_Email_All
+			, Drop_Church_Email_All
+			, Drop_Byu_Phone_All
+			, Drop_Byui_Phone_All
+			, Drop_Byuh_Phone_All
+			, Drop_Ldsbc_Phone_All
+			, Drop_Church_Phone_All
+			, Drop_Byu_Overall
+			, Drop_Byui_Overall
+			, Drop_Byuh_Overall
+			, Drop_Ldsbc_Overall
+			, Drop_Church_Overall
+			' -- Ext_Insert_Fields
+		, '	A.Donor_Key
+			, COALESCE(AM.Drop_Byuh_Email_All,A.[Y]) AS Drop_Byuh_Email_All
+			, COALESCE(AN.Drop_Ldsbc_Email_All,A.[Y]) AS Drop_Ldsbc_Email_All
+			, COALESCE(AO.Drop_Church_Email_All,A.[Y]) AS Drop_Church_Email_All
+			, COALESCE(AP.Drop_Byu_Phone_All,A.[Y]) AS Drop_Byu_Phone_All
+			, COALESCE(AQ.Drop_Byui_Phone_All,A.[Y]) AS Drop_Byui_Phone_All
+			, COALESCE(AR.Drop_Byuh_Phone_All,A.[Y]) AS Drop_Byuh_Phone_All
+			, COALESCE(AU.Drop_Ldsbc_Phone_All,A.[Y]) AS Drop_Ldsbc_Phone_All
+			, COALESCE(AV.Drop_Church_Phone_All,A.[Y]) AS Drop_Church_Phone_All
+			, COALESCE(AW.Drop_Byu_Overall,A.[Y]) AS Drop_Byu_Overall
+			, COALESCE(AX.Drop_Byui_Overall,A.[Y]) AS Drop_Byui_Overall
+			, COALESCE(AY.Drop_Byuh_Overall,A.[Y]) AS Drop_Byuh_Overall
+			, COALESCE(AZ.Drop_Ldsbc_Overall,A.[Y]) AS Drop_Ldsbc_Overall
+			, COALESCE(BA.Drop_Church_Overall,A.[Y]) AS Drop_Church_Overall
+			' -- Ext_Select_Statement
+		, '	_Donor_Key_Dim A
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Email_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AM ON A.Donor_Key = AM.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Email_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AN ON A.Donor_Key = AN.Donor_Key		
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Email_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]																													
+			' -- Ext_From_Statement
+		, 'AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '										)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AO ON A.Donor_Key = AO.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Phone_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All]
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AP ON A.Donor_Key = AP.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Phone_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AQ ON A.Donor_Key = AQ.Donor_Key		
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Phone_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())																														
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '										AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AR ON A.Donor_Key = AR.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Ldsbc_Phone_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AU ON A.Donor_Key = AU.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Phone_All
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AV ON A.Donor_Key = AV.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byu_Overall
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYU]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]																																	
+			' -- Ext_From_Statement_3
+		, '										AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All]
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key	
+					) AW ON A.Donor_Key = AW.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byui_Overall
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUI]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AX ON A.Donor_Key = AX.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Byuh_Overall
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [BYUH]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AY ON A.Donor_Key = AY.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key												
+			'-- Ext_From_Statement_4
+		, '				, [N] AS Drop_Ldsbc_Overall
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [LDSBC]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) AZ ON A.Donor_Key = AZ.Donor_Key	
+				LEFT JOIN
+					(SELECT DISTINCT A.Donor_Key
+						, [N] AS Drop_Church_Overall
+						FROM _Donor_Key_Dim A
+							INNER JOIN
+								(SELECT DISTINCT Drop_Include_Group_Key
+									FROM _Drop_Include_Dim
+									WHERE 1 = 1
+										AND (  ( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [Church]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+												OR
+												( _Drop_Include_Dim.Drop_Include_Type = [Drop]
+												AND _Drop_Include_Dim.New_Inst = [OneAccord]
+												AND _Drop_Include_Dim.Drop_Include_Comm_Type = [All] 
+												AND (_Drop_Include_Dim.New_EndDate IS NULL OR _Drop_Include_Dim.New_EndDate > GETDATE())
+												AND Drop_Include_Group_Key IS NOT NULL
+												AND _Drop_Include_Dim.Drop_Include_Email_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Phone_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Mail_Yn = [Y]
+												AND _Drop_Include_Dim.Drop_Include_Scope = [Institution]
+												)
+											)
+								) B ON A.Drop_Include_Group_Key = B.Drop_Include_Group_Key		
+					) BA ON A.Donor_Key = BA.Donor_Key		
+			'-- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Drop_Logic_Dim
+-- --------------------------
+	( 8 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Drop_Logic_Dim' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' Donor_Key NVARCHAR(100) PRIMARY KEY
+			, Drop_Byu_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'') 
+			, Drop_Byui_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Mail_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Email_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Phone_Ag NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Pcc_Mail_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Pcc_Email_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Pcc_Phone_Acknowledgement NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Mail_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Email_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Phone_All NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byu_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byui_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Byuh_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Ldsbc_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			, Drop_Church_Overall NVARCHAR(1) NOT NULL DEFAULT(''Y'')
+			' -- Ext_Create_Fields
+		, '	Donor_Key
+			, Drop_Byu_Mail_Ag 
+			, Drop_Byui_Mail_Ag
+			, Drop_Byuh_Mail_Ag
+			, Drop_Ldsbc_Mail_Ag
+			, Drop_Byu_Email_Ag
+			, Drop_Byui_Email_Ag
+			, Drop_Byuh_Email_Ag
+			, Drop_Ldsbc_Email_Ag
+			, Drop_Byu_Phone_Ag
+			, Drop_Byui_Phone_Ag
+			, Drop_Byuh_Phone_Ag
+			, Drop_Ldsbc_Phone_Ag
+			, Drop_Byu_Mail_Acknowledgement
+			, Drop_Byui_Mail_Acknowledgement
+			, Drop_Byuh_Mail_Acknowledgement
+			, Drop_Ldsbc_Mail_Acknowledgement
+			, Drop_Byu_Email_Acknowledgement
+			, Drop_Byui_Email_Acknowledgement
+			, Drop_Byuh_Email_Acknowledgement
+			, Drop_Ldsbc_Email_Acknowledgement
+			, Drop_Byu_Phone_Acknowledgement
+			, Drop_Byui_Phone_Acknowledgement
+			, Drop_Byuh_Phone_Acknowledgement
+			, Drop_Ldsbc_Phone_Acknowledgement
+			, Drop_Church_Mail_Acknowledgement
+			, Drop_Church_Email_Acknowledgement
+			, Drop_Church_Phone_Acknowledgement
+			, Drop_Pcc_Mail_Acknowledgement
+			, Drop_Pcc_Email_Acknowledgement
+			, Drop_Pcc_Phone_Acknowledgement
+			, Drop_Byu_Mail_All
+			, Drop_Byui_Mail_All
+			, Drop_Byuh_Mail_All
+			, Drop_Ldsbc_Mail_All
+			, Drop_Church_Mail_All
+			, Drop_Byu_Email_All
+			, Drop_Byui_Email_All
+			, Drop_Byuh_Email_All
+			, Drop_Ldsbc_Email_All
+			, Drop_Church_Email_All
+			, Drop_Byu_Phone_All
+			, Drop_Byui_Phone_All
+			, Drop_Byuh_Phone_All
+			, Drop_Ldsbc_Phone_All
+			, Drop_Church_Phone_All
+			, Drop_Byu_Overall
+			, Drop_Byui_Overall
+			, Drop_Byuh_Overall
+			, Drop_Ldsbc_Overall
+			, Drop_Church_Overall
+			' -- Ext_Insert_Fields
+		, '	A.Donor_Key
+			, B.Drop_Byu_Mail_Ag 
+			, B.Drop_Byui_Mail_Ag
+			, B.Drop_Byuh_Mail_Ag
+			, B.Drop_Ldsbc_Mail_Ag
+			, B.Drop_Byu_Email_Ag
+			, B.Drop_Byui_Email_Ag
+			, B.Drop_Byuh_Email_Ag
+			, B.Drop_Ldsbc_Email_Ag
+			, B.Drop_Byu_Phone_Ag
+			, B.Drop_Byui_Phone_Ag
+			, B.Drop_Byuh_Phone_Ag
+			, B.Drop_Ldsbc_Phone_Ag
+			, B.Drop_Byu_Mail_Acknowledgement
+			, B.Drop_Byui_Mail_Acknowledgement
+			, B.Drop_Byuh_Mail_Acknowledgement
+			, B.Drop_Ldsbc_Mail_Acknowledgement
+			, B.Drop_Byu_Email_Acknowledgement
+			, B.Drop_Byui_Email_Acknowledgement
+			, C.Drop_Byuh_Email_Acknowledgement
+			, C.Drop_Ldsbc_Email_Acknowledgement
+			, C.Drop_Byu_Phone_Acknowledgement
+			, C.Drop_Byui_Phone_Acknowledgement
+			, C.Drop_Byuh_Phone_Acknowledgement
+			, C.Drop_Ldsbc_Phone_Acknowledgement
+			, C.Drop_Church_Mail_Acknowledgement
+			, C.Drop_Church_Email_Acknowledgement
+			, C.Drop_Church_Phone_Acknowledgement
+			, C.Drop_Pcc_Mail_Acknowledgement
+			, C.Drop_Pcc_Email_Acknowledgement
+			, C.Drop_Pcc_Phone_Acknowledgement
+			, C.Drop_Byu_Mail_All
+			, C.Drop_Byui_Mail_All
+			, C.Drop_Byuh_Mail_All
+			, C.Drop_Ldsbc_Mail_All
+			, C.Drop_Church_Mail_All
+			, C.Drop_Byu_Email_All
+			, C.Drop_Byui_Email_All
+			, D.Drop_Byuh_Email_All
+			, D.Drop_Ldsbc_Email_All
+			, D.Drop_Church_Email_All
+			, D.Drop_Byu_Phone_All
+			, D.Drop_Byui_Phone_All
+			, D.Drop_Byuh_Phone_All
+			, D.Drop_Ldsbc_Phone_All
+			, D.Drop_Church_Phone_All
+			, D.Drop_Byu_Overall
+			, D.Drop_Byui_Overall
+			, D.Drop_Byuh_Overall
+			, D.Drop_Ldsbc_Overall
+			, D.Drop_Church_Overall
+			' -- Ext_Select_Statement
+		, '_Donor_Key_Dim A
+				LEFT JOIN _Drop_Logic_Dim_1 B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN _Drop_Logic_Dim_2 C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN _Drop_Logic_Dim_3 D ON A.Donor_Key = D.Donor_Key																					
+			' -- Ext_From_Statement
+		, 'AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '														
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '																											
+			' -- Ext_From_Statement_3
+		, '		
 			'-- Ext_From_Statement_4
 		, NULL -- Ext_From_Statement_5
 		, NULL -- Ext_From_Statement_6
