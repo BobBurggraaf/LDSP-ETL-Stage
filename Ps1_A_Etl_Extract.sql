@@ -25113,6 +25113,86 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 	)
 	,
 -- --------------------------
+-- _Psa_Bridge
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Psa_Bridge' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	ContactId NVARCHAR(100)
+			, Psa_Key INT PRIMARY KEY
+			, Psa_Group_Key INT
+			' -- Ext_Create_Fields
+		, '	ContactId
+			, Psa_Key
+			, Psa_Group_Key
+			' -- Ext_Insert_Fields
+		, 'DISTINCT ContactId
+			, Psa_Key
+			, Psa_Group_Key  
+			' -- Ext_Select_Statement
+		, '_Psa_Dim				
+			' -- Ext_From_Statement
+		, ' ' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Extra_1
+		, NULL -- Extra_2
+		, NULL -- Extra_3
+		, NULL -- Extra_4
+		, NULL -- Extra_5
+		, NULL -- Extra_6
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
 -- _Award_Bridge
 -- --------------------------
 	( 5 -- Tier
