@@ -4244,7 +4244,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Plus_Salutation
 			, Plus_Signer
 			, Plus_NoAcknowledgement
-			, CASE WHEN Plus_ParentGift IS NOT NULL THEN New_GiftNumber ELSE NULL END AS Match_Gift_Number
+			, Plus_ParentGift AS Match_Gift_Number
 			, Plus_Appeal
 			, Plus_MatchExpected
 			, New_Batch
