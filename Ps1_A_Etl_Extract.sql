@@ -4206,60 +4206,60 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, ModifiedOn
 			, StateCode
 			' -- Ext_Insert_Fields
-		, 'New_ConstituentDonor
-			, New_OrganizationDonor
-			, New_FundAccount
-			, New_InstitutionalHierarchyId
-			, New_AssociatedPledge
-			, New_GiftAmount
-			, New_BatchNumber
-			, New_GiftId
-			, OwnerId
-			, New_GiftNumber
-			, StatusCode
-			, CONVERT(NVARCHAR(4000),SUBSTRING(Plus_ReceiptText,1,4000)) AS Plus_ReceiptText
-			, CONVERT(NVARCHAR(4000),SUBSTRING(Plus_SpecialGiftInstructions,1,4000)) AS Plus_SpecialGiftInstructions
-			, Plus_CheckNumber
-			, Plus_GiftSource
-			, Plus_Kind
-			, New_TenderType
+		, 'A.New_ConstituentDonor
+			, A.New_OrganizationDonor
+			, A.New_FundAccount
+			, A.New_InstitutionalHierarchyId
+			, A.New_AssociatedPledge
+			, A.New_GiftAmount
+			, A.New_BatchNumber
+			, A.New_GiftId
+			, A.OwnerId
+			, A.New_GiftNumber
+			, A.StatusCode
+			, CONVERT(NVARCHAR(4000),SUBSTRING(A.Plus_ReceiptText,1,4000)) AS Plus_ReceiptText
+			, CONVERT(NVARCHAR(4000),SUBSTRING(A.Plus_SpecialGiftInstructions,1,4000)) AS Plus_SpecialGiftInstructions
+			, A.Plus_CheckNumber
+			, A.Plus_GiftSource
+			, A.Plus_Kind
+			, A.New_TenderType
 			, CASE WHEN DATENAME(dy,A.New_AccountingDate) BETWEEN B.Mdt_Begin_Date_Number AND B.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.New_AccountingDate)
 					ELSE DATEADD(hh,-7,A.New_AccountingDate) END AS New_AccountingDate
 			, CASE WHEN DATENAME(dy,A.New_ReceiptDate) BETWEEN C.Mdt_Begin_Date_Number AND C.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.New_ReceiptDate)
 					ELSE DATEADD(hh,-7,A.New_ReceiptDate) END AS New_ReceiptDate
 			, CASE WHEN DATENAME(dy,A.New_PostDate) BETWEEN D.Mdt_Begin_Date_Number AND D.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.New_PostDate)
 					ELSE DATEADD(hh,-7,A.New_PostDate) END AS New_PostDate
-			, Plus_PlannedGift
-			, New_Transmitted
-			, Plus_AnonymousGift
-			, Plus_ReceiptDeliveryMethod
-			, CONVERT(NVARCHAR(4000),SUBSTRING(Plus_GiftInstructions,1,4000)) AS Plus_GiftInstructions
-			, CONVERT(NVARCHAR(4000),SUBSTRING(Plus_AcknowledgementInstructions,1,4000)) AS Plus_AcknowledgementInstructions
-			, Plus_ExcludeFromReport
-			, Plus_IncludeOnYearEndReceipt
-			, Plus_GoodsServicesProvided
-			, Plus_EntitledBenefitValue
-			, Plus_AcknowledgeContact
-			, Plus_ContactRole
-			, Plus_Salutation
-			, Plus_Signer
-			, Plus_NoAcknowledgement
-			, Plus_ParentGift AS Match_Gift_Number
-			, Plus_Appeal
-			, Plus_MatchExpected
-			, New_Batch
-			, CONVERT(NVARCHAR(4000),SUBSTRING(Plus_Description,1,4000)) AS Plus_Description
-			, Lds_RecurringGiftRule
-			, Lds_RecurringGiftGroup
-			, Plus_DonorType
-			, Lds_TelefundGift
-			, Plus_Cid
-			, Plus_Cde2
+			, A.Plus_PlannedGift
+			, A.New_Transmitted
+			, A.Plus_AnonymousGift
+			, A.Plus_ReceiptDeliveryMethod
+			, CONVERT(NVARCHAR(4000),SUBSTRING(A.Plus_GiftInstructions,1,4000)) AS Plus_GiftInstructions
+			, CONVERT(NVARCHAR(4000),SUBSTRING(A.Plus_AcknowledgementInstructions,1,4000)) AS Plus_AcknowledgementInstructions
+			, A.Plus_ExcludeFromReport
+			, A.Plus_IncludeOnYearEndReceipt
+			, A.Plus_GoodsServicesProvided
+			, A.Plus_EntitledBenefitValue
+			, A.Plus_AcknowledgeContact
+			, A.Plus_ContactRole
+			, A.Plus_Salutation
+			, A.Plus_Signer
+			, A.Plus_NoAcknowledgement
+			, G.New_GiftNumber AS Match_Gift_Number
+			, A.Plus_Appeal
+			, A.Plus_MatchExpected
+			, A.New_Batch
+			, CONVERT(NVARCHAR(4000),SUBSTRING(A.Plus_Description,1,4000)) AS Plus_Description
+			, A.Lds_RecurringGiftRule
+			, A.Lds_RecurringGiftGroup
+			, A.Plus_DonorType
+			, A.Lds_TelefundGift
+			, A.Plus_Cid
+			, A.Plus_Cde2
 			, CASE WHEN DATENAME(dy,A.CreatedOn) BETWEEN E.Mdt_Begin_Date_Number AND E.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.CreatedOn)
 					ELSE DATEADD(hh,-7,A.CreatedOn) END AS CreatedOn
 			, CASE WHEN DATENAME(dy,A.ModifiedOn) BETWEEN F.Mdt_Begin_Date_Number AND F.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.ModifiedOn)
 					ELSE DATEADD(hh,-7,A.ModifiedOn) END AS ModifiedOn
-			, StateCode
+			, A.StateCode
 			' -- Ext_Select_Statement
 		, 'Oa_Extract.New_GiftBase A
 				LEFT JOIN dbo._MDT_Conversion_Dim B ON YEAR(A.New_AccountingDate) = B.Date_Year
@@ -4268,6 +4268,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 				
 				LEFT JOIN dbo._MDT_Conversion_Dim E ON YEAR(A.CreatedOn) = E.Date_Year
 				LEFT JOIN dbo._MDT_Conversion_Dim F ON YEAR(A.ModifiedOn) = F.Date_Year
+				LEFT JOIN Oa_Extract.New_GiftBase G ON A.Plus_ParentGift = G.New_GiftId
 			' -- Ext_From_Statement
 		, ' ' -- Ext_Where_Statement
 		, NULL -- Tier_3_Stage
@@ -25861,6 +25862,126 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, '	_Alumni_Dim				
 			' -- Ext_From_Statement
 		, ' AND ContactId IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' 
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Donor_Organization_Dim
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Organization_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Donor_Key  NVARCHAR(100)  PRIMARY KEY
+			, Donor_Org_Matches_Gifts_Yn  NVARCHAR(1)
+			, Donor_Org_Allow_Mail_Yn NVARCHAR(1)
+			, Donor_Org_Allow_Bulk_Mail_Yn NVARCHAR(1)
+			, Donor_Org_Allow_Email_Yn NVARCHAR(1)
+			, Donor_Org_Allow_Bulk_Email_Yn NVARCHAR(1)
+			, Donor_Org_Allow_Phone_Yn NVARCHAR(1)
+			, Donor_Org_Allow_Fax_Yn NVARCHAR(1)
+			, Donor_Org_Class_Code NVARCHAR(400)
+			, Donor_Org_Retiree_Ratio NVARCHAR(400) 
+			, Donor_Org_Split_Ratio NVARCHAR(400)
+			, Donor_Org_Matching_Ratio NVARCHAR(400)
+			, Donor_Org_Pref_Cont_Meth NVARCHAR(400)
+			, Donor_Org_Description NVARCHAR(4000)
+		' -- Ext_Create_Fields
+		, ' Donor_Key
+			, Donor_Org_Matches_Gifts_Yn
+			, Donor_Org_Allow_Mail_Yn 
+			, Donor_Org_Allow_Bulk_Mail_Yn 
+			, Donor_Org_Allow_Email_Yn
+			, Donor_Org_Allow_Bulk_Email_Yn
+			, Donor_Org_Allow_Phone_Yn
+			, Donor_Org_Allow_Fax_Yn
+			, Donor_Org_Class_Code
+			, Donor_Org_Retiree_Ratio
+			, Donor_Org_Split_Ratio
+			, Donor_Org_Matching_Ratio
+			, Donor_Org_Pref_Cont_Meth
+			, Donor_Org_Description
+		' -- Ext_Insert_Fields
+		, ' CONVERT(NVARCHAR(100),A.AccountId) AS Donor_Key
+			, CASE WHEN A.Plus_MatchingGiftProgram = 100000000 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Matches_Gifts_Yn
+			, CASE WHEN A.DoNotPostalMail = 0 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Allow_Mail_Yn
+			, CASE WHEN A.DoNotBulkPostalMail = 0 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Allow_Bulk_Mail_Yn
+			, CASE WHEN A.DoNotEmail = 0 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Allow_Email_Yn
+			, CASE WHEN A.DoNotBulkEmail = 0 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Allow_Bulk_Email_Yn
+			, CASE WHEN A.DoNotPhone = 0 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Allow_Phone_Yn
+			, CASE WHEN A.DoNotFax = 0 THEN A.[Y] ELSE A.[N] END AS Donor_Org_Allow_Fax_Yn
+			, P.Column_Label AS Donor_Org_Class_Code
+			, Q.Column_Label AS Donor_Org_Retiree_Ratio
+			, R.Column_Label AS Donor_Org_Split_Ratio
+			, S.Column_Label AS Donor_Org_Matching_Ratio
+			, T.Column_Label AS Donor_Org_Pref_Cont_Meth
+			, A.Description AS Donor_Org_Description
+		' -- Ext_Select_Statement
+		, ' Ext_Account A
+			LEFT JOIN LDSPhilanthropiesDW.dbo._Donor_Act_Class_Code_ P ON A.AccountClassificationCode = P.Column_Value
+			LEFT JOIN LDSPhilanthropiesDW.dbo._Donor_Retiree_Ratio_ Q ON A.new_RetireeRatio = Q.Column_Value
+			LEFT JOIN LDSPhilanthropiesDW.dbo._Donor_Split_Ratio_ R ON A.new_SplitRatio = R.Column_Value
+			LEFT JOIN LDSPhilanthropiesDW.dbo._Donor_Matching_Ratio_ S ON A.new_MatchingRatio = S.Column_Value
+			LEFT JOIN LDSPhilanthropiesDW.dbo._Donor_Pref_Contact_Method_ T ON A.PreferredContactMethodCode = T.Column_Value				
+			' -- Ext_From_Statement
+		, ' AND A.AccountId IS NOT NULL
 			' -- Ext_Where_Statement
 		, NULL -- Tier_3_Stage
 		, NULL -- Tier_3_Stage_DateTime
