@@ -2015,6 +2015,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Lds_OneAccordConstituent UNIQUEIDENTIFIER
 			, Lds_OneAccordOrganization UNIQUEIDENTIFIER
 			, Lds_ConstituentMatchedBy UNIQUEIDENTIFIER
+			, Y NVARCHAR(1) DEFAULT ''Y''
+			, N NVARCHAR(1) DEFAULT ''N''
 			' -- Dest_Create_Fields
 		, 'Lds_WebSubscriptionId
 			, Lds_AddressMatch
@@ -27346,6 +27348,201 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 	)
 	,
 -- --------------------------
+-- _Web_Subscription_Dim
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Web_Subscription_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' WebSubscription_Dim_Key NVARCHAR(100) PRIMARY KEY
+			, Web_Subscription_Name NVARCHAR(100) 
+			, Transaction_ID NVARCHAR(100)
+			, Recurring_Donation_Start_Date DATE
+			, Recurring_Donation_Stop_Date DATE
+			, Next_Payment_Date DATE
+			, Payment_Type NVARCHAR(400)
+			, Tender_Name NVARCHAR(400) 
+			, Opt_Into_Email_Communication NVARCHAR(400) 
+			, CID NVARCHAR(200)
+			, CDE2 NVARCHAR(200)
+			, Type_of_Donation NVARCHAR(400)
+			, Appeal_Code NVARCHAR(10)
+			, Donor_First_Name_From_Web NVARCHAR(100)
+			, Donor_Middle_Name_From_Web NVARCHAR(100)
+			, Donor_Last_Name_From_Web NVARCHAR(100)
+			, Web_Subscription_Linked_LDS_Account NVARCHAR(1)
+			, Donor_Email_From_Web NVARCHAR(100)
+			, Donor_Phone_Number_From_Web NVARCHAR(100)
+			, Donor_Address_Line_1_From_Web NVARCHAR(100)
+			, Donor_Address_Line_2_From_Web NVARCHAR(100)
+			, Donor_Address_City_From_Web NVARCHAR(100)
+			, Donor_Address_State_From_Web NVARCHAR(100)
+			, Donor_Address_Zip_Code_From_Web NVARCHAR(100)
+			, Donor_Address_Country_From_Web NVARCHAR(100)
+			, Comments NVARCHAR(1000)
+			, Telefund_Comments NVARCHAR(4000)	
+			, Donor_Type NVARCHAR(400)	
+			, Donor_Match_Status NVARCHAR(400)	
+			, Web_Subscription_Status NVARCHAR(400)
+			, Web_Subscription_Status_Reason NVARCHAR(400)	
+			, Web_Subscription_Created_On DATE
+			, Web_Subscription_Modified_On DATE
+			, Address_Match NVARCHAR(400)	
+			, Data_Entry_Status NVARCHAR(400)
+			, Receipt_Date DATETIME
+			, Matched_by_User NVARCHAR(200)
+		' -- Ext_Create_Fields
+		, ' WebSubscription_Dim_Key
+			, Web_Subscription_Name
+			, Transaction_ID
+			, Recurring_Donation_Start_Date
+			, Recurring_Donation_Stop_Date
+			, Next_Payment_Date
+			, Payment_Type
+			, Tender_Name
+			, Opt_Into_Email_Communication
+			, CID
+			, CDE2
+			, Type_of_Donation
+			, Appeal_Code
+			, Donor_First_Name_From_Web
+			, Donor_Middle_Name_From_Web
+			, Donor_Last_Name_From_Web
+			, Web_Subscription_Linked_LDS_Account
+			, Donor_Email_From_Web
+			, Donor_Phone_Number_From_Web
+			, Donor_Address_Line_1_From_Web
+			, Donor_Address_Line_2_From_Web
+			, Donor_Address_City_From_Web
+			, Donor_Address_State_From_Web
+			, Donor_Address_Zip_Code_From_Web
+			, Donor_Address_Country_From_Web
+			, Comments
+			, Telefund_Comments	
+			, Donor_Type	
+			, Donor_Match_Status	
+			, Web_Subscription_Status
+			, Web_Subscription_Status_Reason	
+			, Web_Subscription_Created_On
+			, Web_Subscription_Modified_On	
+			, Address_Match	
+			, Data_Entry_Status
+			, Receipt_Date
+			, Matched_by_User
+		' -- Ext_Insert_Fields
+		, ' CONVERT(NVARCHAR(100),A.Lds_WebSubscriptionId) AS WebSubscription_Dim_Key
+			, A.Lds_Name AS Web_Subscription_Name
+			, A.Lds_TransactionId AS Transaction_ID
+			, CONVERT(VARCHAR(10),A.Lds_RecurringDonationStartDate,101) AS Recurring_Donation_Start_Date
+			, CONVERT(VARCHAR(10),A.Lds_RecurringDonationStopDate,101) AS Recurring_Donation_Stop_Date
+			, CONVERT(VARCHAR(10),A.Lds_NextPaymentDate,101) AS Next_Payment_Date
+			, C.Column_Label AS Payment_Type
+			, D.Column_Label AS Tender_Name
+			, E.Column_Label AS Opt_Into_Email_Communication
+			, A.Lds_Cid AS CID
+			, A.Lds_Cde2 AS CDE2
+			, F.Column_Label AS Type_of_Donation
+			, A.Lds_Appeal AS Appeal_Code
+			, A.Lds_DonorFirstName AS Donor_First_Name_From_Web
+			, A.Lds_DonorMiddleName AS Donor_Middle_Name_From_Web
+			, A.Lds_DonorLastName AS Donor_Last_Name_From_Web
+			, CASE WHEN A.Lds_LinkedLdsAccount = 1 THEN A.[Y] ELSE A.[N] END AS Web_Subscription_Linked_LDS_Account
+			, A.Lds_DonorEmailAddress AS Donor_Email_From_Web
+			, A.Lds_DonorPhoneNumber AS Donor_Phone_Number_From_Web
+			, A.Lds_DonorAddressLine1 AS Donor_Address_Line_1_From_Web
+			, A.Lds_DonorAddressLine2 AS Donor_Address_Line_2_From_Web
+			, A.Lds_DonorAddressCity AS Donor_Address_City_From_Web
+			, A.Lds_DonorAddressState AS Donor_Address_State_From_Web
+			, A.Lds_DonorAddressZipCode AS Donor_Address_Zip_Code_From_Web
+			, A.Lds_DonorAddressCountry AS Donor_Address_Country_From_Web
+			, A.Lds_Comments AS Comments
+			, CONVERT(NVARCHAR(4000),SUBSTRING(A.Lds_TelefundComments,1,4000)) AS Telefund_Comments	
+			, G.Column_Label AS Donor_Type	
+			, H.Column_Label AS Donor_Match_Status	
+			, I.Column_Label AS Web_Subscription_Status
+			, J.Column_Label AS Web_Subscription_Status_Reason	
+			, CONVERT(VARCHAR(10),A.CreatedOn,101) AS Web_Subscription_Created_On
+			, CONVERT(VARCHAR(10),A.ModifiedOn,101) AS Web_Subscription_Modified_On	
+			, K.Column_Label AS Address_Match	
+			, L.Column_Label AS Data_Entry_Status
+			, A.Lds_ReceiptDate AS Receipt_Date
+			, B.FullName AS Matched_by_User
+			' -- Ext_Select_Statement
+		, '	Ext_WebSubscription A
+				LEFT JOIN Ext_System_User B ON B.SystemUserId = A.Lds_ConstituentMatchedBy
+				LEFT JOIN _Lds_PaymentType_ C ON A.Lds_PaymentType = C.Column_Value
+				LEFT JOIN _Lds_TenderName_ D ON A.Lds_tendername = D.Column_Value
+				LEFT JOIN _Lds_OptIntoEmailCommunication_ E ON A.Lds_OptIntoEmailCommunication = E.Column_Value
+				LEFT JOIN _Lds_TypeOfDonation_ F ON A.Lds_TypeOfDonation = F.Column_Value
+				LEFT JOIN _Lds_DonorType_ G ON A.Lds_DonorType = G.Column_Value
+				LEFT JOIN _Lds_ConstituentMatchStatus_ H ON A.Lds_ConstituentMatchStatus = H.Column_Value
+				LEFT JOIN _WebSubscription_StateCode_ I ON A.StateCode = I.Column_Value
+				LEFT JOIN _WebSubscription_StatusCode_ J ON A.StatusCode = J.Column_Value
+				LEFT JOIN _Lds_AddressMatch_ K ON A.Lds_AddressMatch = K.Column_Value
+				LEFT JOIN _Lds_DataEntryStatus_ L ON A.Lds_DataEntryStatus = L.Column_Value									
+			' -- Ext_From_Statement
+		, ' Exec dbo.usp_Web_Subscription_Dim_Zero_Key;
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
 -- _Address_Bridge
 -- --------------------------
 	( 5 -- Tier
@@ -30361,6 +30558,89 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			' -- Ext_From_Statement_3
 		, '
 			'-- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Web_Subscription_Fact
+-- --------------------------
+	( 6 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Web_Subscription_Fact' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' WebSubscription_Key NVARCHAR(100) PRIMARY KEY
+			, WebSubscription_Dim_Key NVARCHAR(100)
+			, Transaction_Total MONEY
+		' -- Ext_Create_Fields
+		, ' WebSubscription_Key
+			, WebSubscription_Dim_Key
+			, Transaction_Total
+		' -- Ext_Insert_Fields
+		, ' CONVERT(NVARCHAR(100),A.Lds_WebSubscriptionId) AS WebSubscription_Key
+			, B.WebSubscription_Dim_Key
+			, A.Lds_TransactionTotal AS Transaction_Total
+			' -- Ext_Select_Statement
+		, ' Ext_Websubscription A
+				LEFT JOIN _Web_Subscription_Dim B ON CONVERT(NVARCHAR(100),A.Lds_WebSubscriptionId) = B.WebSubscription_Dim_Key									
+			' -- Ext_From_Statement
+		, '
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
 		, NULL -- Ext_From_Statement_5
 		, NULL -- Ext_From_Statement_6
 		, NULL -- Ext_From_Statement_7
