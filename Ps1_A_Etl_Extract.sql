@@ -75,7 +75,13 @@ CREATE TABLE LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 	, Tier_11_Stage NVARCHAR(50)
 	, Tier_11_Stage_DateTime DATETIME
 	, Tier_12_Stage NVARCHAR(50)
-	, Tier_12_Stage_DateTime DATETIME
+	, Tier_12_Stage_DateTime DATETIME	
+	, Ext_Create_Fields_4 NVARCHAR(4000)
+	, Ext_Create_Fields_5 NVARCHAR(4000)
+	, Ext_Insert_Fields_2 NVARCHAR(4000)
+	, Ext_Insert_Fields_3 NVARCHAR(4000)
+	, Ext_Insert_Fields_4 NVARCHAR(4000)
+	, Ext_Insert_Fields_5 NVARCHAR(4000)
 	, Extra_7 NVARCHAR(4000)
 	, Extra_8 NVARCHAR(4000)
 	, Extra_9 NVARCHAR(4000)
@@ -145,6 +151,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 	, Tier_11_Stage_DateTime
 	, Tier_12_Stage
 	, Tier_12_Stage_DateTime
+	, Ext_Create_Fields_4
+	, Ext_Create_Fields_5
+	, Ext_Insert_Fields_2
+	, Ext_Insert_Fields_3
+	, Ext_Insert_Fields_4
+	, Ext_Insert_Fields_5
 	, Extra_7
 	, Extra_8
 	, Extra_9
@@ -375,6 +387,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -416,6 +434,8 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, ModifiedOn DATETIME
 			, StatusCode INT
 			, StateCode INT
+			, Zero NVARCHAR(1) DEFAULT ''0''
+			, D1 NVARCHAR(2) DEFAULT ''D1''
 			' -- Ext_Create_Fields
 		, '	Plus_DonorScoreId
 			, Plus_Constituent
@@ -487,6 +507,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -606,6 +632,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -801,6 +833,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -882,6 +920,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -978,6 +1022,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -1134,6 +1184,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -1215,6 +1271,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -1337,6 +1399,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -1424,6 +1492,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -1876,6 +1950,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -1962,6 +2042,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2248,6 +2334,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2458,6 +2550,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2576,6 +2674,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2691,6 +2795,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2777,6 +2887,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2858,6 +2974,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -2944,6 +3066,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -3030,6 +3158,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -3116,6 +3250,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -3207,6 +3347,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -3379,6 +3525,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -3505,6 +3657,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -3716,6 +3874,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4028,6 +4192,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4361,6 +4531,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4533,6 +4709,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4614,6 +4796,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4676,6 +4864,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Byuh NVARCHAR(10) DEFAULT ''BYUH''
 			, Ldsbc NVARCHAR(10) DEFAULT ''LDSBC''
 			, Church NVARCHAR(10) DEFAULT ''Church''
+			, Ldsp NVARCHAR(10) DEFAULT ''LDSP''
 			' -- Ext_Create_Fields
 		, 'New_Institutionid
 			, New_Name
@@ -4763,6 +4952,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4912,6 +5107,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -4993,6 +5194,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -5136,6 +5343,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -5237,6 +5450,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -5355,6 +5574,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -5513,6 +5738,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -5923,6 +6154,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6004,6 +6241,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6085,6 +6328,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6212,6 +6461,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6347,6 +6602,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6475,6 +6736,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6561,6 +6828,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6647,6 +6920,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6809,6 +7088,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6890,6 +7175,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -6981,6 +7272,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7205,6 +7502,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7286,6 +7589,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7447,6 +7756,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7600,6 +7915,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7706,6 +8027,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7787,6 +8114,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -7878,6 +8211,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8021,6 +8360,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8107,6 +8452,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8277,6 +8628,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8299,6 +8656,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, StatusCode INT
 			, CreatedOn DATETIME
 			, ModifiedOn DATETIME
+			, ModifiedBy UNIQUEIDENTIFIER
 			' -- Dest_Create_Fields
 		, '  Plus_WebBatchId
 			, Plus_AggregateScore
@@ -8309,6 +8667,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, StatusCode
 			, CreatedOn
 			, ModifiedOn
+			, ModifiedBy
 			' -- Dest_Insert_Fields
 		, ' ' -- Dest_Where_Statement
 		, ' Plus_WebBatchId UNIQUEIDENTIFIER
@@ -8320,6 +8679,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, StatusCode INT
 			, CreatedOn DATETIME
 			, ModifiedOn DATETIME
+			, ModifiedBy UNIQUEIDENTIFIER
 			' -- Ext_Create_Fields
 		, ' Plus_WebBatchId
 			, Plus_AggregateScore
@@ -8330,6 +8690,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, StatusCode
 			, CreatedOn
 			, ModifiedOn
+			, ModifiedBy
 			' -- Ext_Insert_Fields
 		, ' Plus_WebBatchId
 			, Plus_AggregateScore
@@ -8343,6 +8704,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 					ELSE DATEADD(hh,-7,A.CreatedOn) END AS CreatedOn
 			, CASE WHEN DATENAME(dy,A.ModifiedOn) BETWEEN D.Mdt_Begin_Date_Number AND D.Mdt_End_Date_Number THEN DATEADD(hh,-6,A.ModifiedOn)
 					ELSE DATEADD(hh,-7,A.ModifiedOn) END AS ModifiedOn
+			, ModifiedBy
 			' -- Ext_Select_Statement
 		, 'Oa_Extract.Plus_WebBatchBase A
 				LEFT JOIN dbo._MDT_Conversion_Dim B ON YEAR(A.Plus_ProcessedDate) = B.Date_Year
@@ -8399,6 +8761,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8699,6 +9067,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8820,6 +9194,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -8939,6 +9319,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9082,6 +9468,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9213,6 +9605,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9346,6 +9744,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9386,6 +9790,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, Plus_DonorType NVARCHAR(100) DEFAULT ''Plus_DonorType''
 			, Plus_RecurringGiftRules NVARCHAR(100) DEFAULT ''Plus_RecurringGiftRules''
 			, Plus_DonationFrom NVARCHAR(100) DEFAULT ''Plus_DonationFrom''
+			, Plus_WebBatch NVARCHAR(100) DEFAULT ''Plus_WebBatch''
 			' -- Ext_Create_Fields
 		, 'Physical_Table_Name
 			, Column_Name
@@ -9451,6 +9856,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9616,6 +10027,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9749,6 +10166,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -9943,6 +10366,564 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Donor_Retention_1
+-- --------------------------
+	( 2 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Retention_1' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Donor_Key NVARCHAR(100)
+			, Donor_Retention_Type_Code_Byu_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_5 NVARCHAR(2)
+			' -- Ext_Create_Fields
+		, 'Donor_Key
+			, Donor_Retention_Type_Code_Byu_Minus_1
+			, Donor_Retention_Type_Code_Byu_Minus_2
+			, Donor_Retention_Type_Code_Byu_Minus_3
+			, Donor_Retention_Type_Code_Byu_Minus_4
+			, Donor_Retention_Type_Code_Byu_Minus_5
+			' -- Ext_Insert_Fields
+		, ' Donor_Key
+			, MAX(Donor_Retention_Type_Code_Byu_Minus_1) AS Donor_Retention_Type_Code_Byu_Minus_1
+			, MAX(Donor_Retention_Type_Code_Byu_Minus_2) AS Donor_Retention_Type_Code_Byu_Minus_2
+			, MAX(Donor_Retention_Type_Code_Byu_Minus_3) AS Donor_Retention_Type_Code_Byu_Minus_3
+			, MAX(Donor_Retention_Type_Code_Byu_Minus_4) AS Donor_Retention_Type_Code_Byu_Minus_4
+			, MAX(Donor_Retention_Type_Code_Byu_Minus_5) AS Donor_Retention_Type_Code_Byu_Minus_5
+			' -- Ext_Select_Statement
+		, '(SELECT Donor_Key
+				, New_Inst
+				, Donor_Type_Year
+				, Donor_Type
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-1
+						AND New_Inst = [BYU] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byu_Minus_1 
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-2
+						AND New_Inst = [BYU] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byu_Minus_2
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-3
+						AND New_Inst = [BYU] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byu_Minus_3
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-4
+						AND New_Inst = [BYU] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byu_Minus_4
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-5
+						AND New_Inst = [BYU] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byu_Minus_5
+				, [Zero] AS Zero
+				FROM 
+					(SELECT COALESCE(A.Plus_Constituent,A.Plus_Institution) AS Donor_Key
+						, YEAR(A.Plus_I5LegacyDonorTypeDate) AS Donor_Type_Year
+						, B.New_Inst
+						, CONVERT(NVARCHAR(2),A.Plus_I5LegacyDonorType) AS Donor_Type
+						, A.Plus_DonorScoreId
+						, A.[Zero] AS Zero
+						, B.[BYU] AS BYU		
+						, ROW_NUMBER() OVER(PARTITION BY COALESCE(A.Plus_Constituent,A.Plus_Institution), YEAR(A.Plus_I5LegacyDonorTypeDate), B.New_Inst ORDER BY A.ModifiedOn) AS RowNum
+						FROM Ext_Donor_Score A
+							INNER JOIN Ext_Institution B ON A.Plus_Institution = B.New_InstitutionId
+						WHERE 1 = 1
+							AND A.StatusCode = 1
+					) A
+				WHERE 1 = 1
+					AND RowNum = 1
+			) A
+			' -- Ext_From_Statement
+		, 'AND  (Donor_Retention_Type_Code_Byu_Minus_1 != [Zero]
+				OR Donor_Retention_Type_Code_Byu_Minus_2 != [Zero]
+				OR Donor_Retention_Type_Code_Byu_Minus_3 != [Zero]
+				OR Donor_Retention_Type_Code_Byu_Minus_4 != [Zero]
+				OR Donor_Retention_Type_Code_Byu_Minus_5 != [Zero]
+				)
+			GROUP BY Donor_Key
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL  
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Donor_Retention_2
+-- --------------------------
+	( 2 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Retention_2' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Donor_Key NVARCHAR(100)
+			, Donor_Retention_Type_Code_Byui_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_5 NVARCHAR(2)
+			' -- Ext_Create_Fields
+		, 'Donor_Key
+			, Donor_Retention_Type_Code_Byui_Minus_1
+			, Donor_Retention_Type_Code_Byui_Minus_2
+			, Donor_Retention_Type_Code_Byui_Minus_3
+			, Donor_Retention_Type_Code_Byui_Minus_4
+			, Donor_Retention_Type_Code_Byui_Minus_5
+			' -- Ext_Insert_Fields
+		, ' Donor_Key
+			, MAX(Donor_Retention_Type_Code_Byui_Minus_1) AS Donor_Retention_Type_Code_Byui_Minus_1
+			, MAX(Donor_Retention_Type_Code_Byui_Minus_2) AS Donor_Retention_Type_Code_Byui_Minus_2
+			, MAX(Donor_Retention_Type_Code_Byui_Minus_3) AS Donor_Retention_Type_Code_Byui_Minus_3
+			, MAX(Donor_Retention_Type_Code_Byui_Minus_4) AS Donor_Retention_Type_Code_Byui_Minus_4
+			, MAX(Donor_Retention_Type_Code_Byui_Minus_5) AS Donor_Retention_Type_Code_Byui_Minus_5
+			' -- Ext_Select_Statement
+		, '(SELECT Donor_Key
+				, New_Inst
+				, Donor_Type_Year
+				, Donor_Type
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-1
+						AND New_Inst = [BYUI] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byui_Minus_1 
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-2
+						AND New_Inst = [BYUI] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byui_Minus_2
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-3
+						AND New_Inst = [BYUI] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byui_Minus_3
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-4
+						AND New_Inst = [BYUI] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byui_Minus_4
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-5
+						AND New_Inst = [BYUI] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byui_Minus_5
+				, [Zero] AS Zero
+				FROM 
+					(SELECT COALESCE(A.Plus_Constituent,A.Plus_Institution) AS Donor_Key
+						, YEAR(A.Plus_I5LegacyDonorTypeDate) AS Donor_Type_Year
+						, B.New_Inst
+						, CONVERT(NVARCHAR(2),A.Plus_I5LegacyDonorType) AS Donor_Type
+						, A.Plus_DonorScoreId
+						, A.[Zero] AS Zero
+						, B.[BYUI] AS BYUI		
+						, ROW_NUMBER() OVER(PARTITION BY COALESCE(A.Plus_Constituent,A.Plus_Institution), YEAR(A.Plus_I5LegacyDonorTypeDate), B.New_Inst ORDER BY A.ModifiedOn) AS RowNum
+						FROM Ext_Donor_Score A
+							INNER JOIN Ext_Institution B ON A.Plus_Institution = B.New_InstitutionId
+						WHERE 1 = 1
+							AND A.StatusCode = 1
+					) A
+				WHERE 1 = 1
+					AND RowNum = 1
+			) A
+			' -- Ext_From_Statement
+		, 'AND  (Donor_Retention_Type_Code_Byui_Minus_1 != [Zero]
+				OR Donor_Retention_Type_Code_Byui_Minus_2 != [Zero]
+				OR Donor_Retention_Type_Code_Byui_Minus_3 != [Zero]
+				OR Donor_Retention_Type_Code_Byui_Minus_4 != [Zero]
+				OR Donor_Retention_Type_Code_Byui_Minus_5 != [Zero]
+				)
+			GROUP BY Donor_Key
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL  
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Donor_Retention_3
+-- --------------------------
+	( 2 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Retention_3' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Donor_Key NVARCHAR(100)
+			, Donor_Retention_Type_Code_Byuh_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_5 NVARCHAR(2)
+			' -- Ext_Create_Fields
+		, 'Donor_Key
+			, Donor_Retention_Type_Code_Byuh_Minus_1
+			, Donor_Retention_Type_Code_Byuh_Minus_2
+			, Donor_Retention_Type_Code_Byuh_Minus_3
+			, Donor_Retention_Type_Code_Byuh_Minus_4
+			, Donor_Retention_Type_Code_Byuh_Minus_5
+			' -- Ext_Insert_Fields
+		, ' Donor_Key
+			, MAX(Donor_Retention_Type_Code_Byuh_Minus_1) AS Donor_Retention_Type_Code_Byuh_Minus_1
+			, MAX(Donor_Retention_Type_Code_Byuh_Minus_2) AS Donor_Retention_Type_Code_Byuh_Minus_2
+			, MAX(Donor_Retention_Type_Code_Byuh_Minus_3) AS Donor_Retention_Type_Code_Byuh_Minus_3
+			, MAX(Donor_Retention_Type_Code_Byuh_Minus_4) AS Donor_Retention_Type_Code_Byuh_Minus_4
+			, MAX(Donor_Retention_Type_Code_Byuh_Minus_5) AS Donor_Retention_Type_Code_Byuh_Minus_5
+			' -- Ext_Select_Statement
+		, '(SELECT Donor_Key
+				, New_Inst
+				, Donor_Type_Year
+				, Donor_Type
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-1
+						AND New_Inst = [BYUH] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byuh_Minus_1 
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-2
+						AND New_Inst = [BYUH] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byuh_Minus_2
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-3
+						AND New_Inst = [BYUH] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byuh_Minus_3
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-4
+						AND New_Inst = [BYUH] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byuh_Minus_4
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-5
+						AND New_Inst = [BYUH] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Byuh_Minus_5
+				, [Zero] AS Zero
+				FROM 
+					(SELECT COALESCE(A.Plus_Constituent,A.Plus_Institution) AS Donor_Key
+						, YEAR(A.Plus_I5LegacyDonorTypeDate) AS Donor_Type_Year
+						, B.New_Inst
+						, CONVERT(NVARCHAR(2),A.Plus_I5LegacyDonorType) AS Donor_Type
+						, A.Plus_DonorScoreId
+						, A.[Zero] AS Zero
+						, B.[BYUH] AS BYUH		
+						, ROW_NUMBER() OVER(PARTITION BY COALESCE(A.Plus_Constituent,A.Plus_Institution), YEAR(A.Plus_I5LegacyDonorTypeDate), B.New_Inst ORDER BY A.ModifiedOn) AS RowNum
+						FROM Ext_Donor_Score A
+							INNER JOIN Ext_Institution B ON A.Plus_Institution = B.New_InstitutionId
+						WHERE 1 = 1
+							AND A.StatusCode = 1
+					) A
+				WHERE 1 = 1
+					AND RowNum = 1
+			) A
+			' -- Ext_From_Statement
+		, 'AND  (Donor_Retention_Type_Code_Byuh_Minus_1 != [Zero]
+				OR Donor_Retention_Type_Code_Byuh_Minus_2 != [Zero]
+				OR Donor_Retention_Type_Code_Byuh_Minus_3 != [Zero]
+				OR Donor_Retention_Type_Code_Byuh_Minus_4 != [Zero]
+				OR Donor_Retention_Type_Code_Byuh_Minus_5 != [Zero]
+				)
+			GROUP BY Donor_Key
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL  
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Donor_Retention_4
+-- --------------------------
+	( 2 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Retention_4' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Donor_Key NVARCHAR(100)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5 NVARCHAR(2)
+			' -- Ext_Create_Fields
+		, 'Donor_Key
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5
+			' -- Ext_Insert_Fields
+		, ' Donor_Key
+			, MAX(Donor_Retention_Type_Code_Ldsbc_Minus_1) AS Donor_Retention_Type_Code_Ldsbc_Minus_1
+			, MAX(Donor_Retention_Type_Code_Ldsbc_Minus_2) AS Donor_Retention_Type_Code_Ldsbc_Minus_2
+			, MAX(Donor_Retention_Type_Code_Ldsbc_Minus_3) AS Donor_Retention_Type_Code_Ldsbc_Minus_3
+			, MAX(Donor_Retention_Type_Code_Ldsbc_Minus_4) AS Donor_Retention_Type_Code_Ldsbc_Minus_4
+			, MAX(Donor_Retention_Type_Code_Ldsbc_Minus_5) AS Donor_Retention_Type_Code_Ldsbc_Minus_5
+			' -- Ext_Select_Statement
+		, '(SELECT Donor_Key
+				, New_Inst
+				, Donor_Type_Year
+				, Donor_Type
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-1
+						AND New_Inst = [LDSBC] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Ldsbc_Minus_1 
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-2
+						AND New_Inst = [LDSBC] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Ldsbc_Minus_2
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-3
+						AND New_Inst = [LDSBC] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Ldsbc_Minus_3
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-4
+						AND New_Inst = [LDSBC] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Ldsbc_Minus_4
+				, CASE WHEN Donor_Type_Year = YEAR(GETDATE())-5
+						AND New_Inst = [LDSBC] THEN Donor_Type 
+					ELSE [Zero] END AS Donor_Retention_Type_Code_Ldsbc_Minus_5
+				, [Zero] AS Zero
+				FROM 
+					(SELECT COALESCE(A.Plus_Constituent,A.Plus_Institution) AS Donor_Key
+						, YEAR(A.Plus_I5LegacyDonorTypeDate) AS Donor_Type_Year
+						, B.New_Inst
+						, CONVERT(NVARCHAR(2),A.Plus_I5LegacyDonorType) AS Donor_Type
+						, A.Plus_DonorScoreId
+						, A.[Zero] AS Zero
+						, B.[LDSBC] AS LDSBC		
+						, ROW_NUMBER() OVER(PARTITION BY COALESCE(A.Plus_Constituent,A.Plus_Institution), YEAR(A.Plus_I5LegacyDonorTypeDate), B.New_Inst ORDER BY A.ModifiedOn) AS RowNum
+						FROM Ext_Donor_Score A
+							INNER JOIN Ext_Institution B ON A.Plus_Institution = B.New_InstitutionId
+						WHERE 1 = 1
+							AND A.StatusCode = 1
+					) A
+				WHERE 1 = 1
+					AND RowNum = 1
+			) A
+			' -- Ext_From_Statement
+		, 'AND  (Donor_Retention_Type_Code_Ldsbc_Minus_1 != [Zero]
+				OR Donor_Retention_Type_Code_Ldsbc_Minus_2 != [Zero]
+				OR Donor_Retention_Type_Code_Ldsbc_Minus_3 != [Zero]
+				OR Donor_Retention_Type_Code_Ldsbc_Minus_4 != [Zero]
+				OR Donor_Retention_Type_Code_Ldsbc_Minus_5 != [Zero]
+				)
+			GROUP BY Donor_Key
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL  
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10021,6 +11002,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10099,6 +11086,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10177,6 +11170,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10255,6 +11254,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10333,6 +11338,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10411,6 +11422,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10489,6 +11506,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10567,6 +11590,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10645,6 +11674,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10723,6 +11758,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10801,6 +11842,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10879,6 +11926,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -10957,6 +12010,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11035,6 +12094,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11113,6 +12178,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11191,6 +12262,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11269,6 +12346,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11347,6 +12430,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11425,6 +12514,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11503,6 +12598,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11581,6 +12682,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11659,6 +12766,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11737,6 +12850,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11815,6 +12934,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11893,6 +13018,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -11971,6 +13102,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12049,6 +13186,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12127,6 +13270,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12205,6 +13354,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12283,6 +13438,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12361,6 +13522,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12439,6 +13606,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12517,6 +13690,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12595,6 +13774,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12673,6 +13858,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12751,6 +13942,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12829,6 +14026,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12907,6 +14110,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -12985,6 +14194,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13063,6 +14278,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13141,6 +14362,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13219,6 +14446,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13297,6 +14530,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13375,6 +14614,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13453,6 +14698,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13531,6 +14782,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13609,6 +14866,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13687,6 +14950,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13765,6 +15034,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13843,6 +15118,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13921,6 +15202,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -13999,6 +15286,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14077,6 +15370,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14155,6 +15454,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14233,6 +15538,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14311,6 +15622,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14389,6 +15706,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14467,6 +15790,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14545,6 +15874,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14623,6 +15958,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14701,6 +16042,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14779,6 +16126,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14857,6 +16210,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -14935,6 +16294,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15013,6 +16378,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15091,6 +16462,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15169,6 +16546,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15247,6 +16630,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15325,6 +16714,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15403,6 +16798,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15481,6 +16882,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15559,6 +16966,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15637,6 +17050,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15715,6 +17134,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15793,6 +17218,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15871,6 +17302,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -15949,6 +17386,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16027,6 +17470,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16105,6 +17554,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16183,6 +17638,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16261,6 +17722,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16339,6 +17806,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16417,6 +17890,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16495,6 +17974,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16573,6 +18058,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16651,6 +18142,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16729,6 +18226,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16807,6 +18310,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16885,6 +18394,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -16963,6 +18478,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17041,6 +18562,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17119,6 +18646,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17197,6 +18730,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17275,6 +18814,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17353,6 +18898,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17431,6 +18982,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17509,6 +19066,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17587,6 +19150,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17665,6 +19234,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17743,6 +19318,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17821,6 +19402,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17899,6 +19486,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -17977,6 +19570,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18055,6 +19654,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18133,6 +19738,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18211,6 +19822,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18321,6 +19938,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18431,6 +20054,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18541,6 +20170,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18619,6 +20254,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18697,6 +20338,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18775,6 +20422,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18853,6 +20506,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -18931,6 +20590,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19009,6 +20674,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19087,6 +20758,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19165,6 +20842,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19243,6 +20926,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19321,6 +21010,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19399,6 +21094,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19477,6 +21178,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19555,6 +21262,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19633,6 +21346,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19711,6 +21430,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19789,6 +21514,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19867,6 +21598,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -19945,6 +21682,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20023,6 +21766,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20101,6 +21850,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20179,6 +21934,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20257,6 +22018,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20335,6 +22102,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20413,6 +22186,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20491,6 +22270,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20569,6 +22354,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20647,6 +22438,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20725,6 +22522,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20803,6 +22606,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20881,6 +22690,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -20959,6 +22774,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21037,6 +22858,180 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Web_Batch_StateCode_
+-- --------------------------
+	( 2 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Web_Batch_StateCode_' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Column_Value INT
+			, Column_Label  NVARCHAR(400)
+			' -- Ext_Create_Fields
+		, 'Column_Value
+			, Column_Label
+			' -- Ext_Insert_Fields
+		, 'Column_Value
+			, Column_Label
+			' -- Ext_Select_Statement
+		, '_Picklist_4
+			' -- Ext_From_Statement
+		, 'AND Physical_Table_Name = [Plus_WebBatch] AND Column_Name = [StateCode]
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL  
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)	
+	,
+-- --------------------------
+-- _Web_Batch_StatusCode_
+-- --------------------------
+	( 2 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Web_Batch_StatusCode_' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Column_Value INT
+			, Column_Label  NVARCHAR(400)
+			' -- Ext_Create_Fields
+		, 'Column_Value
+			, Column_Label
+			' -- Ext_Insert_Fields
+		, 'Column_Value
+			, Column_Label
+			' -- Ext_Select_Statement
+		, '_Picklist_4
+			' -- Ext_From_Statement
+		, 'AND Physical_Table_Name = [Plus_WebBatch] AND Column_Name = [StatusCode]
+			' -- Ext_Where_Statement	
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' ' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL  
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21320,6 +23315,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21475,6 +23476,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21602,6 +23609,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21715,6 +23728,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21846,6 +23865,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -21945,6 +23970,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22044,6 +24075,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22218,6 +24255,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22308,6 +24351,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22404,6 +24453,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22516,6 +24571,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22687,6 +24748,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -22985,6 +25052,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -23108,6 +25181,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -23272,6 +25351,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -23442,6 +25527,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -23576,6 +25667,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -23716,6 +25813,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -24075,6 +26178,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -24239,6 +26348,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -24370,6 +26485,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -24670,6 +26791,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -24799,6 +26926,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -24912,6 +27045,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -25171,6 +27310,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -25284,6 +27429,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -25397,6 +27548,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -25510,6 +27667,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -25718,6 +27881,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -25968,6 +28137,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -26055,6 +28230,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -26142,6 +28323,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -26229,6 +28416,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -26331,6 +28524,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -26607,6 +28806,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -26968,6 +29173,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -27365,6 +29576,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -27411,6 +29628,11 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 			, ModifiedOn DATE
 			, DomainName NVARCHAR(1024)
 			, Regarding_Type NVARCHAR(15)
+			, Appointment NVARCHAR(15) DEFAULT ''Appointment''
+			, Email NVARCHAR(15) DEFAULT ''Email''
+			, Letter NVARCHAR(15) DEFAULT ''Letter''
+			, Phone_Call NVARCHAR(15) DEFAULT ''Phone Call''
+			, Fax NVARCHAR(15) DEFAULT ''Fax''
 		' -- Ext_Create_Fields
 		, 'Activity_Key
 			, Activity_Group_Key
@@ -27560,7 +29782,7 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 				) E ON A.ContactId = E.ContactId
 			' -- Ext_From_Statement
 		, 'INSERT INTO _Activity_Dim
-			VALUES(0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+			VALUES(0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 			' -- Ext_Where_Statement	
 		, NULL -- Tier_3_Stage
 		, NULL -- Tier_3_Stage_DateTime
@@ -27611,6 +29833,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -28071,6 +30299,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -28390,6 +30624,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -28668,6 +30908,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -28763,6 +31009,769 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Donor_Retention_Dim
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Retention_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Donor_Key NVARCHAR(100)      
+			, Donor_Retention_Type_Code_Byu_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_5 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_5 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_5 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc NVARCHAR(2)
+			, Donor_Type_Code_Ldsp NVARCHAR(2)
+		' -- Ext_Create_Fields
+		, ' Donor_Key      
+			, Donor_Retention_Type_Code_Byu_Minus_1
+			, Donor_Retention_Type_Code_Byu_Minus_2
+			, Donor_Retention_Type_Code_Byu_Minus_3
+			, Donor_Retention_Type_Code_Byu_Minus_4
+			, Donor_Retention_Type_Code_Byu_Minus_5
+			, Donor_Retention_Type_Code_Byui_Minus_1
+			, Donor_Retention_Type_Code_Byui_Minus_2
+			, Donor_Retention_Type_Code_Byui_Minus_3
+			, Donor_Retention_Type_Code_Byui_Minus_4
+			, Donor_Retention_Type_Code_Byui_Minus_5
+			, Donor_Retention_Type_Code_Byuh_Minus_1
+			, Donor_Retention_Type_Code_Byuh_Minus_2
+			, Donor_Retention_Type_Code_Byuh_Minus_3
+			, Donor_Retention_Type_Code_Byuh_Minus_4
+			, Donor_Retention_Type_Code_Byuh_Minus_5
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5
+			, Donor_Retention_Type_Code_Byu
+			, Donor_Retention_Type_Code_Byui
+			, Donor_Retention_Type_Code_Byuh
+			, Donor_Retention_Type_Code_Ldsbc
+			, Donor_Type_Code_Ldsp
+		' -- Ext_Insert_Fields
+		, '  A.Donor_Key
+			, Donor_Retention_Type_Code_Byu_Minus_1
+			, Donor_Retention_Type_Code_Byu_Minus_2
+			, Donor_Retention_Type_Code_Byu_Minus_3
+			, Donor_Retention_Type_Code_Byu_Minus_4
+			, Donor_Retention_Type_Code_Byu_Minus_5
+			, Donor_Retention_Type_Code_Byui_Minus_1
+			, Donor_Retention_Type_Code_Byui_Minus_2
+			, Donor_Retention_Type_Code_Byui_Minus_3
+			, Donor_Retention_Type_Code_Byui_Minus_4
+			, Donor_Retention_Type_Code_Byui_Minus_5
+			, Donor_Retention_Type_Code_Byuh_Minus_1
+			, Donor_Retention_Type_Code_Byuh_Minus_2
+			, Donor_Retention_Type_Code_Byuh_Minus_3
+			, Donor_Retention_Type_Code_Byuh_Minus_4
+			, Donor_Retention_Type_Code_Byuh_Minus_5
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5
+			, Donor_Retention_Type_Code_Byu
+			, Donor_Retention_Type_Code_Byui
+			, Donor_Retention_Type_Code_Byuh
+			, Donor_Retention_Type_Code_Ldsbc
+			, Donor_Type_Code_Ldsp
+		' -- Ext_Select_Statement
+		, ' _All_Donors_ A
+				LEFT JOIN _Donor_Retention_1 B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN _Donor_Retention_2 C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN _Donor_Retention_3 D ON A.Donor_Key = D.Donor_Key
+				LEFT JOIN _Donor_Retention_4 E ON A.Donor_Key = E.Donor_Key
+				LEFT JOIN 
+					(SELECT Donor_Key
+						, MIN(Donor_Retention_Type_Code_Byu) AS Donor_Retention_Type_Code_Byu
+						, MIN(Donor_Retention_Type_Code_Byui) AS Donor_Retention_Type_Code_Byui
+						, MIN(Donor_Retention_Type_Code_Byuh) AS Donor_Retention_Type_Code_Byuh
+						, MIN(Donor_Retention_Type_Code_Ldsbc) AS Donor_Retention_Type_Code_Ldsbc
+						, MIN(Donor_Type_Code_Ldsp) AS Donor_Type_Code_Ldsp
+						FROM
+							(SELECT Donor_Key
+									, New_Inst
+									, Donor_Type_Year
+									, Donor_Type
+									, CASE WHEN Donor_Type_Year = YEAR(GETDATE())
+											AND New_Inst = [BYU] THEN Donor_Type 
+										ELSE [D1] END AS Donor_Retention_Type_Code_Byu 
+									, CASE WHEN Donor_Type_Year = YEAR(GETDATE())
+											AND New_Inst = [BYUI] THEN Donor_Type 
+										ELSE [D1] END AS Donor_Retention_Type_Code_Byui
+									, CASE WHEN Donor_Type_Year = YEAR(GETDATE())
+											AND New_Inst = [BYUH] THEN Donor_Type 
+										ELSE [D1] END AS Donor_Retention_Type_Code_Byuh
+									, CASE WHEN Donor_Type_Year = YEAR(GETDATE())
+											AND New_Inst = [LDSBC] THEN Donor_Type 
+										ELSE [D1] END AS Donor_Retention_Type_Code_Ldsbc
+									, CASE WHEN Donor_Type_Year = YEAR(GETDATE())
+											AND New_Inst = [LDSP] THEN Donor_Type 
+										ELSE [D1] END AS Donor_Type_Code_Ldsp
+									, [D1] AS D1
+									FROM 
+										(SELECT COALESCE(A.Plus_Constituent,A.Plus_Institution) AS Donor_Key
+											, YEAR(A.Plus_I5LegacyDonorTypeDate) AS Donor_Type_Year
+											, B.New_Inst
+											, CONVERT(NVARCHAR(2),A.Plus_I5LegacyDonorType) AS Donor_Type
+											, A.Plus_DonorScoreId
+											, A.[D1] AS D1
+											, B.[BYU] AS BYU
+											, B.[BYUI] AS BYUI
+											, B.[BYUH] AS BYUH
+											, B.[LDSBC] AS LDSBC
+											, B.[LDSP] AS LDSP		
+											, ROW_NUMBER() OVER(PARTITION BY COALESCE(A.Plus_Constituent,A.Plus_Institution), YEAR(A.Plus_I5LegacyDonorTypeDate), B.New_Inst ORDER BY A.ModifiedOn) AS RowNum
+											FROM Ext_Donor_Score A
+												INNER JOIN Ext_Institution B ON A.Plus_Institution = B.New_InstitutionId
+											WHERE 1 = 1
+												AND A.StatusCode = 1
+										) A
+									WHERE 1 = 1
+										AND RowNum = 1
+							) A
+						WHERE 1 = 1
+						GROUP BY Donor_Key
+					) F ON A.Donor_Key = F.Donor_Key				
+			' -- Ext_From_Statement
+		, ' AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, ' 
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, NULL -- Ext_From_Statement_3
+		, NULL -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Donor_Telefund_Dim
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Telefund_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Donor_Key NVARCHAR(100)      
+			, Donor_Open_Byu_Telefund_Pledge NVARCHAR(1)
+			, Donor_Open_Byui_Telefund_Pledge NVARCHAR(1)
+			, Donor_Open_Byuh_Telefund_Pledge NVARCHAR(1)
+			, Donor_Open_Ldsbc_Telefund_Pledge NVARCHAR(1)
+			, Donor_Previously_Contacted_Byu_Yn NVARCHAR(1)
+			, Donor_Previously_Contacted_Byui_Yn NVARCHAR(1)
+			, Donor_Previously_Contacted_Byuh_Yn NVARCHAR(1)
+			, Donor_Previously_Contacted_Ldsbc_Yn NVARCHAR(1)
+			, Donor_Lds_TelefundNotes NVARCHAR(4000)
+		' -- Ext_Create_Fields
+		, ' Donor_Key      
+			, Donor_Open_Byu_Telefund_Pledge
+			, Donor_Open_Byui_Telefund_Pledge
+			, Donor_Open_Byuh_Telefund_Pledge
+			, Donor_Open_Ldsbc_Telefund_Pledge
+			, Donor_Previously_Contacted_Byu_Yn
+			, Donor_Previously_Contacted_Byui_Yn
+			, Donor_Previously_Contacted_Byuh_Yn
+			, Donor_Previously_Contacted_Ldsbc_Yn
+			, Donor_Lds_TelefundNotes
+		' -- Ext_Insert_Fields
+		, ' A.Donor_Key
+			, COALESCE(Donor_Open_Byu_Telefund_Pledge,A.[N]) AS Donor_Open_Byu_Telefund_Pledge
+			, COALESCE(Donor_Open_Byui_Telefund_Pledge,A.[N]) AS Donor_Open_Byui_Telefund_Pledge
+			, COALESCE(Donor_Open_Byuh_Telefund_Pledge,A.[N]) AS Donor_Open_Byuh_Telefund_Pledge
+			, COALESCE(Donor_Open_Ldsbc_Telefund_Pledge,A.[N]) AS Donor_Open_Ldsbc_Telefund_Pledge
+			, CASE WHEN F.Donor_Key IS NULL THEN A.[N]
+				WHEN F.Donor_Key IS NOT NULL THEN A.[Y]
+				ELSE A.[N] END AS Donor_Previously_Contacted_Byu_Yn
+			, CASE WHEN G.Donor_Key IS NULL THEN A.[N]
+				WHEN G.Donor_Key IS NOT NULL THEN A.[Y]
+				ELSE A.[N] END AS Donor_Previously_Contacted_Byui_Yn
+			, CASE WHEN H.Donor_Key IS NULL THEN A.[N]
+				WHEN H.Donor_Key IS NOT NULL THEN A.[Y]
+				ELSE A.[N] END AS Donor_Previously_Contacted_Byuh_Yn
+			, CASE WHEN I.Donor_Key IS NULL THEN A.[N]
+				WHEN I.Donor_Key IS NOT NULL THEN A.[Y]
+				ELSE A.[N] END AS Donor_Previously_Contacted_Ldsbc_Yn
+			, J.Lds_TelefundNotes AS Donor_Lds_TelefundNotes
+		' -- Ext_Select_Statement
+		, ' _All_Donors_ A
+				LEFT JOIN
+					(SELECT DISTINCT COALESCE(CONVERT(NVARCHAR(100),A.New_ConstituentDonor),CONVERT(NVARCHAR(100),A.New_OrganizationDonor)) AS Donor_Key
+						, A.[Y] AS Donor_Open_Byu_Telefund_Pledge
+						FROM Ext_Pledge A
+							LEFT JOIN Ext_Institution D ON A.New_InstitutionalHierarchy = D.New_InstitutionId
+						WHERE 1 = 1
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Campaign_Activity B
+										LEFT JOIN Ext_Activity_Pointer C ON B.ActivityId = C.ActivityId	
+									WHERE 1 = 1
+										AND A.Plus_Appeal = B.ActivityId
+										AND C.CampactChannelTypeCode = 1 -- Phone
+										AND (B.Plus_CommunicationType = 100000009 OR B.Plus_CommunicationType = 100000019) -- Soliciation 
+										AND A.StatusCode = 1 -- Outstanding
+										AND A.New_BeginDate > DATEADD(MONTH,-6,GETDATE()) -- Dynamic 6 months from today
+								)
+							AND D.New_Inst = D.[BYU]
+					) B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT COALESCE(CONVERT(NVARCHAR(100),A.New_ConstituentDonor),CONVERT(NVARCHAR(100),A.New_OrganizationDonor)) AS Donor_Key
+						, A.[Y] AS Donor_Open_Byui_Telefund_Pledge
+						FROM Ext_Pledge A
+							LEFT JOIN Ext_Institution D ON A.New_InstitutionalHierarchy = D.New_InstitutionId
+						WHERE 1 = 1
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Campaign_Activity B
+										LEFT JOIN Ext_Activity_Pointer C ON B.ActivityId = C.ActivityId	
+									WHERE 1 = 1
+										AND A.Plus_Appeal = B.ActivityId
+										AND C.CampactChannelTypeCode = 1 -- Phone
+										AND (B.Plus_CommunicationType = 100000009 OR B.Plus_CommunicationType = 100000019) -- Soliciation 
+										AND A.StatusCode = 1 -- Outstanding
+										AND A.New_BeginDate > DATEADD(MONTH,-6,GETDATE()) -- Dynamic 6 months from today
+								)
+							AND D.New_Inst = D.[BYUI]
+					) C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT COALESCE(CONVERT(NVARCHAR(100),A.New_ConstituentDonor),CONVERT(NVARCHAR(100),A.New_OrganizationDonor)) AS Donor_Key
+						, A.[Y] AS Donor_Open_Byuh_Telefund_Pledge
+						FROM Ext_Pledge A
+							LEFT JOIN Ext_Institution D ON A.New_InstitutionalHierarchy = D.New_InstitutionId
+						WHERE 1 = 1
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Campaign_Activity B
+										LEFT JOIN Ext_Activity_Pointer C ON B.ActivityId = C.ActivityId	
+									WHERE 1 = 1
+										AND A.Plus_Appeal = B.ActivityId
+										AND C.CampactChannelTypeCode = 1 -- Phone
+										AND (B.Plus_CommunicationType = 100000009 OR B.Plus_CommunicationType = 100000019) -- Soliciation 
+										AND A.StatusCode = 1 -- Outstanding
+										AND A.New_BeginDate > DATEADD(MONTH,-6,GETDATE()) -- Dynamic 6 months from today
+								)
+							AND D.New_Inst = D.[BYUH]
+					) D ON A.Donor_Key = D.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT COALESCE(CONVERT(NVARCHAR(100),A.New_ConstituentDonor),CONVERT(NVARCHAR(100),A.New_OrganizationDonor)) AS Donor_Key
+						, A.[Y] AS Donor_Open_Ldsbc_Telefund_Pledge
+						FROM Ext_Pledge A
+							LEFT JOIN Ext_Institution D ON A.New_InstitutionalHierarchy = D.New_InstitutionId
+						WHERE 1 = 1
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Campaign_Activity B
+										LEFT JOIN Ext_Activity_Pointer C ON B.ActivityId = C.ActivityId	
+									WHERE 1 = 1
+										AND A.Plus_Appeal = B.ActivityId
+										AND C.CampactChannelTypeCode = 1 -- Phone
+										AND (B.Plus_CommunicationType = 100000009 OR B.Plus_CommunicationType = 100000019) -- Soliciation 
+										AND A.StatusCode = 1 -- Outstanding
+										AND A.New_BeginDate > DATEADD(MONTH,-6,GETDATE()) -- Dynamic 6 months from today
+								)
+							AND D.New_Inst = D.[LDSBC]
+					) E ON A.Donor_Key = E.Donor_Key				
+			' -- Ext_From_Statement
+		, ' AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '		LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key
+						FROM
+							(SELECT DISTINCT F.PartyID AS ContactId
+								FROM Ext_Campaign_Response A 
+									INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId 
+									INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal
+									INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+									INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+									INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+									INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+								WHERE 1 = 1
+									AND D.CampactChannelTypeCode = 1 
+									AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+									AND F.PartyObjectTypeCode IN (2) 
+									AND G.New_Inst = G.[BYU]
+							UNION
+							SELECT Relationship_ContactId AS ContactId
+								FROM _Connection_Dim CD
+								WHERE 1 = 1 
+									AND EXISTS
+										(SELECT *
+											FROM Ext_Campaign_Response A 
+												INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId  
+												INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal 
+												INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+												INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+												INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+												INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+											WHERE 1 = 1
+												AND CD.ContactId = F.PartyId
+												AND D.CampactChannelTypeCode = 1 	
+												AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+												AND F.PartyObjectTypeCode IN (2)
+												AND G.New_Inst = G.[BYU]
+										) 
+								AND Relationship = CD.[Spouse]
+							) A
+						WHERE 1 = 1 
+							AND ContactId IS NOT NULL
+					) F ON A.Donor_Key = F.Donor_Key
+				LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key
+						FROM
+							(SELECT DISTINCT F.PartyID AS ContactId
+								FROM Ext_Campaign_Response A 
+									INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId 
+									INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal
+									INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+									INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+									INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+									INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+								WHERE 1 = 1
+									AND D.CampactChannelTypeCode = 1 
+									AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+									AND F.PartyObjectTypeCode IN (2) 
+									AND G.New_Inst = G.[BYUI]
+							UNION
+							SELECT Relationship_ContactId AS ContactId
+								FROM _Connection_Dim CD
+								WHERE 1 = 1 
+									AND EXISTS
+										(SELECT *
+											FROM Ext_Campaign_Response A 
+												INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId  
+												INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal 
+												INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+												INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+												INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+												INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId											 
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '									WHERE 1 = 1
+												AND CD.ContactId = F.PartyId
+												AND D.CampactChannelTypeCode = 1 	
+												AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+												AND F.PartyObjectTypeCode IN (2)
+												AND G.New_Inst = G.[BYUI]
+										) 
+								AND Relationship = CD.[Spouse]
+							) A
+						WHERE 1 = 1 
+							AND ContactId IS NOT NULL
+					) G ON A.Donor_Key = G.Donor_Key
+				LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key
+						FROM
+							(SELECT DISTINCT F.PartyID AS ContactId
+								FROM Ext_Campaign_Response A 
+									INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId 
+									INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal
+									INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+									INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+									INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+									INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+								WHERE 1 = 1
+									AND D.CampactChannelTypeCode = 1 
+									AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+									AND F.PartyObjectTypeCode IN (2) 
+									AND G.New_Inst = G.[BYUH]
+							UNION
+							SELECT Relationship_ContactId AS ContactId
+								FROM _Connection_Dim CD
+								WHERE 1 = 1 
+									AND EXISTS
+										(SELECT *
+											FROM Ext_Campaign_Response A 
+												INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId  
+												INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal 
+												INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+												INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+												INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+												INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+											WHERE 1 = 1
+												AND CD.ContactId = F.PartyId
+												AND D.CampactChannelTypeCode = 1 	
+												AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+												AND F.PartyObjectTypeCode IN (2)
+												AND G.New_Inst = G.[BYUH]
+										) 
+								AND Relationship = CD.[Spouse]
+							) A
+						WHERE 1 = 1 
+							AND ContactId IS NOT NULL
+					) H ON A.Donor_Key = H.Donor_Key
+			' -- Ext_From_Statement_3
+		, '	LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key
+						FROM
+							(SELECT DISTINCT F.PartyID AS ContactId
+								FROM Ext_Campaign_Response A 
+									INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId 
+									INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal
+									INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+									INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+									INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+									INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+								WHERE 1 = 1
+									AND D.CampactChannelTypeCode = 1 
+									AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+									AND F.PartyObjectTypeCode IN (2) 
+									AND G.New_Inst = G.[LDSBC]
+							UNION
+							SELECT Relationship_ContactId AS ContactId
+								FROM _Connection_Dim CD
+								WHERE 1 = 1 
+									AND EXISTS
+										(SELECT *
+											FROM Ext_Campaign_Response A 
+												INNER JOIN Ext_Activity_Pointer B ON B.ActivityId = A.ActivityId  
+												INNER JOIN Ext_Campaign_Activity C ON C.ActivityId = A.Plus_CampaignAppeal 
+												INNER JOIN Ext_Activity_Pointer D ON C.ActivityId = D.ActivityId 
+												INNER JOIN Ext_Campaign E ON E.CampaignId = B.RegardingObjectId and B.regardingobjecttypecode = 4400 
+												INNER JOIN Ext_Activity F ON F.ActivityId = A.ActivityId 	
+												INNER JOIN Ext_Institution G ON C.Plus_InstitutionalHierarchy = G.New_InstitutionId
+											WHERE 1 = 1
+												AND CD.ContactId = F.PartyId
+												AND D.CampactChannelTypeCode = 1 	
+												AND B.CreatedOn > DATEADD(m,-3,GETDATE()) 	
+												AND F.PartyObjectTypeCode IN (2)
+												AND G.New_Inst = G.[LDSBC]
+										) 
+								AND Relationship = CD.[Spouse]
+							) A
+						WHERE 1 = 1 
+							AND ContactId IS NOT NULL
+					) I ON A.Donor_Key = I.Donor_Key
+				LEFT JOIN Ext_Contact J ON A.Donor_Key = CONVERT(NVARCHAR(100),J.ContactId)
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Donor_Initiative_Dim
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Initiative_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Donor_Key NVARCHAR(100)      
+			, Donor_Furthest_Initiative_Stage NVARCHAR(400)
+			, Donor_Number_Of_Open_Initiatives INT
+			, Donor_Last_F2F_Visit_Date DATE
+			, Donor_Pledge_Reminder_Email_Content_Byu NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Byui NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Byuh NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Ldsbc NVARCHAR(2000)
+			, Donor_Is_Qualified NVARCHAR(1)
+			, Donor_Qualified_On DATE
+			, Donor_Qualified_By NVARCHAR(200)
+		' -- Ext_Create_Fields
+		, ' Donor_Key      
+			, Donor_Furthest_Initiative_Stage
+			, Donor_Number_Of_Open_Initiatives
+			, Donor_Last_F2F_Visit_Date
+			, Donor_Pledge_Reminder_Email_Content_Byu
+			, Donor_Pledge_Reminder_Email_Content_Byui
+			, Donor_Pledge_Reminder_Email_Content_Byuh
+			, Donor_Pledge_Reminder_Email_Content_Ldsbc
+			, Donor_Is_Qualified
+			, Donor_Qualified_On 
+			, Donor_Qualified_By
+		' -- Ext_Insert_Fields
+		, ' A.Donor_Key
+			, Donor_Furthest_Initiative_Stage
+			, Donor_Number_Of_Open_Initiatives
+			, Donor_Last_F2F_Visit_Date
+			, Donor_Pledge_Reminder_Email_Content_Byu
+			, Donor_Pledge_Reminder_Email_Content_Byui
+			, Donor_Pledge_Reminder_Email_Content_Byuh
+			, Donor_Pledge_Reminder_Email_Content_Ldsbc
+			, Donor_Is_Qualified
+			, Donor_Qualified_On
+			, Donor_Qualified_By
+		' -- Ext_Select_Statement
+		, ' _All_Donors_ A
+				LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),A.CustomerId) AS Donor_Key
+						, MAX(A.StepName) AS Donor_Furthest_Initiative_Stage
+						FROM Ext_Opportunity A
+							LEFT JOIN Ext_Contact B ON A.CustomerId = B.ContactId 
+							LEFT JOIN Ext_Account C ON A.Customerid = C.AccountId 
+						WHERE 1 = 1
+							AND A.StateCode = 0 -- Open Initiative (0 - Open, 1 - Won, 2 - Lost)
+							AND A.StepName IS NOT NULL
+						GROUP BY CONVERT(NVARCHAR(100),A.CustomerId)
+					) B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),CustomerId) AS Donor_Key -- Donor_Key
+						, Count(*) AS Donor_Number_Of_Open_Initiatives
+						FROM Ext_Opportunity A
+							LEFT JOIN Ext_Contact B ON A.CustomerId = B.ContactId 
+							LEFT JOIN Ext_Account C ON A.Customerid = C.AccountId 
+						WHERE 1 = 1
+							AND A.StateCode = 0 -- Open Initiative (0 - Open, 1 - Won, 2 - Lost)
+						GROUP BY CONVERT(NVARCHAR(100),A.CustomerId)
+					) C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN
+					(SELECT CONVERT(NVARCHAR(100),C.PartyId) AS Donor_Key
+						, MAX(CONVERT(NVARCHAR(10),A.ActualEnd,110)) AS Donor_Last_F2F_Visit_Date
+						FROM Ext_Activity_Pointer A --Contains the shared activity data (data which is used in all activity types)
+							INNER JOIN Ext_Appointment B ON A.ActivityId = B.ActivityId --Contains the data specific to appointments
+							INNER JOIN Ext_Activity C ON A.ActivityId = C.ActivityId --Attendees/Participants
+						WHERE 1 = 1
+							AND A.ActivityTypeCode = 4201 --Appointment
+							AND A.StateCode = 1 --Completed
+							AND B.Plus_FaceToface = 1 --Indicates the appointment is face to face (F2F)
+							AND C.PartyObjectTypeCode in (1,2) --Organizations are 1, Constituents are 2
+							AND A.ActualEnd IS NOT NULL	
+						GROUP BY CONVERT(NVARCHAR(100),C.PartyId)
+					) D ON A.Donor_Key = D.Donor_Key
+				LEFT JOIN _Donor_Pledge_Reminder_Email_Content_Byu_() E ON A.Donor_Key = E.Donor_Key
+				LEFT JOIN _Donor_Pledge_Reminder_Email_Content_Byui_() F ON A.Donor_Key = F.Donor_Key
+				LEFT JOIN _Donor_Pledge_Reminder_Email_Content_Byuh_() G ON A.Donor_Key = G.Donor_Key
+				LEFT JOIN _Donor_Pledge_Reminder_Email_Content_Ldsbc_() H ON A.Donor_Key = H.Donor_Key
+				LEFT JOIN 
+					(
+					SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key	
+						, CASE WHEN Lds_IsQualified = 0 THEN [N]
+								WHEN Lds_IsQualified = 1 THEN [Y] 
+								ELSE [N] END AS Donor_Is_Qualified
+						FROM Ext_Contact
+					UNION
+					SELECT CONVERT(NVARCHAR(100),AccountId) AS Donor_Key
+						, CASE WHEN Lds_IsQualified = 0 THEN [N]
+								WHEN Lds_IsQualified = 1 THEN [Y] 
+								ELSE [N] END AS Donor_Is_Qualified
+						FROM Ext_Account
+					) I ON A.Donor_Key = I.Donor_Key
+				LEFT JOIN 
+					(SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key	
+						, CONVERT(DATE,Lds_QualifiedOn,101) AS Donor_Qualified_On
+						FROM Ext_Contact
+					UNION
+					SELECT CONVERT(NVARCHAR(100),AccountId) AS Donor_Key
+						, CONVERT(DATE,Lds_QualifiedOn,101) AS Donor_Qualified_On
+						FROM Ext_Account
+					) J ON A.Donor_Key = J.Donor_Key
+				LEFT JOIN 
+					(SELECT CONVERT(NVARCHAR(100),ContactId) AS Donor_Key	
+						, B.User_Full_Name AS Donor_Qualified_By 
+						FROM Ext_Contact A
+							LEFT JOIN _User_Dim B ON CONVERT(NVARCHAR(100),A.Lds_QualifiedBy) = B.User_Key
+					UNION
+					SELECT CONVERT(NVARCHAR(100),AccountId) AS Donor_Key
+						, B.User_Full_Name AS Donor_Qualified_By 
+						FROM Ext_Account A
+							LEFT JOIN _User_Dim B ON CONVERT(NVARCHAR(100),A.Lds_QualifiedBy) = B.User_Key
+					) K ON A.Donor_Key = K.Donor_Key				
+			' -- Ext_From_Statement
+		, ' AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -28993,6 +32002,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -29113,6 +32128,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -29339,6 +32360,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -29597,6 +32624,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -29792,6 +32825,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30003,6 +33042,233 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Web_Batch_Fact
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Web_Batch_Fact' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Web_Batch_Key NVARCHAR(100)
+			, Web_Batch_Total_Amount MONEY
+			, Average_Match_Score NVARCHAR(100)
+			, Total_Record_Count INT
+			' -- Ext_Create_Fields
+		, '	Web_Batch_Key
+			, Web_Batch_Total_Amount
+			, Average_Match_Score
+			, Total_Record_Count 
+			' -- Ext_Insert_Fields
+		, 'CONVERT(NVARCHAR(100),A.Plus_WebBatchId) AS Web_Batch_Key
+			, A.Plus_TotalAmount AS Web_Batch_Total_Amount
+			, A.Plus_AggregateScore AS Average_Match_Score
+			, A.Plus_TotalRecordCount AS Total_Record_Count
+			' -- Ext_Select_Statement
+		, ' Ext_WebBatch A
+			' -- Ext_From_Statement
+		, '
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Web_Batch_Dim
+-- --------------------------
+	( 5 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Web_Batch_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Web_Batch_Dim_Key NVARCHAR(100)
+			, Web_Batch_Key NVARCHAR(100)
+			, Web_Batch_Status NVARCHAR(400)
+			, Web_Batch_Status_Reason NVARCHAR(400)
+			, Web_Batch_Created_On DATE
+			, Web_Batch_Processed_Date DATETIME
+			, Web_Batch_Modified_On DATE
+			, Web_Batch_Modified_By NVARCHAR(200)
+			' -- Ext_Create_Fields
+		, '	Web_Batch_Dim_Key
+			, Web_Batch_Key
+			, Web_Batch_Status
+			, Web_Batch_Status_Reason
+			, Web_Batch_Created_On
+			, Web_Batch_Processed_Date
+			, Web_Batch_Modified_On
+			, Web_Batch_Modified_By 
+			' -- Ext_Insert_Fields
+		, ' CONVERT(NVARCHAR(100),A.Plus_WebBatchId) AS Web_Batch_Dim_Key
+			, CONVERT(NVARCHAR(100),A.Plus_WebBatchId) AS Web_Batch_Key
+			, C.Column_Label AS Web_Batch_Status
+			, D.Column_Label AS Web_Batch_Status_Reason
+			, CONVERT(NVARCHAR(10),A.CreatedOn,101) AS Web_Batch_Created_On
+			, A.Plus_ProcessedDate AS Web_Batch_Processed_Date
+			, CONVERT(NVARCHAR(10),A.ModifiedOn,101) AS Web_Batch_Modified_On
+			, B.FullName AS Web_Batch_Modified_By
+			' -- Ext_Select_Statement
+		, ' Ext_WebBatch A
+				LEFT JOIN Ext_System_User B ON A.ModifiedBy = B.SystemUserId
+				LEFT JOIN _Web_Batch_StateCode_ C ON A.StateCode = C.Column_Value
+				LEFT JOIN _Web_Batch_StatusCode_ D ON A.StatusCode = D.Column_Value
+			' -- Ext_From_Statement
+		, '
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30083,6 +33349,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30163,6 +33435,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30243,6 +33521,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30323,6 +33607,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30403,6 +33693,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30484,6 +33780,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30564,6 +33866,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30644,6 +33952,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30724,6 +34038,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30805,6 +34125,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30885,6 +34211,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -30965,6 +34297,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -31045,6 +34383,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -31125,6 +34469,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -31205,6 +34555,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -31486,6 +34842,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -31866,6 +35228,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -32361,6 +35729,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -32572,6 +35946,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -32897,6 +36277,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -33104,6 +36490,426 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- _Donor_Recurring_Gift_Dim
+-- --------------------------
+	( 6 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Recurring_Gift_Dim' -- Ext_Table
+		, '	' -- Dest_Create_Fields
+		, '	' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, ' Donor_Key NVARCHAR(100)    
+			, Donor_Byu_Recurring_Donor NVARCHAR(1) 
+			, Donor_Byui_Recurring_Donor NVARCHAR(1)
+			, Donor_Byuh_Recurring_Donor NVARCHAR(1)
+			, Donor_Ldsbc_Recurring_Donor NVARCHAR(1)
+			, Donor_First_Recurring_Rule_Date_Byu DATE
+			, Donor_First_Recurring_Rule_Date_Byui DATE
+			, Donor_First_Recurring_Rule_Date_Byuh DATE
+			, Donor_First_Recurring_Rule_Date_Ldsbc DATE
+			, Donor_Recurring_Total_Last_Month_Byu MONEY
+			, Donor_Recurring_Total_Last_Month_Byui MONEY
+			, Donor_Recurring_Total_Last_Month_Byuh MONEY
+			, Donor_Recurring_Total_Last_Month_Ldsbc MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Byu MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Byui MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Byuh MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Ldsbc MONEY
+			, Donor_Recurring_Gift_Upgrade_Byu NVARCHAR(1)
+			, Donor_Recurring_Gift_Upgrade_Byui NVARCHAR(1)
+			, Donor_Recurring_Gift_Upgrade_Byuh NVARCHAR(1)
+			, Donor_Recurring_Gift_Upgrade_Ldsbc NVARCHAR(1)
+			' -- Ext_Create_Fields
+		, '	Donor_Key      
+			, Donor_Byu_Recurring_Donor
+			, Donor_Byui_Recurring_Donor
+			, Donor_Byuh_Recurring_Donor
+			, Donor_Ldsbc_Recurring_Donor
+			, Donor_First_Recurring_Rule_Date_Byu
+			, Donor_First_Recurring_Rule_Date_Byui
+			, Donor_First_Recurring_Rule_Date_Byuh
+			, Donor_First_Recurring_Rule_Date_Ldsbc
+			, Donor_Recurring_Total_Last_Month_Byu
+			, Donor_Recurring_Total_Last_Month_Byui
+			, Donor_Recurring_Total_Last_Month_Byuh
+			, Donor_Recurring_Total_Last_Month_Ldsbc
+			, Donor_Recurring_Total_Month_Before_Last_Byu
+			, Donor_Recurring_Total_Month_Before_Last_Byui
+			, Donor_Recurring_Total_Month_Before_Last_Byuh
+			, Donor_Recurring_Total_Month_Before_Last_Ldsbc
+			, Donor_Recurring_Gift_Upgrade_Byu
+			, Donor_Recurring_Gift_Upgrade_Byui
+			, Donor_Recurring_Gift_Upgrade_Byuh
+			, Donor_Recurring_Gift_Upgrade_Ldsbc
+			' -- Ext_Insert_Fields
+		, ' A.Donor_Key
+			, CASE WHEN Donor_Byu_Recurring_Donor IS NULL THEN A.[N]
+				WHEN Donor_Byu_Recurring_Donor = A.[N] THEN A.[N]
+				WHEN Donor_Byu_Recurring_Donor = A.[Y] THEN A.[Y]
+				ELSE NULL END AS Donor_Byu_Recurring_Donor
+			, CASE WHEN Donor_Byui_Recurring_Donor IS NULL THEN A.[N]
+				WHEN Donor_Byui_Recurring_Donor = A.[N] THEN A.[N]
+				WHEN Donor_Byui_Recurring_Donor = A.[Y] THEN A.[Y]
+				ELSE NULL END AS Donor_Byui_Recurring_Donor
+			, CASE WHEN Donor_Byuh_Recurring_Donor IS NULL THEN A.[N]
+				WHEN Donor_Byuh_Recurring_Donor = A.[N] THEN A.[N]
+				WHEN Donor_Byuh_Recurring_Donor = A.[Y] THEN A.[Y]
+				ELSE NULL END AS Donor_Byuh_Recurring_Donor
+			, CASE WHEN Donor_Ldsbc_Recurring_Donor IS NULL THEN A.[N]
+				WHEN Donor_Ldsbc_Recurring_Donor = A.[N] THEN A.[N]
+				WHEN Donor_Ldsbc_Recurring_Donor = A.[Y] THEN A.[Y]
+				ELSE NULL END AS Donor_Ldsbc_Recurring_Donor
+			, Donor_First_Recurring_Rule_Date_Byu
+			, Donor_First_Recurring_Rule_Date_Byui
+			, Donor_First_Recurring_Rule_Date_Byuh
+			, Donor_First_Recurring_Rule_Date_Ldsbc
+			, Donor_Recurring_Total_Last_Month_Byu
+			, Donor_Recurring_Total_Last_Month_Byui
+			, Donor_Recurring_Total_Last_Month_Byuh
+			, Donor_Recurring_Total_Last_Month_Ldsbc
+			, Donor_Recurring_Total_Month_Before_Last_Byu
+			, Donor_Recurring_Total_Month_Before_Last_Byui
+			, Donor_Recurring_Total_Month_Before_Last_Byuh
+			, Donor_Recurring_Total_Month_Before_Last_Ldsbc
+			, CASE WHEN Donor_Recurring_Total_Last_Month_Byu > Donor_Recurring_Total_Month_Before_Last_Byu THEN A.[Y] 
+					ELSE A.[N] END AS Donor_Recurring_Gift_Upgrade_Byu
+			, CASE WHEN Donor_Recurring_Total_Last_Month_Byui > Donor_Recurring_Total_Month_Before_Last_Byui THEN A.[Y] 
+					ELSE A.[N] END AS Donor_Recurring_Gift_Upgrade_Byui
+			, CASE WHEN Donor_Recurring_Total_Last_Month_Byuh > Donor_Recurring_Total_Month_Before_Last_Byuh THEN A.[Y] 
+					ELSE A.[N] END AS Donor_Recurring_Gift_Upgrade_Byuh
+			, CASE WHEN Donor_Recurring_Total_Last_Month_Ldsbc > Donor_Recurring_Total_Month_Before_Last_Ldsbc THEN A.[Y] 
+					ELSE A.[N] END AS Donor_Recurring_Gift_Upgrade_Ldsbc
+			' -- Ext_Select_Statement
+		, ' _All_Donors_ A
+				LEFT JOIN
+					(SELECT DISTINCT A.Plus_Constituent AS Donor_Key
+						, A.[Y] AS Donor_BYU_Recurring_Donor
+						FROM Ext_Recurring_Gift_Rules A
+						WHERE 1 = 1 
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Fund_Account B
+										LEFT JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+									WHERE 1 = 1
+										AND A.Plus_FundAccount = B.New_FundAccountId
+										AND A.StatusCode <> 2 --all statuses except canceled.
+										AND C.New_Inst = C.[BYU]
+								)
+							AND NOT EXISTS
+								(SELECT *
+									FROM Ext_Recurring_Gift_Rules D
+									WHERE 1 = 1
+										AND A.Plus_RecurringGiftRulesId = D.Plus_RecurringGiftRulesId
+										AND D.Plus_PaymentStop < CONVERT(NVARCHAR(10), GETDATE() -1, 112)
+								) 
+					) B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Plus_Constituent AS Donor_Key
+						, A.[Y] AS Donor_BYUI_Recurring_Donor
+						FROM Ext_Recurring_Gift_Rules A
+						WHERE 1 = 1 
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Fund_Account B
+										LEFT JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+									WHERE 1 = 1
+										AND A.Plus_FundAccount = B.New_FundAccountId
+										AND A.StatusCode <> 2 --all statuses except canceled.
+										AND C.New_Inst = C.[BYUI]
+								)
+							AND NOT EXISTS
+								(SELECT *
+									FROM Ext_Recurring_Gift_Rules D
+									WHERE 1 = 1
+										AND A.Plus_RecurringGiftRulesId = D.Plus_RecurringGiftRulesId
+										AND D.Plus_PaymentStop < CONVERT(NVARCHAR(10), GETDATE() -1, 112)
+								) 
+					) C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Plus_Constituent AS Donor_Key
+						, A.[Y] AS Donor_BYUH_Recurring_Donor
+						FROM Ext_Recurring_Gift_Rules A
+						WHERE 1 = 1 
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Fund_Account B
+										LEFT JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+									WHERE 1 = 1
+										AND A.Plus_FundAccount = B.New_FundAccountId
+										AND A.StatusCode <> 2 --all statuses except canceled.
+										AND C.New_Inst = C.[BYUH]
+								)
+							AND NOT EXISTS
+								(SELECT *
+									FROM Ext_Recurring_Gift_Rules D
+									WHERE 1 = 1
+										AND A.Plus_RecurringGiftRulesId = D.Plus_RecurringGiftRulesId
+										AND D.Plus_PaymentStop < CONVERT(NVARCHAR(10), GETDATE() -1, 112)
+								) 
+					) D ON A.Donor_Key = D.Donor_Key
+				LEFT JOIN
+					(SELECT DISTINCT A.Plus_Constituent AS Donor_Key
+						, A.[Y] AS Donor_LDSBC_Recurring_Donor
+						FROM Ext_Recurring_Gift_Rules A
+						WHERE 1 = 1 
+							AND EXISTS
+								(SELECT *
+									FROM Ext_Fund_Account B
+										LEFT JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+									WHERE 1 = 1
+										AND A.Plus_FundAccount = B.New_FundAccountId
+										AND A.StatusCode <> 2 --all statuses except canceled.
+										AND C.New_Inst = C.[LDSBC]
+								)
+							AND NOT EXISTS
+								(SELECT *
+									FROM Ext_Recurring_Gift_Rules D
+									WHERE 1 = 1
+										AND A.Plus_RecurringGiftRulesId = D.Plus_RecurringGiftRulesId
+										AND D.Plus_PaymentStop < CONVERT(NVARCHAR(10), GETDATE() -1, 112)
+								) 
+					) E ON A.Donor_Key = E.Donor_Key
+				LEFT JOIN 
+					(SELECT COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) AS Donor_Key 
+						, MIN(CONVERT(DATE,A.CreatedOn,101)) AS Donor_First_Recurring_Rule_Date_Byu
+						FROM Ext_Recurring_Gift_Rules A
+							INNER JOIN Ext_Fund_Account B ON A.Plus_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+				
+			' -- Ext_From_Statement
+		, 'AND A.Donor_Key IS NOT NULL 
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' ' -- Ext_Select_Statement_2
+		, '				WHERE 1 = 1
+							AND C.New_Inst = C.[BYU]
+							AND COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) IS NOT NULL
+							AND A.CreatedOn IS NOT NULL
+						GROUP BY COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization))
+					) F ON A.Donor_Key = F.Donor_Key
+				LEFT JOIN 
+					(SELECT COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) AS Donor_Key 
+						, MIN(CONVERT(DATE,A.CreatedOn,101)) AS Donor_First_Recurring_Rule_Date_Byui
+						FROM Ext_Recurring_Gift_Rules A
+							INNER JOIN Ext_Fund_Account B ON A.Plus_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND C.New_Inst = C.[BYUI]
+							AND COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) IS NOT NULL
+							AND A.CreatedOn IS NOT NULL
+						GROUP BY COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization))
+					) G ON A.Donor_Key = G.Donor_Key
+				LEFT JOIN 
+					(SELECT COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) AS Donor_Key 
+						, MIN(CONVERT(DATE,A.CreatedOn,101)) AS Donor_First_Recurring_Rule_Date_Byuh
+						FROM Ext_Recurring_Gift_Rules A
+							INNER JOIN Ext_Fund_Account B ON A.Plus_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND C.New_Inst = C.[BYUH]
+							AND COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) IS NOT NULL
+							AND A.CreatedOn IS NOT NULL
+						GROUP BY COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization))
+					) H ON A.Donor_Key = H.Donor_Key
+				LEFT JOIN 
+					(SELECT COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) AS Donor_Key 
+						, MIN(CONVERT(DATE,A.CreatedOn,101)) AS Donor_First_Recurring_Rule_Date_Ldsbc
+						FROM Ext_Recurring_Gift_Rules A
+							INNER JOIN Ext_Fund_Account B ON A.Plus_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND C.New_Inst = C.[LDSBC]
+							AND COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization)) IS NOT NULL
+							AND A.CreatedOn IS NOT NULL
+						GROUP BY COALESCE(CONVERT(NVARCHAR(100),A.Plus_Constituent),CONVERT(NVARCHAR(100),A.Plus_Organization))
+					) I ON A.Donor_Key = I.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Last_Month_Byu
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[BYU]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-1, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-1, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)
+					) J ON A.Donor_Key = J.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Last_Month_Byui
+						FROM dbo._Gift_ A																	
+			' -- Ext_From_Statement_2
+		, ' ' -- Ext_Create_Fields_2
+		, ' ' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, NULL -- Ext_Select_Statement_3
+		, NULL -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '					INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[BYUI]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-1, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-1, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)
+					) K ON A.Donor_Key = K.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Last_Month_Byuh
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[BYUH]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-1, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-1, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)
+					) L ON A.Donor_Key = L.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Last_Month_Ldsbc
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[LDSBC]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-1, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-1, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)
+					) M ON A.Donor_Key = M.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Month_Before_Last_Byu
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[BYU]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-2, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-2, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)	
+					) N ON A.Donor_Key = N.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Month_Before_Last_Byui
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId															
+			' -- Ext_From_Statement_3
+		, '				WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[BYUI]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-2, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-2, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)	
+					) O ON A.Donor_Key = O.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Month_Before_Last_Byuh
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[BYUH]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-2, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-2, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)	
+					) P ON A.Donor_Key = P.Donor_Key
+				LEFT JOIN
+					(SELECT COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor) AS Donor_Key
+						, SUM(A.New_GiftAmount) AS Donor_Recurring_Total_Month_Before_Last_Ldsbc
+						FROM dbo._Gift_ A
+							INNER JOIN Ext_Fund_Account B ON A.New_FundAccount = B.New_FundAccountId
+							INNER JOIN Ext_Institution C ON B.New_InstitutionalHierarchy = C.New_InstitutionId
+						WHERE 1 = 1
+							AND (A.Lds_RecurringGiftRule IS NOT NULL
+									OR A.Lds_RecurringGiftGroup IS NOT NULL)
+							AND C.New_Inst = C.[LDSBC]
+							AND CONVERT(DATE,A.New_ReceiptDate,101) BETWEEN CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE())-2, 0),101)
+																AND CONVERT(DATE,DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE())-2, -1),101)
+							AND A.New_GiftAmount IS NOT NULL
+						GROUP BY COALESCE(A.New_ConstituentDonor,A.New_OrganizationDonor)	
+					) Q ON A.Donor_Key = Q.Donor_Key
+			'-- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -33206,6 +37012,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -33311,6 +37123,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -33429,6 +37247,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -33796,6 +37620,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -34037,6 +37867,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -34166,6 +38002,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -34298,6 +38140,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -34427,6 +38275,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -34543,6 +38397,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -34849,6 +38709,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -35482,6 +39348,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -36146,6 +40018,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -36644,6 +40522,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -36875,6 +40759,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -37071,6 +40961,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -37155,6 +41051,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -37239,6 +41141,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -37323,6 +41231,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -37410,6 +41324,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -37536,6 +41456,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38044,6 +41970,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38208,6 +42140,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38289,6 +42227,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38370,6 +42314,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38451,6 +42401,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38550,6 +42506,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38649,6 +42611,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38748,6 +42716,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38847,6 +42821,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -38946,6 +42926,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39045,6 +43031,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39144,6 +43136,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39243,6 +43241,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39342,6 +43346,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39496,6 +43506,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39650,6 +43666,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39804,6 +43826,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -39958,6 +43986,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -40244,6 +44278,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -40516,6 +44556,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -40782,6 +44828,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -41250,6 +45302,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -41422,6 +45480,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -41657,6 +45721,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -41880,6 +45950,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -42147,6 +46223,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -42385,6 +46467,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -42608,6 +46696,134 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- View_Ldsp_Org_Web_Batches_Dataset
+-- --------------------------
+	( 9 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, 'View_Ldsp_Org_Web_Batches_Dataset' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Plus_WebBatchID NVARCHAR(100)
+			, Web_Batch_Total_Amount MONEY
+			, Average_Match_Score NVARCHAR(100)
+			, Total_Record_Count INT
+			, Web_Batch_Status NVARCHAR(400)
+			, Web_Batch_Status_Reason NVARCHAR(400)
+			, Web_Batch_Created_On DATE
+			, Web_Batch_Processed_Date DATETIME
+			, Web_Batch_Modified_On DATE
+			, Web_Batch_Modified_By NVARCHAR(200)
+			' -- Ext_Create_Fields
+		, '	Plus_WebBatchID
+			, Web_Batch_Total_Amount
+			, Average_Match_Score
+			, Total_Record_Count
+			, Web_Batch_Status
+			, Web_Batch_Status_Reason
+			, Web_Batch_Created_On
+			, Web_Batch_Processed_Date
+			, Web_Batch_Modified_On
+			, Web_Batch_Modified_By 
+			' -- Ext_Insert_Fields
+		, ' A.Web_Batch_Key AS Plus_WebBatchID
+			, A.Web_Batch_Total_Amount
+			, A.Average_Match_Score
+			, A.Total_Record_Count
+			, B.Web_Batch_Status
+			, B.Web_Batch_Status_Reason
+			, B.Web_Batch_Created_On
+			, B.Web_Batch_Processed_Date
+			, B.Web_Batch_Modified_On
+			, B.Web_Batch_Modified_By
+			' -- Ext_Select_Statement
+		, ' _Web_Batch_Fact A
+				LEFT JOIN _Web_Batch_Dim B ON A.Web_Batch_Key = B.Web_Batch_Key
+			' -- Ext_From_Statement
+		, '
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -42739,6 +46955,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -42859,6 +47081,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -42983,6 +47211,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -43194,6 +47428,12 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
@@ -43452,6 +47692,1907 @@ INSERT INTO LDSPhilanthropiesDW.Oa_Extract.Extract_Tables
 		, NULL -- Tier_11_Stage_DateTime
 		, NULL -- Tier_12_Stage
 		, NULL -- Tier_12_Stage_DateTime
+		, NULL -- Ext_Create_Fields_4
+		, NULL -- Ext_Create_Fields_5
+		, NULL -- Ext_Insert_Fields_2
+		, NULL -- Ext_Insert_Fields_3
+		, NULL -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- View_Qualifieds
+-- --------------------------
+	( 10 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, 'View_Qualifieds' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Ldsp_Id NVARCHAR(100)
+			, Donor_Full_Name NVARCHAR(160)
+			, Is_Qualified  NVARCHAR(1)
+			, Qualified_By NVARCHAR(200)
+			, Qualified_On DATE
+			, Coordinating_Liaison NVARCHAR(200)
+			, Pending_Liaison NVARCHAR(200)
+			' -- Ext_Create_Fields
+		, '	Ldsp_Id
+			, Donor_Full_Name
+			, Is_Qualified
+			, Qualified_By
+			, Qualified_On
+			, Coordinating_Liaison
+			, Pending_Liaison 
+			' -- Ext_Insert_Fields
+		, ' A.Donor_Ldsp_Id AS Ldsp_Id
+			, C.Donor_Name AS Donor_Full_Name
+			, B.Donor_Qualified AS Is_Qualified 
+			, B.Donor_Qualified_By AS Qualified_By
+			, B.Donor_Qualified_On AS Qualified_On
+			, D.Plus_CoordinatingLiaison AS Coordinating_Liaison
+			, D.Plus_PendingLiaison AS Pending_Liaison
+			' -- Ext_Select_Statement
+		, ' _Donor_Key_Dim A 
+				LEFT JOIN _Donor_Detail_Dim B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN _Donor_Name_Dim C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN _Donor_Association_Dim D ON A.Donor_Key = D.Donor_Key
+			' -- Ext_From_Statement
+		, ' AND (D.Plus_CoordinatingLiaison_DomainName IS NOT NULL
+					OR D.Plus_PendingLiaison_DomainName IS NOT NULL
+					OR D.Plus_ConnectedLiaison_DomainName IS NOT NULL
+				)
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- View_Dl_Initiatives
+-- --------------------------
+	( 10 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, 'View_Dl_Initiatives' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Donor_Ldsp_Id NVARCHAR(100)
+			, Initiative_Key NVARCHAR(100)
+			, Initiative_Name_Donor_Name NVARCHAR(1000)
+			, Initiative_Step_Name NVARCHAR(400)
+			, Initiative_State_Code NVARCHAR(400)
+			, Initiative_Status_Code NVARCHAR(400)
+			, Initiative_Proposal_Status NVARCHAR(400)	
+			, Initiative_Liaison NVARCHAR(200)
+			, Initiative_New_Account NVARCHAR(400)
+			, Initiative_Proposal_Date DATE
+			, Initiative_Targeted_Commitment_Date DATE
+			, Initiative_Committed_Date DATE
+			, Initiative_Cultivation_Proc_Stg_1_Date DATE
+			, Initiative_Cultivation_Proc_Stg_2_Date DATE
+			, Initiative_Cultivation_Proc_Stg_3_Date DATE
+			, Initiative_Cultivation_Proc_Stg_4_Date DATE
+			, Initiative_Gift_Notice_Created_Date DATE
+			, Initiative_Proposal_Status_Change_Date DATE
+			, Initiative_Coordinating_Liaison NVARCHAR(200)
+			, Initiative_Supporting_Liaisons NVARCHAR(1000)
+			, Initiative_Primary_Initiative NVARCHAR(1)
+			, Initiative_Parent_Initiative NVARCHAR(600)
+			, Initiative_Proposal_Amt MONEY
+			, Initiative_Total_Committed_Amt MONEY
+			, Initiative_Total_Given_Amt MONEY
+			, Initiative_Has_Expectancy NVARCHAR(1)
+			' -- Ext_Create_Fields
+		, '	Donor_Ldsp_Id
+			, Initiative_Key
+			, Initiative_Name_Donor_Name
+			, Initiative_Step_Name
+			, Initiative_State_Code
+			, Initiative_Status_Code
+			, Initiative_Proposal_Status	
+			, Initiative_Liaison
+			, Initiative_New_Account
+			, Initiative_Proposal_Date
+			, Initiative_Targeted_Commitment_Date
+			, Initiative_Committed_Date
+			, Initiative_Cultivation_Proc_Stg_1_Date
+			, Initiative_Cultivation_Proc_Stg_2_Date
+			, Initiative_Cultivation_Proc_Stg_3_Date
+			, Initiative_Cultivation_Proc_Stg_4_Date
+			, Initiative_Gift_Notice_Created_Date
+			, Initiative_Proposal_Status_Change_Date
+			, Initiative_Coordinating_Liaison
+			, Initiative_Supporting_Liaisons
+			, Initiative_Primary_Initiative
+			, Initiative_Parent_Initiative
+			, Initiative_Proposal_Amt
+			, Initiative_Total_Committed_Amt
+			, Initiative_Total_Given_Amt
+			, Initiative_Has_Expectancy 
+			' -- Ext_Insert_Fields
+		, ' C.Donor_Ldsp_Id
+			, A.Initiative_Key
+			, A.Initiative_Name_Donor_Name
+			, A.Initiative_Step_Name
+			, A.Initiative_State_Code
+			, A.Initiative_Status_Code
+			, A.Initiative_Proposal_Status	
+			, A.Initiative_Liaison
+			, A.Initiative_New_Account
+			, A.Initiative_Proposal_Date
+			, A.Initiative_Targeted_Commitment_Date
+			, A.Initiative_Committed_Date
+			, A.Initiative_Cultivation_Proc_Stg_1_Date
+			, A.Initiative_Cultivation_Proc_Stg_2_Date
+			, A.Initiative_Cultivation_Proc_Stg_3_Date
+			, A.Initiative_Cultivation_Proc_Stg_4_Date
+			, A.Initiative_Gift_Notice_Created_Date
+			, A.Initiative_Proposal_Status_Change_Date
+			, A.Initiative_Coordinating_Liaison
+			, A.Initiative_Supporting_Liaisons
+			, A.Initiative_Primary_Initiative
+			, A.Initiative_Parent_Initiative
+			, B.Initiative_Proposal_Amt
+			, B.Initiative_Total_Committed_Amt
+			, B.Initiative_Total_Given_Amt
+			, A.Initiative_Has_Expectancy
+			' -- Ext_Select_Statement
+		, ' _Initiative_Dim A
+				INNER JOIN _Initiative_Fact B ON A.Initiative_Key = B.Initiative_Key
+				INNER JOIN _Donor_Key_Dim C ON B.Donor_Key = C.Donor_Key
+			' -- Ext_From_Statement
+		, ' AND Initiative_Liaison IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,	
+-- --------------------------
+-- View_Dl_Activities
+-- --------------------------
+	( 10 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, 'View_Dl_Activities' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Owner NVARCHAR(200)
+			, Donor_Ldsp_Id NVARCHAR(100)
+			, Donor_Display_Name NVARCHAR(100)
+			, Type NVARCHAR(100)
+			, Subject NVARCHAR(200)
+			, Regarding NVARCHAR(4000)
+			, Face_To_Face NVARCHAR(1)
+			, Scheduled_Start DATE
+			, Scheduled_End DATE
+			, Completed DATE
+			, CreatedOn DATE
+			, ModifiedOn DATE
+			, Description  NVARCHAR(4000)
+			, Attendees  NVARCHAR(4000)
+			, Source NVARCHAR(100)
+			, StateCode  NVARCHAR(400)
+			, StatusCode NVARCHAR(400)
+			, Donor_Key NVARCHAR(100)
+			, Activity_Id NVARCHAR(100)
+			, Regarding_Type NVARCHAR(15)
+			' -- Ext_Create_Fields
+		, '	Owner
+			, Donor_Ldsp_Id
+			, Donor_Display_Name
+			, Type
+			, Subject
+			, Regarding
+			, Face_To_Face
+			, Scheduled_Start
+			, Scheduled_End
+			, Completed
+			, CreatedOn
+			, ModifiedOn
+			, Description
+			, Attendees
+			, Source
+			, StateCode
+			, StatusCode
+			, Donor_Key
+			, Activity_Id
+			, Regarding_Type 
+			' -- Ext_Insert_Fields
+		, '  C.Owner
+			, A.Donor_Ldsp_Id
+			, D.Donor_Display_Name
+			, C.Type
+			, C.Subject
+			, C.Regarding
+			, C.Face_To_Face
+			, C.Scheduled_Start
+			, C.Scheduled_End
+			, C.Completed
+			, C.CreatedOn
+			, C.ModifiedOn
+			, C.Description
+			, C.Attendees
+			, C.Source
+			, C.StateCode
+			, C.StatusCode
+			, A.Donor_Key
+			, C.Activity_Id
+			, C.Regarding_Type
+			' -- Ext_Select_Statement
+		, ' _Donor_Key_Dim A
+			INNER JOIN _Activity_Bridge B ON A.Activity_Group_Key = B.Activity_Group_Key
+			INNER JOIN _Activity_Dim C ON B.Activity_Key = C.Activity_Key
+			INNER JOIN _Donor_Name_Dim D ON A.Donor_Key = D.Donor_Key
+			' -- Ext_From_Statement
+		, ' AND C.Type IN (C.[Appointment],C.[Email],C.[Letter],C.[Phone_Call],C.[Fax])
+			AND C.Owner IN
+						(SELECT DISTINCT B.User_Full_Name
+							FROM 
+								(SELECT A.Donor_Ldsp_Id
+									, D.Donor_Display_Name
+									, C.Type
+									, C.Subject
+									, C.Regarding
+									, C.Face_To_Face
+									, C.Scheduled_Start
+									, C.Scheduled_End
+									, C.Completed
+									, C.CreatedOn
+									, C.ModifiedOn
+									, C.Description
+									, C.Attendees
+									, C.Owner
+									, C.Source
+									, C.StateCode
+									, C.StatusCode
+									, A.Donor_Key
+									, C.Activity_Id
+									, C.Regarding_Type
+									FROM _Donor_Key_Dim A
+										INNER JOIN _Activity_Bridge B ON A.Activity_Group_Key = B.Activity_Group_Key
+										INNER JOIN _Activity_Dim C ON B.Activity_Key = C.Activity_Key
+										INNER JOIN _Donor_Name_Dim D ON A.Donor_Key = D.Donor_Key
+								) A
+								LEFT JOIN _User_Coordinating_Liaison_Dim B ON A.Owner = B.User_Full_Name
+							WHERE 1 = 1
+								AND B.User_Full_Name IS NOT NULL
+						)
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,
+-- --------------------------
+-- View_Portfolio_Management
+-- --------------------------
+	( 10 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, 'View_Portfolio_Management' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, '	Ldsp_Id NVARCHAR(100)
+			, Donor_Full_Name NVARCHAR(160)
+			, Donor_Display_Name NVARCHAR(100)
+			, Couple_Name NVARCHAR(200)
+			, Couple_Display_Name NVARCHAR(200)
+			, Coordinating_Liaison NVARCHAR(200)
+			, Pending_Liaison NVARCHAR(200)
+			, Connected_Liaison NVARCHAR(200)
+			, Coordinating_Liaison_Domain_Name NVARCHAR(1024)
+			, Pending_Liaison_Domain_Name NVARCHAR(1024)
+			, Connected_Liaison_Domain_Name NVARCHAR(1024)
+			, Contact_Type NVARCHAR(100)
+			, Ldsp_Donor_Type NVARCHAR(2)
+			, Age INT
+			, Birthdate DATE
+			, Birth_Year NVARCHAR(100)
+			, Address_Type NVARCHAR(400)
+			, Street_Line_1 NVARCHAR(100)
+			, Street_Line_2 NVARCHAR(100)
+			, City NVARCHAR(100)
+			, County NVARCHAR(100)
+			, State_Abbreviation NVARCHAR(100)
+			, Zip_Code NVARCHAR(100)
+			, Country NVARCHAR(100)
+			, Phone_Number NVARCHAR(100)
+			, Email_Address NVARCHAR(150)
+			, Spouse_Email NVARCHAR(100)
+			, Total_Lifetime_Giving MONEY
+			, Total_Lifetime_Giving_Last_5_Years MONEY
+			, Total_Giving_Current_Year MONEY
+			, Total_Giving_1_Years_Ago MONEY
+			, Total_Giving_2_Years_Ago MONEY
+			, Total_Giving_3_Years_Ago MONEY
+			, Total_Giving_4_Years_Ago MONEY
+			, Total_Giving_5_Years_Ago MONEY
+			, Gift_Capacity_2016_To_2020 NVARCHAR(400)
+			, Gift_Count_Previous_5_Years INT
+			, Average_Single_Gift_Previous_5_Years MONEY
+			, Ldsp_Largest_Gift MONEY
+			, Ldsp_Largest_Gift_Date DATE
+			, Ldsp_Most_Recent_Gift MONEY
+			, Ldsp_Most_Recent_Gift_Date DATE
+			, Institution_Giving_Areas NVARCHAR(1000)
+			, Byu_Giving_Areas NVARCHAR(2000)
+			, Church_Giving_Areas NVARCHAR(2000)
+			, Is_Qualified NVARCHAR(1)
+			, Qualified_On DATE 
+			, Qualified_By NVARCHAR(200)
+			, DonorId NVARCHAR(100)
+			, First_Gift_To_Byu_Amt MONEY
+			, First_Gift_To_Byui_Amt MONEY
+			, First_Gift_To_Byuh_Amt MONEY
+			, First_Gift_To_Ldsbc_Amt MONEY
+			, First_Gift_To_Church_Amt MONEY
+			, First_Gift_To_Ldsp_Amt MONEY
+			, First_Gift_Date_Byu DATE
+			, First_Gift_Date_Byui DATE
+			, First_Gift_Date_Byuh DATE
+			, First_Gift_Date_Ldsbc DATE
+			, First_Gift_Date_Church DATE
+			, First_Gift_Date_Ldsp DATE
+			, Total_Giving_Current_Year_With_Matching MONEY
+			, Total_Giving_1_Years_Ago_With_Matching MONEY
+			, Total_Giving_2_Years_Ago_With_Matching MONEY
+			, Total_Giving_3_Years_Ago_With_Matching MONEY
+			, Total_Giving_4_Years_Ago_With_Matching MONEY
+			, Total_Giving_5_Years_Ago_With_Matching MONEY
+			' -- Ext_Create_Fields
+		, '	Ldsp_Id
+			, Donor_Full_Name
+			, Donor_Display_Name
+			, Couple_Name
+			, Couple_Display_Name
+			, Coordinating_Liaison
+			, Pending_Liaison
+			, Connected_Liaison
+			, Coordinating_Liaison_Domain_Name 
+			, Pending_Liaison_Domain_Name
+			, Connected_Liaison_Domain_Name
+			, Contact_Type
+			, Ldsp_Donor_Type
+			, Age
+			, Birthdate
+			, Birth_Year
+			, Address_Type
+			, Street_Line_1
+			, Street_Line_2
+			, City
+			, County
+			, State_Abbreviation
+			, Zip_Code
+			, Country
+			, Phone_Number
+			, Email_Address
+			, Spouse_Email
+			, Total_Lifetime_Giving
+			, Total_Lifetime_Giving_Last_5_Years
+			, Total_Giving_Current_Year
+			, Total_Giving_1_Years_Ago
+			, Total_Giving_2_Years_Ago
+			, Total_Giving_3_Years_Ago
+			, Total_Giving_4_Years_Ago
+			, Total_Giving_5_Years_Ago
+			, Gift_Capacity_2016_To_2020
+			, Gift_Count_Previous_5_Years
+			, Average_Single_Gift_Previous_5_Years
+			, Ldsp_Largest_Gift
+			, Ldsp_Largest_Gift_Date
+			, Ldsp_Most_Recent_Gift
+			, Ldsp_Most_Recent_Gift_Date
+			, Institution_Giving_Areas
+			, Byu_Giving_Areas
+			, Church_Giving_Areas
+			, Is_Qualified
+			, Qualified_On 
+			, Qualified_By
+			, DonorId
+			, First_Gift_To_Byu_Amt
+			, First_Gift_To_Byui_Amt
+			, First_Gift_To_Byuh_Amt
+			, First_Gift_To_Ldsbc_Amt
+			, First_Gift_To_Church_Amt
+			, First_Gift_To_Ldsp_Amt
+			, First_Gift_Date_Byu
+			, First_Gift_Date_Byui
+			, First_Gift_Date_Byuh
+			, First_Gift_Date_Ldsbc
+			, First_Gift_Date_Church
+			, First_Gift_Date_Ldsp
+			, Total_Giving_Current_Year_With_Matching
+			, Total_Giving_1_Years_Ago_With_Matching
+			, Total_Giving_2_Years_Ago_With_Matching
+			, Total_Giving_3_Years_Ago_With_Matching
+			, Total_Giving_4_Years_Ago_With_Matching
+			, Total_Giving_5_Years_Ago_With_Matching 
+			' -- Ext_Insert_Fields
+		, ' A.Donor_Ldsp_Id AS Ldsp_Id
+			, F.Donor_Name AS Donor_Full_Name
+			, F.Donor_Display_Name AS Donor_Display_Name
+			, F.Donor_Total_Name AS Couple_Name
+			, G.Donor_Total_Name_Display AS Couple_Display_Name
+			, H.Plus_CoordinatingLiaison AS Coordinating_Liaison
+			, H.Plus_PendingLiaison AS Pending_Liaison
+			, H.Plus_ConnectedLiaison AS Connected_Liaison
+			, H.Plus_CoordinatingLiaison_DomainName AS Coordinating_Liaison_Domain_Name 
+			, H.Plus_PendingLiaison_DomainName AS Pending_Liaison_Domain_Name
+			, H.Plus_ConnectedLiaison_DomainName AS Connected_Liaison_Domain_Name
+			, A.Donor_Contact_Type AS Contact_Type
+			, I.Donor_Type_Code_Ldsp AS Ldsp_Donor_Type
+			, C.Donor_Age AS Age
+			, C.Donor_Birth_Dt AS Birthdate
+			, C.Donor_Birth_Dt_Year AS Birth_Year
+			, B.Address_Type AS Address_Type
+			, B.Address_Street_1 AS Street_Line_1
+			, B.Address_Street_2 AS Street_Line_2
+			, B.Address_City AS City
+			, B.Address_County AS County
+			, B.Address_State_Code AS State_Abbreviation
+			, B.Address_Post_Code_Full AS Zip_Code
+			, B.Address_Country AS Country
+			, B.Phone_Number AS Phone_Number
+			, B.Email_Address AS Email_Address
+			, G.Spouse_Email AS Spouse_Email
+			, J.Donor_Total_Lifetime_Giving AS Total_Lifetime_Giving
+			, J.Donor_Total_Lifetime_Giving_Last_5_Years AS Total_Lifetime_Giving_Last_5_Years
+			, D.Total_Giving_Current_Year AS Total_Giving_Current_Year
+			, D.Total_Giving_Current_Year_Minus_1 AS Total_Giving_1_Years_Ago
+			, D.Total_Giving_Current_Year_Minus_2 AS Total_Giving_2_Years_Ago
+			, D.Total_Giving_Current_Year_Minus_3 AS Total_Giving_3_Years_Ago
+			, D.Total_Giving_Current_Year_Minus_4 AS Total_Giving_4_Years_Ago
+			, D.Total_Giving_Current_Year_Minus_5 AS Total_Giving_5_Years_Ago
+			, K.Donor_Gift_Capacity_En AS Gift_Capacity_2016_To_2020
+			, L.Donor_Gift_Count_Previous_5_Years AS Gift_Count_Previous_5_Years
+			, L.Donor_Average_Single_Gift_Previous_5_Years AS Average_Single_Gift_Previous_5_Years
+			, M.Donor_Ldsp_Largest_Gift AS Ldsp_Largest_Gift
+			, M.Donor_Largest_Gift_Date_Ldsp AS Ldsp_Largest_Gift_Date
+			, N.Donor_Most_Recent_Gift_To_Ldsp_Amt AS Ldsp_Most_Recent_Gift
+			, N.Donor_Most_Recent_Gift_Date_Ldsp AS Ldsp_Most_Recent_Gift_Date
+			, L.Donor_Institution_Giving_Areas AS Institution_Giving_Areas
+			, L.Donor_Byu_Giving_Areas AS Byu_Giving_Areas
+			, L.Donor_Church_Giving_Areas AS Church_Giving_Areas
+			, C.Donor_Qualified AS Is_Qualified
+			, C.Donor_Qualified_On AS Qualified_On 
+			, C.Donor_Qualified_By AS Qualified_By
+			, A.Donor_Key AS DonorId
+			, O.Donor_First_Gift_To_Byu_Amt AS First_Gift_To_Byu_Amt
+			, O.Donor_First_Gift_To_Byui_Amt AS First_Gift_To_Byui_Amt
+			, O.Donor_First_Gift_To_Byuh_Amt AS First_Gift_To_Byuh_Amt
+			, O.Donor_First_Gift_To_Ldsbc_Amt AS First_Gift_To_Ldsbc_Amt
+			, O.Donor_First_Gift_To_Church_Amt AS First_Gift_To_Church_Amt
+			, O.Donor_First_Gift_To_Ldsp_Amt AS First_Gift_To_Ldsp_Amt
+			, O.Donor_First_Gift_Date_Byu AS First_Gift_Date_Byu
+			, O.Donor_First_Gift_Date_Byui AS First_Gift_Date_Byui
+			, O.Donor_First_Gift_Date_Byuh AS First_Gift_Date_Byuh
+			, O.Donor_First_Gift_Date_Ldsbc AS First_Gift_Date_Ldsbc
+			, O.Donor_First_Gift_Date_Church AS First_Gift_Date_Church
+			, O.Donor_First_Gift_Date_Ldsp AS First_Gift_Date_Ldsp
+			, E.Total_Giving_With_Matching_Current_Year AS Total_Giving_Current_Year_With_Matching
+			, E.Total_Giving_With_Matching_Current_Year_Minus_1 AS Total_Giving_1_Years_Ago_With_Matching
+			, E.Total_Giving_With_Matching_Current_Year_Minus_2 AS Total_Giving_2_Years_Ago_With_Matching
+			, E.Total_Giving_With_Matching_Current_Year_Minus_3 AS Total_Giving_3_Years_Ago_With_Matching
+			, E.Total_Giving_With_Matching_Current_Year_Minus_4 AS Total_Giving_4_Years_Ago_With_Matching
+			, E.Total_Giving_With_Matching_Current_Year_Minus_5 AS Total_Giving_5_Years_Ago_With_Matching
+			' -- Ext_Select_Statement
+		, ' _Donor_Key_Dim A
+				LEFT JOIN _Primary_Contact_Dim B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN _Donor_Detail_Dim C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN _Total_Giving_Dim D ON A.Donor_Key = D.Donor_Key
+				LEFT JOIN _Total_Giving_With_Matching_Dim E ON A.Donor_Key = E.Donor_Key
+				LEFT JOIN _Donor_Name_Dim F ON A.Donor_Key = F.Donor_Key
+				LEFT JOIN _Donor_Connection_Dim G ON A.Donor_Key = G.Donor_Key
+				LEFT JOIN _Donor_Association_Dim H ON A.Donor_Key = H.Donor_Key
+				LEFT JOIN _Donor_Retention_Dim I ON A.Donor_Key = I.Donor_Key
+				LEFT JOIN _Donor_Lifetime_Giving_Dim J ON A.Donor_Key = J.Donor_Key
+				LEFT JOIN _Donor_Financial_Dim K ON A.Donor_Key = K.Donor_Key
+				LEFT JOIN _Donor_Giving_Dim L ON A.Donor_Key = L.Donor_Key
+				LEFT JOIN _Donor_Largest_Gift_Dim M ON A.Donor_Key = M.Donor_Key
+				LEFT JOIN _Donor_Most_Recent_Gift_Dim N ON A.Donor_Key = N.Donor_Key
+				LEFT JOIN _Donor_First_Gift_Dim O ON A.Donor_Key = O.Donor_Key
+			' -- Ext_From_Statement
+		, '	AND (H.Plus_CoordinatingLiaison_DomainName IS NOT NULL
+					OR H.Plus_PendingLiaison_DomainName IS NOT NULL
+					OR H.Plus_ConnectedLiaison_DomainName IS NOT NULL
+				)
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, '
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, '
+			' -- Ext_Create_Fields_2
+		, '
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' 
+			' -- Ext_Select_Statement_3
+		, '
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' 
+			'-- Ext_Create_Fields_4
+		, '
+			' -- Ext_Create_Fields_5
+		, '
+			' -- Ext_Insert_Fields_2
+		, '
+			' -- Ext_Insert_Fields_3
+		, '
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
+		, NULL -- Extra_7
+		, NULL -- Extra_8
+		, NULL -- Extra_9
+		, NULL -- Extra_10
+	)
+	,	
+-- --------------------------
+-- _Donor_Dim
+-- --------------------------
+	( 10 -- Tier
+		, ' ' -- Source_Table
+		, ' ' -- Destination_Table
+		, '_Donor_Dim' -- Ext_Table
+		, ' ' -- Dest_Create_Fields
+		, ' ' -- Dest_Insert_Fields
+		, ' ' -- Dest_Where_Statement
+		, 'Donor_Key  NVARCHAR(100)  PRIMARY KEY
+			, Activity_Group_Key  INT 
+			, Address_Group_Key  INT 
+			, Alumni_Group_Key  INT 
+			, Association_Group_Key  INT 
+			, Award_Group_Key  INT 
+			, Drop_Include_Group_Key  INT 
+			, Email_Group_Key  INT 
+			, Employment_Group_Key  INT 
+			, Language_Group_Key  INT 
+			, Phone_Group_Key  INT 
+			, Psa_Group_Key  INT 
+			, Connection_Group_Key INT
+			, Id_Group_Key INT
+			, Interest_Group_Key INT
+			, Affiliated_Key INT
+			, Student_Group_Key INT
+			, Donor_Ldsp_Id  NVARCHAR(100) 
+			, Donor_Contact_Type  NVARCHAR(100) 
+			, Donor_Organization_Id  NVARCHAR(100) 
+			, Donor_Name  NVARCHAR(160) 
+			, Donor_First_Name  NVARCHAR(50) 
+			, Donor_Middle_Name  NVARCHAR(50) 
+			, Donor_Last_Name  NVARCHAR(50) 
+			, Donor_Nick_Name  NVARCHAR(50) 
+			, Donor_Middle_Name2  NVARCHAR(100) 
+			, Donor_Last_Name2  NVARCHAR(100) 
+			, Donor_Preferred_Name  NVARCHAR(100) 
+			, Donor_Display_Name  NVARCHAR(100) 
+			, Donor_Maiden_Name  NVARCHAR(100) 
+			, Donor_Title  NVARCHAR(100) 
+			, Donor_Professional_Suffix  NVARCHAR(100) 
+			, Donor_Personal_Suffix  NVARCHAR(400) 
+			, Donor_Marriage_Status  NVARCHAR(400) 
+			, Donor_Spouses_Name  NVARCHAR(100) 
+			, Donor_Gender  NVARCHAR(400) 
+			, Donor_Lds_Member  NVARCHAR(400) 
+			, Donor_Current_Student_Yn  VARCHAR(1) 
+			, Donor_Birth_Dt  DATE 
+			, Donor_Birth_Dt_Day  NVARCHAR(100) 
+			, Donor_Birth_Dt_Month  NVARCHAR(100) 
+			, Donor_Birth_Dt_Year  NVARCHAR(100) 
+			, Donor_Deceased_Dt  DATE 
+			, Donor_Deceased_Dt_Day  NVARCHAR(100) 
+			, Donor_Deceased_Dt_Month  NVARCHAR(100) 
+			, Donor_Deceased_Dt_Year  NVARCHAR(100)  
+			, Donor_Wealth_Dt  DATE 
+			, Donor_Major_Gift_Propen  NVARCHAR(400) 
+			, Donor_Annual_Gift  NVARCHAR(400) 
+			, Donor_Planned_Gift  NVARCHAR(400) 
+			, Donor_Gift_Capacity_Enp  NVARCHAR(400) 
+			, Donor_Gift_Capacity_En  NVARCHAR(400) 
+			, Donor_Philan_Cap_Rating  NVARCHAR(400) 
+			, Donor_Est_Household_Income  NVARCHAR(400) 
+			, Donor_Est_Home_Market_Val  NVARCHAR(400) 
+			, Donor_Block_Clusters  NVARCHAR(400) 
+			, Donor_Individual_Infor_Envel  NVARCHAR(300) 
+			, Donor_Couple_Infor_Envel  NVARCHAR(300) 
+			, Donor_Individual_Form_Envel  NVARCHAR(300) 
+			, Donor_Couple_Form_Envel  NVARCHAR(300) 
+			, Donor_Country  NVARCHAR(100) 
+			, Donor_Org_Matches_Gifts_Yn  NVARCHAR(1) 
+			, Donor_Deceased_Yn  NVARCHAR(1) 
+			, Donor_Org_Allow_Mail_Yn  NVARCHAR(1) 
+			, Donor_Org_Allow_Bulk_Mail_Yn  NVARCHAR(1) 
+			, Donor_Org_Allow_Email_Yn  NVARCHAR(1) 
+			, Donor_Org_Allow_Bulk_Email_Yn  NVARCHAR(1) 
+			, Donor_Org_Allow_Phone_Yn  NVARCHAR(1) 
+			, Donor_Org_Allow_Fax_Yn  NVARCHAR(1) 
+			, Donor_Org_Class_Code  NVARCHAR(400) 
+			, Donor_Org_Retiree_Ratio  NVARCHAR(400) 
+			, Donor_Org_Split_Ratio  NVARCHAR(400) 
+			, Donor_Org_Matching_Ratio  NVARCHAR(400) 
+			, Donor_Org_Pref_Cont_Meth  NVARCHAR(400) 
+			, Donor_Org_Description  NVARCHAR(4000) 
+			, All_Personal_Connections NVARCHAR(4000)
+		' -- Ext_Create_Fields
+		, ' Donor_Key      
+			, Activity_Group_Key 
+			, Address_Group_Key 
+			, Alumni_Group_Key 
+			, Association_Group_Key 
+			, Award_Group_Key 
+			, Drop_Include_Group_Key 
+			, Email_Group_Key 
+			, Employment_Group_Key 
+			, Language_Group_Key 
+			, Phone_Group_Key 
+			, Psa_Group_Key 
+			, Connection_Group_Key
+			, Id_Group_Key
+			, Interest_Group_Key
+			, Affiliated_Key
+			, Student_Group_Key
+			, Donor_Ldsp_Id 
+			, Donor_Contact_Type 
+			, Donor_Organization_Id 
+			, Donor_Name 
+			, Donor_First_Name
+			, Donor_Middle_Name
+			, Donor_Last_Name 
+			, Donor_Nick_Name 
+			, Donor_Middle_Name2 
+			, Donor_Last_Name2
+			, Donor_Preferred_Name
+			, Donor_Display_Name
+			, Donor_Maiden_Name
+			, Donor_Title
+			, Donor_Professional_Suffix 
+			, Donor_Personal_Suffix 
+			, Donor_Marriage_Status 
+			, Donor_Spouses_Name 
+			, Donor_Gender  
+			, Donor_Lds_Member 
+			, Donor_Current_Student_Yn 
+			, Donor_Birth_Dt 
+			, Donor_Birth_Dt_Day 
+			, Donor_Birth_Dt_Month 
+			, Donor_Birth_Dt_Year 
+			, Donor_Deceased_Dt
+			, Donor_Deceased_Dt_Day 
+			, Donor_Deceased_Dt_Month
+			, Donor_Deceased_Dt_Year 
+			, Donor_Wealth_Dt
+			, Donor_Major_Gift_Propen 
+			, Donor_Annual_Gift 
+			, Donor_Planned_Gift
+			, Donor_Gift_Capacity_Enp 
+			, Donor_Gift_Capacity_En 
+			, Donor_Philan_Cap_Rating 
+			, Donor_Est_Household_Income 
+			, Donor_Est_Home_Market_Val 
+			, Donor_Block_Clusters
+			, Donor_Individual_Infor_Envel
+			, Donor_Couple_Infor_Envel 
+			, Donor_Individual_Form_Envel 
+			, Donor_Couple_Form_Envel 
+			, Donor_Country
+			, Donor_Org_Matches_Gifts_Yn
+			, Donor_Deceased_Yn
+			, Donor_Org_Allow_Mail_Yn
+			, Donor_Org_Allow_Bulk_Mail_Yn
+			, Donor_Org_Allow_Email_Yn
+			, Donor_Org_Allow_Bulk_Email_Yn 
+			, Donor_Org_Allow_Phone_Yn
+			, Donor_Org_Allow_Fax_Yn
+			, Donor_Org_Class_Code
+			, Donor_Org_Retiree_Ratio 
+			, Donor_Org_Split_Ratio
+			, Donor_Org_Matching_Ratio
+			, Donor_Org_Pref_Cont_Meth
+			, Donor_Org_Description 
+			, All_Personal_Connections
+			, Byu_Student_Id
+			, ByuI_Student_Id
+			, ByuH_Student_Id
+			, Ldsbc_Student_Id
+			, Byu_Employee_Id
+			, ByuI_Employee_Id
+			, ByuH_Employee_Id
+			, Ldsbc_Employee_Id
+			, Spouse_Name
+			, Spouse_LdspId
+			, Ces_Id
+			, Church_Payroll_Id
+			, Donor_Total_Name
+			, Donor_Total_Donation
+			, Plus_PreferredFirstName
+			, Plus_PreferredMiddleName
+			, Plus_PreferredLastName
+			, Plus_PreferredFullName
+			, Plus_SpousePreferredFirstName
+			, Plus_SpousePreferredMiddleName
+			, Plus_SpousePreferredLastName
+			, Plus_SpousePreferredFullName
+			, Plus_CoordinatingLiaison
+			, Plus_ConnectedLiaison
+			, Plus_PendingLiaison
+			, Byu_Degrees
+			, ByuI_Degrees
+			, ByuH_Degrees
+			, Ldsbc_Degrees
+			, Donor_Age
+			, General_Authority
+			, Emeritus_General_Authority
+			, Mission_President
+			, Temple_President
+			, All_Employment 
+			, Current_Employment
+			, Former_Employment
+			, Spouse_Phone_Number
+			, Spouse_Email 
+			, Spouse_First_Name
+			, Spouse_Last_Name
+			, Spouse_Birth_Date
+			, Spouse_Age
+			, Byu_Donor
+			, ByuI_Donor
+			, ByuH_Donor
+			, Ldsbc_Donor
+			, Cell_Phone
+		' -- Ext_Insert_Fields
+		, ' A.Donor_Key      
+			, Activity_Group_Key 
+			, Address_Group_Key 
+			, Alumni_Group_Key 
+			, Association_Group_Key 
+			, Award_Group_Key 
+			, Drop_Include_Group_Key 
+			, Email_Group_Key 
+			, Employment_Group_Key 
+			, Language_Group_Key 
+			, Phone_Group_Key 
+			, Psa_Group_Key 
+			, Connection_Group_Key
+			, Id_Group_Key
+			, Interest_Group_Key
+			, Affiliated_Key
+			, Student_Group_Key
+			, Donor_Ldsp_Id 
+			, Donor_Contact_Type 
+			, Donor_Organization_Id 
+			, Donor_Name 
+			, Donor_First_Name
+			, Donor_Middle_Name
+			, Donor_Last_Name 
+			, Donor_Nick_Name 
+			, Donor_Middle_Name2 
+			, Donor_Last_Name2
+			, Donor_Preferred_Name
+			, Donor_Display_Name
+			, Donor_Maiden_Name
+			, Donor_Title
+			, Donor_Professional_Suffix 
+			, Donor_Personal_Suffix 
+			, Donor_Marriage_Status 
+			, Donor_Spouses_Name 
+			, Donor_Gender 
+			, Donor_Lds_Member 
+			, Donor_Current_Student_Yn 
+			, Donor_Birth_Dt 
+			, Donor_Birth_Dt_Day 
+			, Donor_Birth_Dt_Month 
+			, Donor_Birth_Dt_Year 
+			, Donor_Deceased_Dt
+			, Donor_Deceased_Dt_Day 
+			, Donor_Deceased_Dt_Month
+			, Donor_Deceased_Dt_Year 
+			, Donor_Wealth_Dt
+			, Donor_Major_Gift_Propen 
+			, Donor_Annual_Gift 
+			, Donor_Planned_Gift
+			, Donor_Gift_Capacity_Enp 
+			, Donor_Gift_Capacity_En 
+			, Donor_Philan_Cap_Rating 
+			, Donor_Est_Household_Income 
+			, Donor_Est_Home_Market_Val 
+			, Donor_Block_Clusters
+			, Donor_Individual_Infor_Envel
+			, Donor_Couple_Infor_Envel 
+			, Donor_Individual_Form_Envel 
+			, Donor_Couple_Form_Envel 
+			, Donor_Country
+			, Donor_Org_Matches_Gifts_Yn
+			, Donor_Deceased_Yn
+			, Donor_Org_Allow_Mail_Yn
+			, Donor_Org_Allow_Bulk_Mail_Yn
+			, Donor_Org_Allow_Email_Yn
+			, Donor_Org_Allow_Bulk_Email_Yn 
+			, Donor_Org_Allow_Phone_Yn
+			, Donor_Org_Allow_Fax_Yn
+			, Donor_Org_Class_Code
+			, Donor_Org_Retiree_Ratio 
+			, Donor_Org_Split_Ratio
+			, Donor_Org_Matching_Ratio
+			, Donor_Org_Pref_Cont_Meth
+			, Donor_Org_Description 
+			, All_Personal_Connections
+			, Byu_Student_Id
+			, ByuI_Student_Id
+			, ByuH_Student_Id
+			, Ldsbc_Student_Id
+			, Byu_Employee_Id
+			, ByuI_Employee_Id
+			, ByuH_Employee_Id
+			, Ldsbc_Employee_Id
+			, Spouse_Name
+			, Spouse_LdspId
+			, Ces_Id
+			, Church_Payroll_Id
+			, Donor_Total_Name
+			, Donor_Total_Donation
+			, Plus_PreferredFirstName
+			, Plus_PreferredMiddleName
+			, Plus_PreferredLastName
+			, Plus_PreferredFullName
+			, Plus_SpousePreferredFirstName
+			, Plus_SpousePreferredMiddleName
+			, Plus_SpousePreferredLastName
+			, Plus_SpousePreferredFullName
+			, Plus_CoordinatingLiaison
+			, Plus_ConnectedLiaison
+			, Plus_PendingLiaison
+			, Byu_Degrees
+			, ByuI_Degrees
+			, ByuH_Degrees
+			, Ldsbc_Degrees
+			, Donor_Age
+			, General_Authority
+			, Emeritus_General_Authority
+			, Mission_President
+			, Temple_President
+			, All_Employment 
+			, Current_Employment
+			, Former_Employment
+			, Spouse_Phone_Number
+			, Spouse_Email 
+			, Spouse_First_Name
+			, Spouse_Last_Name
+			, Spouse_Birth_Date
+			, Spouse_Age
+			, Byu_Donor
+			, ByuI_Donor
+			, ByuH_Donor
+			, Ldsbc_Donor
+			, Cell_Phone
+		' -- Ext_Select_Statement
+		, ' _Donor_Key_Dim A
+				LEFT JOIN _Donor_Name_Dim B ON A.Donor_Key = B.Donor_Key
+				LEFT JOIN _Donor_Detail_Dim C ON A.Donor_Key = C.Donor_Key
+				LEFT JOIN _Donor_Association_Dim D ON A.Donor_Key = D.Donor_Key
+				LEFT JOIN _Donor_Connection_Dim E ON A.Donor_Key = E.Donor_Key
+				LEFT JOIN _Donor_Organization_Dim F ON A.Donor_Key = F.Donor_Key
+				LEFT JOIN _Donor_Education_Dim G ON A.Donor_Key = G.Donor_Key
+				LEFT JOIN _Donor_Financial_Dim H ON A.Donor_Key = H.Donor_Key
+				LEFT JOIN _Donor_Giving_Dim I ON A.Donor_Key = I.Donor_Key
+				LEFT JOIN _Donor_Lifetime_Giving_Dim J ON A.Donor_Key = J.Donor_Key
+				LEFT JOIN _Donor_First_Gift_Dim K ON A.Donor_Key = K.Donor_Key
+				LEFT JOIN _Donor_Most_Recent_Gift_Dim L ON A.Donor_Key = L.Donor_Key
+				LEFT JOIN _Donor_Largest_Gift_Dim M ON A.Donor_Key = M.Donor_Key
+				LEFT JOIN _Donor_Employment_Dim N ON A.Donor_Key = N.Donor_Key
+				LEFT JOIN _Donor_Recurring_Gift_Dim O ON A.Donor_Key = O.Donor_Key
+				LEFT JOIN _Donor_Retention_Dim P ON A.Donor_Key = P.Donor_Key
+				LEFT JOIN _Donor_Telefund_Dim Q ON A.Donor_Key = Q.Donor_Key
+				LEFT JOIN _Donor_Initiative_Dim R ON A.Donor_Key = R.Donor_Key
+				LEFT JOIN _Total_Giving_Dim S ON A.Donor_Key = S.Donor_Key
+				LEFT JOIN _Total_Giving_With_Matching_Dim T ON A.Donor_Key = T.Donor_Key
+			' -- Ext_From_Statement
+		, ' AND A.Donor_Key IS NOT NULL
+			' -- Ext_Where_Statement
+		, NULL -- Tier_3_Stage
+		, NULL -- Tier_3_Stage_DateTime
+		, NULL -- Tier_4_Stage
+		, NULL -- Tier_4_Stage_DateTime
+		, ' , Current_Employer_Name
+			, Current_Job_Title
+			, Current_Job_Code
+			, Current_Job_Date_Started
+			, Current_Job_Work_Phone
+			, Current_Job_Work_Address
+			, Total_Giving_Current_Year AS Donor_Total_Giving_Current_Year
+			, Total_Giving_Current_Year_Minus_1 AS Donor_Total_Giving_Current_Year_Minus_1
+			, Total_Giving_Current_Year_Minus_2 AS Donor_Total_Giving_Current_Year_Minus_2
+			, Total_Giving_Current_Year_Minus_3 AS Donor_Total_Giving_Current_Year_Minus_3
+			, Donor_Any_School_Current_Student
+			, Donor_BYU_Current_Student
+			, Donor_BYUI_Current_Student
+			, Donor_BYUH_Current_Student
+			, Donor_LDSBC_Current_Student
+			, Donor_Given_This_Year_To_Byu
+			, Donor_Given_This_Year_To_ByuI
+			, Donor_Given_This_Year_To_ByuH
+			, Donor_Given_This_Year_To_LDSBC
+			, Donor_Byu_Plc
+			, Donor_Byuh_Plc
+			, Donor_Nac
+			, Donor_Byu_Law_Grads
+			, Donor_Byu_Msm_Grads
+			, Donor_Open_Byu_Telefund_Pledge
+			, Donor_Open_Byui_Telefund_Pledge
+			, Donor_Open_Byuh_Telefund_Pledge
+			, Donor_Open_Ldsbc_Telefund_Pledge
+			, Donor_Byu_Recurring_Donor
+			, Donor_Byui_Recurring_Donor
+			, Donor_Byuh_Recurring_Donor
+			, Donor_Ldsbc_Recurring_Donor
+			, Donor_Ldsp_Text_Lines
+			, Donor_Largest_Gift_Amt_Byu
+			, Donor_Largest_Gift_Amt_Byui
+			, Donor_Largest_Gift_Amt_Byuh
+			, Donor_Largest_Gift_Amt_Ldsbc
+			, Donor_Retention_Type_Code_Byu
+			, Donor_Retention_Type_Code_Byui
+			, Donor_Retention_Type_Code_Byuh
+			, Donor_Retention_Type_Code_Ldsbc
+			, Total_Giving_Current_Year_Byu AS Donor_Total_Giving_To_Byu_Current_Year_Amt
+			, Total_Giving_Current_Year_Minus_1_Byu AS Donor_Total_Giving_To_Byu_Current_Year_Minus_1_Amt
+			, Total_Giving_Current_Year_Minus_2_Byu AS Donor_Total_Giving_To_Byu_Current_Year_Minus_2_Amt
+			, Total_Giving_Current_Year_Minus_3_Byu AS Donor_Total_Giving_To_Byu_Current_Year_Minus_3_Amt
+			, Total_Giving_Current_Year_Byui AS Donor_Total_Giving_To_Byui_Current_Year_Amt
+			, Total_Giving_Current_Year_Minus_1_Byui AS Donor_Total_Giving_To_Byui_Current_Year_Minus_1_Amt
+			, Total_Giving_Current_Year_Minus_2_Byui AS Donor_Total_Giving_To_Byui_Current_Year_Minus_2_Amt
+			, Total_Giving_Current_Year_Minus_3_Byui AS Donor_Total_Giving_To_Byui_Current_Year_Minus_3_Amt
+			, Total_Giving_Current_Year_Byuh AS Donor_Total_Giving_To_Byuh_Current_Year_Amt
+			, Total_Giving_Current_Year_Minus_1_Byuh AS Donor_Total_Giving_To_Byuh_Current_Year_Minus_1_Amt
+			, Total_Giving_Current_Year_Minus_2_Byuh AS Donor_Total_Giving_To_Byuh_Current_Year_Minus_2_Amt
+			, Total_Giving_Current_Year_Minus_3_Byuh AS Donor_Total_Giving_To_Byuh_Current_Year_Minus_3_Amt
+			, Total_Giving_Current_Year_Ldsbc AS Donor_Total_Giving_To_Ldsbc_Current_Year_Amt
+			, Total_Giving_Current_Year_Minus_1_Ldsbc AS Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_1_Amt
+			, Total_Giving_Current_Year_Minus_2_Ldsbc AS Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_2_Amt
+			, Total_Giving_Current_Year_Minus_3_Ldsbc AS Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_3_Amt
+			, Total_Giving_Current_Year_Minus_4_Byu AS Donor_Total_Giving_To_Byu_Current_Year_Minus_4_Amt
+			, Total_Giving_Current_Year_Minus_5_Byu AS Donor_Total_Giving_To_Byu_Current_Year_Minus_5_Amt
+			, Total_Giving_Current_Year_Minus_4_Byui AS Donor_Total_Giving_To_Byui_Current_Year_Minus_4_Amt
+			, Total_Giving_Current_Year_Minus_5_Byui AS Donor_Total_Giving_To_Byui_Current_Year_Minus_5_Amt
+			' -- Ext_Select_Statement_2
+		, '										 
+			' -- Ext_From_Statement_2
+		, ' , Byu_Student_Id NVARCHAR(100)
+			, ByuI_Student_Id NVARCHAR(100)
+			, ByuH_Student_Id NVARCHAR(100)
+			, Ldsbc_Student_Id NVARCHAR(100)
+			, Byu_Employee_Id NVARCHAR(100)
+			, ByuI_Employee_Id NVARCHAR(100)
+			, ByuH_Employee_Id NVARCHAR(100)
+			, Ldsbc_Employee_Id NVARCHAR(100)
+			, Spouse_Name NVARCHAR(100)
+			, Spouse_LdspId INT
+			, Ces_Id NVARCHAR(100)
+			, Church_Payroll_Id NVARCHAR(100)
+			, Donor_Total_Name  NVARCHAR(200)
+			, Donor_Total_Donation NVARCHAR(50)
+			, Plus_PreferredFirstName NVARCHAR(100)
+			, Plus_PreferredMiddleName NVARCHAR(100)
+			, Plus_PreferredLastName NVARCHAR(100)
+			, Plus_PreferredFullName NVARCHAR(100)
+			, Plus_SpousePreferredFirstName NVARCHAR(100)
+			, Plus_SpousePreferredMiddleName NVARCHAR(100)
+			, Plus_SpousePreferredLastName NVARCHAR(100)
+			, Plus_SpousePreferredFullName NVARCHAR(100)
+			, Plus_CoordinatingLiaison NVARCHAR(200)
+			, Plus_ConnectedLiaison NVARCHAR(200)
+			, Plus_PendingLiaison NVARCHAR(200)
+			, Byu_Degrees NVARCHAR(4000)
+			, ByuI_Degrees NVARCHAR(4000)
+			, ByuH_Degrees NVARCHAR(4000)
+			, Ldsbc_Degrees NVARCHAR(4000)
+			, Donor_Age INT
+			, General_Authority NVARCHAR(1)
+			, Emeritus_General_Authority NVARCHAR(1)
+			, Mission_President NVARCHAR(1)
+			, Temple_President NVARCHAR(1)
+			, All_Employment NVARCHAR(4000) 
+			, Current_Employment NVARCHAR(4000)
+			, Former_Employment NVARCHAR(4000)
+			, Spouse_Phone_Number NVARCHAR(100)
+			, Spouse_Email NVARCHAR(100) 
+			, Spouse_First_Name NVARCHAR(100)
+			, Spouse_Last_Name NVARCHAR(100)
+			, Spouse_Birth_Date DATE
+			, Spouse_Age INT
+			, Byu_Donor NVARCHAR(1)
+			, ByuI_Donor NVARCHAR(1)
+			, ByuH_Donor NVARCHAR(1)
+			, Ldsbc_Donor NVARCHAR(1)
+			, Cell_Phone NVARCHAR(100)
+			, Current_Employer_Name NVARCHAR(160)
+			, Current_Job_Title NVARCHAR(100)
+			, Current_Job_Code NVARCHAR(100)
+			, Current_Job_Date_Started DATE
+			, Current_Job_Work_Phone NVARCHAR(100)
+			, Current_Job_Work_Address NVARCHAR(300)
+			, Donor_Total_Giving_Current_Year MONEY
+			, Donor_Total_Giving_Current_Year_Minus_1 MONEY
+			, Donor_Total_Giving_Current_Year_Minus_2 MONEY
+			, Donor_Total_Giving_Current_Year_Minus_3 MONEY
+			, Donor_Any_School_Current_Student NVARCHAR(1)
+			, Donor_BYU_Current_Student NVARCHAR(1)
+			, Donor_BYUI_Current_Student NVARCHAR(1)
+			, Donor_BYUH_Current_Student NVARCHAR(1)
+			, Donor_LDSBC_Current_Student NVARCHAR(1)
+			, Donor_Given_This_Year_To_Byu NVARCHAR(1)
+			, Donor_Given_This_Year_To_ByuI NVARCHAR(1)
+			, Donor_Given_This_Year_To_ByuH NVARCHAR(1)
+			, Donor_Given_This_Year_To_LDSBC NVARCHAR(1)
+			, Donor_Byu_Plc NVARCHAR(1)
+			, Donor_Byuh_Plc NVARCHAR(1)
+			, Donor_Nac NVARCHAR(1)
+			, Donor_Byu_Law_Grads NVARCHAR(1)
+			, Donor_Byu_Msm_Grads NVARCHAR(1)
+			, Donor_Open_Byu_Telefund_Pledge NVARCHAR(1)
+			, Donor_Open_Byui_Telefund_Pledge NVARCHAR(1)
+			, Donor_Open_Byuh_Telefund_Pledge NVARCHAR(1)
+			, Donor_Open_Ldsbc_Telefund_Pledge NVARCHAR(1)
+			, Donor_Byu_Recurring_Donor NVARCHAR(1)
+			, Donor_Byui_Recurring_Donor NVARCHAR(1)
+			, Donor_Byuh_Recurring_Donor NVARCHAR(1)
+			, Donor_Ldsbc_Recurring_Donor NVARCHAR(1)
+			, Donor_Ldsp_Text_Lines NVARCHAR(4000)
+			, Donor_Largest_Gift_Amt_Byu MONEY
+			, Donor_Largest_Gift_Amt_Byui MONEY
+			, Donor_Largest_Gift_Amt_Byuh MONEY
+			, Donor_Largest_Gift_Amt_Ldsbc MONEY
+			, Donor_Retention_Type_Code_Byu NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc NVARCHAR(2)
+			' -- Ext_Create_Fields_2
+		, ' , Donor_Total_Giving_To_Byu_Current_Year_Amt MONEY
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_1_Amt  MONEY
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_2_Amt  MONEY
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_3_Amt  MONEY
+			, Donor_Total_Giving_To_Byui_Current_Year_Amt  MONEY
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_1_Amt  MONEY
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_2_Amt  MONEY
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_3_Amt  MONEY
+			, Donor_Total_Giving_To_Byuh_Current_Year_Amt  MONEY
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_1_Amt MONEY
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_2_Amt MONEY
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_3_Amt  MONEY
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Amt  MONEY
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_1_Amt  MONEY
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_2_Amt  MONEY
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_3_Amt  MONEY
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_4_Amt  MONEY
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_5_Amt  MONEY
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_4_Amt  MONEY
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_5_Amt  MONEY
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_4_Amt MONEY
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_5_Amt MONEY
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_4_Amt  MONEY
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_5_Amt  MONEY
+			, Donor_Total_Giving_Current_Year_Minus_4_Amt  MONEY
+			, Donor_Total_Giving_Current_Year_Minus_5_Amt  MONEY
+			, Donor_Total_Giving_Byu_High_Flag NVARCHAR(1)
+			, Donor_Total_Giving_Byui_High_Flag NVARCHAR(1)
+			, Donor_Total_Giving_Byuh_High_Flag NVARCHAR(1)
+			, Donor_Total_Giving_Ldsbc_High_Flag NVARCHAR(1)
+			, Current_Byu_Employment_Yn NVARCHAR(1)
+			, Current_Byui_Employment_Yn NVARCHAR(1)
+			, Current_Byuh_Employment_Yn NVARCHAR(1)
+			, Current_Ldsbc_Employment_Yn NVARCHAR(1)
+			, Informal_Mailing_Name NVARCHAR(300)
+			, Informal_Salutation NVARCHAR(200)
+			, Byu_Night_Society_Member NVARCHAR(1)
+			, Byui_Legacy_Society_Member NVARCHAR(1)
+			, Byuh_Cowley_Society_Member NVARCHAR(1)
+			, Ldsbc_Fox_Society_Member NVARCHAR(1)
+			, Donor_Spouse_Coordinating_Liaison NVARCHAR(400)
+			, Donor_Previously_Contacted_Byu_Yn NVARCHAR(1)
+			, Donor_Previously_Contacted_Byui_Yn NVARCHAR(1)
+			, Donor_Previously_Contacted_Byuh_Yn NVARCHAR(1)
+			, Donor_Previously_Contacted_Ldsbc_Yn NVARCHAR(1)
+			, Donor_Given_Last_3_Months_To_Byu NVARCHAR(1)
+			, Donor_Given_Last_3_Months_To_Byui NVARCHAR(1)
+			, Donor_Given_Last_3_Months_To_Byuh NVARCHAR(1)
+			, Donor_Given_Last_3_Months_To_Ldsbc NVARCHAR(1)
+			, Donor_Given_Last_3_Months_To_Church NVARCHAR(1)
+			, Donor_Liaison_Connections NVARCHAR(4000)
+			, Donor_Total_Lifetime_Giving MONEY
+			, Donor_Total_Lifetime_Giving_Last_5_Years MONEY
+			, Donor_Total_Lifetime_Giving_Byu MONEY
+			, Donor_Total_Lifetime_Giving_Byui MONEY
+			, Donor_Total_Lifetime_Giving_Byuh MONEY
+			, Donor_Total_Lifetime_Giving_Ldsbc MONEY
+			, Donor_Total_Lifetime_Giving_Church MONEY
+			, Donor_Total_Lifetime_Giving_Pcc MONEY
+			, Donor_Total_Lifetime_Giving_Ces MONEY
+			, Donor_Most_Recent_Gift_Date_Ldsp DATE
+			, Donor_Most_Recent_Gift_Date_Byu DATE
+			, Donor_Most_Recent_Gift_Date_Byui DATE
+			, Donor_Most_Recent_Gift_Date_Byuh DATE
+			, Donor_Most_Recent_Gift_Date_Ldsbc DATE
+			, Donor_Most_Recent_Gift_Date_Church DATE
+			, Donor_Ldsp_Largest_Gift MONEY
+			' -- Ext_Create_Fields_3
+		, ' ' -- Ext_Where_Statement_2
+		, ' ' -- Ext_Where_Statement_3
+		, NULL -- Tier_5_Stage
+		, NULL -- Tier_5_Stage_DateTime
+		, NULL -- Tier_6_Stage
+		, NULL -- Tier_6_Stage_DateTime
+		, NULL -- Tier_7_Stage
+		, NULL -- Tier_7_Stage_DateTime
+		, NULL -- Tier_8_Stage
+		, NULL -- Tier_8_Stage_DateTime
+		, NULL -- Tier_9_Stage
+		, NULL -- Tier_9_Stage_DateTime
+		, 1
+		, NULL -- Extract_Stage
+		, NULL -- Extract_Stage_DateTime
+		, NULL -- Coupler_Stage
+		, NULL -- Coupler_Stage_DateTime
+		, NULL -- Tier_2_Stage
+		, NULL -- Tier_2_Stage_DateTime
+		, GETDATE()
+		, NULL
+		, ' , Total_Giving_Current_Year_Minus_4_Byuh AS Donor_Total_Giving_To_Byuh_Current_Year_Minus_4_Amt
+			, Total_Giving_Current_Year_Minus_5_Byuh AS Donor_Total_Giving_To_Byuh_Current_Year_Minus_5_Amt
+			, Total_Giving_Current_Year_Minus_4_Ldsbc AS Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_4_Amt
+			, Total_Giving_Current_Year_Minus_5_Ldsbc AS Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_5_Amt
+			, Total_Giving_Current_Year_Minus_4 AS Donor_Total_Giving_Current_Year_Minus_4_Amt
+			, Total_Giving_Current_Year_Minus_5 AS Donor_Total_Giving_Current_Year_Minus_5_Amt			
+			, Donor_Total_Giving_Byu_High_Flag
+			, Donor_Total_Giving_Byui_High_Flag
+			, Donor_Total_Giving_Byuh_High_Flag
+			, Donor_Total_Giving_Ldsbc_High_Flag
+			, Current_Byu_Employment_Yn
+			, Current_Byui_Employment_Yn
+			, Current_Byuh_Employment_Yn
+			, Current_Ldsbc_Employment_Yn
+			, Informal_Mailing_Name
+			, Informal_Salutation
+			, Byu_Night_Society_Member
+			, Byui_Legacy_Society_Member
+			, Byuh_Cowley_Society_Member
+			, Ldsbc_Fox_Society_Member
+			, Donor_Spouse_Coordinating_Liaison
+			, Donor_Previously_Contacted_Byu_Yn
+			, Donor_Previously_Contacted_Byui_Yn
+			, Donor_Previously_Contacted_Byuh_Yn
+			, Donor_Previously_Contacted_Ldsbc_Yn
+			, Donor_Given_Last_3_Months_To_Byu
+			, Donor_Given_Last_3_Months_To_Byui
+			, Donor_Given_Last_3_Months_To_Byuh
+			, Donor_Given_Last_3_Months_To_Ldsbc
+			, Donor_Given_Last_3_Months_To_Church
+			, Donor_Liaison_Connections
+			, Donor_Total_Lifetime_Giving
+			, Donor_Total_Lifetime_Giving_Last_5_Years
+			, Donor_Total_Lifetime_Giving_Byu
+			, Donor_Total_Lifetime_Giving_Byui
+			, Donor_Total_Lifetime_Giving_Byuh
+			, Donor_Total_Lifetime_Giving_Ldsbc
+			, Donor_Total_Lifetime_Giving_Church
+			, Donor_Total_Lifetime_Giving_Pcc
+			, Donor_Total_Lifetime_Giving_Ces
+			, Donor_Most_Recent_Gift_Date_Ldsp
+			, Donor_Most_Recent_Gift_Date_Byu
+			, Donor_Most_Recent_Gift_Date_Byui
+			, Donor_Most_Recent_Gift_Date_Byuh
+			, Donor_Most_Recent_Gift_Date_Ldsbc
+			, Donor_Most_Recent_Gift_Date_Church
+			, Donor_Ldsp_Largest_Gift
+			, Donor_First_Gift_Post_Date_Byu
+			, Donor_First_Gift_Post_Date_Byui
+			, Donor_First_Gift_Post_Date_Byuh
+			, Donor_First_Gift_Post_Date_Ldsbc
+			, Donor_Furthest_Initiative_Stage
+			, Donor_Number_Of_Open_Initiatives
+			, Donor_Total_Lifetime_Giving_To_Byu_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Byui_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Byuh_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Ldsbc_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Church_Last_5_Years
+			, Donor_Most_Recent_Gift_To_Ldsp_Amt
+			, Donor_Most_Recent_Gift_To_Byu_Amt
+			, Donor_Most_Recent_Gift_To_Byui_Amt
+			, Donor_Most_Recent_Gift_To_Byuh_Amt
+			, Donor_Most_Recent_Gift_To_Ldsbc_Amt
+			, Donor_Most_Recent_Gift_To_Church_Amt
+			, Donor_Last_F2F_Visit_Date
+			, Donor_Type_Code_Ldsp
+			, Donor_Largest_Gift_Amt_Church
+			, Donor_Largest_Gift_Date_Ldsp
+			, Donor_Largest_Gift_Date_Byu
+			, Donor_Largest_Gift_Date_Byui
+			, Donor_Largest_Gift_Date_Byuh
+			, Donor_Largest_Gift_Date_Ldsbc
+			, Donor_Largest_Gift_Date_Church
+			, Donor_Institution_Giving_Areas
+			, Donor_Byu_Giving_Areas
+			, Donor_Church_Giving_Areas
+			, Donor_Pledge_Reminder_Email_Content_Byu
+			, Donor_Pledge_Reminder_Email_Content_Byui
+			, Donor_Pledge_Reminder_Email_Content_Byuh
+			, Donor_Pledge_Reminder_Email_Content_Ldsbc
+			, Donor_Total_Name_Display
+			, Plus_CoordinatingLiaison_DomainName
+			' -- Ext_Select_Statement_3
+		, ' , Plus_PendingLiaison_DomainName
+			, Plus_ConnectedLiaison_DomainName
+			, Donor_Gift_Count_Previous_5_Years
+			, Donor_Average_Single_Gift_Previous_5_Years
+			, Donor_Is_Qualified
+			, R.Donor_Qualified_On 
+			, R.Donor_Qualified_By
+			, Donor_First_Recurring_Rule_Date_Byu
+			, Donor_First_Recurring_Rule_Date_Byui
+			, Donor_First_Recurring_Rule_Date_Byuh
+			, Donor_First_Recurring_Rule_Date_Ldsbc
+			, Donor_Recurring_Total_Last_Month_Byu
+			, Donor_Recurring_Total_Last_Month_Byui
+			, Donor_Recurring_Total_Last_Month_Byuh
+			, Donor_Recurring_Total_Last_Month_Ldsbc
+			, Donor_Recurring_Total_Month_Before_Last_Byu
+			, Donor_Recurring_Total_Month_Before_Last_Byui
+			, Donor_Recurring_Total_Month_Before_Last_Byuh
+			, Donor_Recurring_Total_Month_Before_Last_Ldsbc
+			, Donor_Recurring_Gift_Upgrade_Byu
+			, Donor_Recurring_Gift_Upgrade_Byui
+			, Donor_Recurring_Gift_Upgrade_Byuh
+			, Donor_Recurring_Gift_Upgrade_Ldsbc			
+			, Total_Giving_Current_Year_Church AS Donor_Total_Giving_To_Church_Current_Year_Amt
+			, Total_Giving_Current_Year_Minus_1_Church AS Donor_Total_Giving_To_Church_Current_Year_Minus_1_Amt
+			, Total_Giving_Current_Year_Minus_2_Church AS Donor_Total_Giving_To_Church_Current_Year_Minus_2_Amt
+			, Total_Giving_Current_Year_Minus_3_Church AS Donor_Total_Giving_To_Church_Current_Year_Minus_3_Amt
+			, Total_Giving_Current_Year_Minus_4_Church AS Donor_Total_Giving_To_Church_Current_Year_Minus_4_Amt
+			, Total_Giving_Current_Year_Minus_5_Church AS Donor_Total_Giving_To_Church_Current_Year_Minus_5_Amt			
+			, Donor_Retention_Type_Code_Byu_Minus_1
+			, Donor_Retention_Type_Code_Byu_Minus_2
+			, Donor_Retention_Type_Code_Byu_Minus_3
+			, Donor_Retention_Type_Code_Byu_Minus_4
+			, Donor_Retention_Type_Code_Byu_Minus_5
+			, Donor_Retention_Type_Code_Byui_Minus_1
+			, Donor_Retention_Type_Code_Byui_Minus_2
+			, Donor_Retention_Type_Code_Byui_Minus_3
+			, Donor_Retention_Type_Code_Byui_Minus_4
+			, Donor_Retention_Type_Code_Byui_Minus_5
+			, Donor_Retention_Type_Code_Byuh_Minus_1
+			, Donor_Retention_Type_Code_Byuh_Minus_2
+			, Donor_Retention_Type_Code_Byuh_Minus_3
+			, Donor_Retention_Type_Code_Byuh_Minus_4
+			, Donor_Retention_Type_Code_Byuh_Minus_5
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5
+			, Donor_First_Gift_To_Byu_Amt
+			, Donor_First_Gift_To_Byui_Amt
+			, Donor_First_Gift_To_Byuh_Amt
+			, Donor_First_Gift_To_Ldsbc_Amt
+			, Donor_First_Gift_To_Church_Amt
+			, Donor_First_Gift_To_Ldsp_Amt
+			, Donor_First_Gift_Date_Byu
+			, Donor_First_Gift_Date_Byui
+			, Donor_First_Gift_Date_Byuh
+			, Donor_First_Gift_Date_Ldsbc
+			, Donor_First_Gift_Date_Church
+			, Donor_First_Gift_Date_Ldsp
+			, Donor_Spouse_Middle_Name
+			, Donor_Spouse_Birth_Name			
+			, Total_Giving_With_Matching_Current_Year AS Donor_Total_Giving_Current_Year_With_Matching 
+			, Total_Giving_With_Matching_Current_Year_Minus_1 AS Donor_Total_Giving_Current_Year_Minus_1_With_Matching
+			, Total_Giving_With_Matching_Current_Year_Minus_2 AS Donor_Total_Giving_Current_Year_Minus_2_With_Matching
+			, Total_Giving_With_Matching_Current_Year_Minus_3 AS Donor_Total_Giving_Current_Year_Minus_3_With_Matching
+			, Total_Giving_With_Matching_Current_Year_Minus_4 AS Donor_Total_Giving_Current_Year_Minus_4_With_Matching
+			, Total_Giving_With_Matching_Current_Year_Minus_5 AS Donor_Total_Giving_Current_Year_Minus_5_With_Matching			
+			, Donor_Lds_TelefundNotes
+			' -- Ext_Select_Statement_4
+		, NULL -- Ext_Select_Statement_5
+		, NULL -- Ext_Select_Statement_6
+		, NULL -- Ext_Select_Statement_7
+		, '
+			' -- Ext_From_Statement_3
+		, '
+			' -- Ext_From_Statement_4
+		, NULL -- Ext_From_Statement_5
+		, NULL -- Ext_From_Statement_6
+		, NULL -- Ext_From_Statement_7
+		, NULL -- Ext_Where_Statement_4
+		, NULL -- Ext_Where_Statement_5
+		, NULL -- Ext_Where_Statement_6
+		, NULL -- Ext_Where_Statement_7
+		, NULL -- Tier_10_Stage
+		, NULL -- Tier_10_Stage_DateTime
+		, NULL -- Tier_11_Stage
+		, NULL -- Tier_11_Stage_DateTime
+		, NULL -- Tier_12_Stage
+		, NULL -- Tier_12_Stage_DateTime
+		, ' , Donor_First_Gift_Post_Date_Byu DATE
+			, Donor_First_Gift_Post_Date_Byui DATE
+			, Donor_First_Gift_Post_Date_Byuh DATE
+			, Donor_First_Gift_Post_Date_Ldsbc DATE
+			, Donor_Furthest_Initiative_Stage NVARCHAR(400)
+			, Donor_Number_Of_Open_Initiatives INT
+			, Donor_Total_Lifetime_Giving_To_Byu_Last_5_Years MONEY
+			, Donor_Total_Lifetime_Giving_To_Byui_Last_5_Years MONEY
+			, Donor_Total_Lifetime_Giving_To_Byuh_Last_5_Years MONEY
+			, Donor_Total_Lifetime_Giving_To_Ldsbc_Last_5_Years MONEY
+			, Donor_Total_Lifetime_Giving_To_Church_Last_5_Years MONEY
+			, Donor_Most_Recent_Gift_To_Ldsp_Amt MONEY
+			, Donor_Most_Recent_Gift_To_Byu_Amt MONEY
+			, Donor_Most_Recent_Gift_To_Byui_Amt MONEY
+			, Donor_Most_Recent_Gift_To_Byuh_Amt MONEY
+			, Donor_Most_Recent_Gift_To_Ldsbc_Amt MONEY
+			, Donor_Most_Recent_Gift_To_Church_Amt MONEY
+			, Donor_Last_F2F_Visit_Date DATE
+			, Donor_Type_Code_Ldsp NVARCHAR(2)
+			, Donor_Largest_Gift_Amt_Church MONEY
+			, Donor_Largest_Gift_Date_Ldsp DATE
+			, Donor_Largest_Gift_Date_Byu DATE
+			, Donor_Largest_Gift_Date_Byui DATE
+			, Donor_Largest_Gift_Date_Byuh DATE
+			, Donor_Largest_Gift_Date_Ldsbc DATE
+			, Donor_Largest_Gift_Date_Church DATE
+			, Donor_Institution_Giving_Areas NVARCHAR(1000)
+			, Donor_Byu_Giving_Areas NVARCHAR(2000)
+			, Donor_Church_Giving_Areas NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Byu NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Byui NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Byuh NVARCHAR(2000)
+			, Donor_Pledge_Reminder_Email_Content_Ldsbc NVARCHAR(2000)
+			, Donor_Total_Name_Display NVARCHAR(200)
+			, Plus_CoordinatingLiaison_DomainName NVARCHAR(1024)
+			, Plus_PendingLiaison_DomainName NVARCHAR(1024)
+			, Plus_ConnectedLiaison_DomainName NVARCHAR(1024)
+			, Donor_Gift_Count_Previous_5_Years INT
+			, Donor_Average_Single_Gift_Previous_5_Years MONEY
+			, Donor_Is_Qualified NVARCHAR(1)
+			, Donor_Qualified_On DATE 
+			, Donor_Qualified_By NVARCHAR(200)
+			, Donor_First_Recurring_Rule_Date_Byu DATE
+			, Donor_First_Recurring_Rule_Date_Byui DATE
+			, Donor_First_Recurring_Rule_Date_Byuh DATE
+			, Donor_First_Recurring_Rule_Date_Ldsbc DATE
+			, Donor_Recurring_Total_Last_Month_Byu MONEY
+			, Donor_Recurring_Total_Last_Month_Byui MONEY
+			, Donor_Recurring_Total_Last_Month_Byuh MONEY
+			, Donor_Recurring_Total_Last_Month_Ldsbc MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Byu MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Byui MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Byuh MONEY
+			, Donor_Recurring_Total_Month_Before_Last_Ldsbc MONEY
+			, Donor_Recurring_Gift_Upgrade_Byu NVARCHAR(1)
+			, Donor_Recurring_Gift_Upgrade_Byui NVARCHAR(1)
+			, Donor_Recurring_Gift_Upgrade_Byuh NVARCHAR(1)
+			, Donor_Recurring_Gift_Upgrade_Ldsbc NVARCHAR(1)
+			, Donor_Total_Giving_To_Church_Current_Year_Amt MONEY
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_1_Amt MONEY
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_2_Amt MONEY
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_3_Amt MONEY
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_4_Amt MONEY
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_5_Amt MONEY
+			, Donor_Retention_Type_Code_Byu_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byu_Minus_5 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byui_Minus_5 NVARCHAR(2) 
+			'-- Ext_Create_Fields_4
+		, ' , Donor_Retention_Type_Code_Byuh_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Byuh_Minus_5 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4 NVARCHAR(2)
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5 NVARCHAR(2)
+			, Donor_First_Gift_To_Byu_Amt MONEY
+			, Donor_First_Gift_To_Byui_Amt MONEY
+			, Donor_First_Gift_To_Byuh_Amt MONEY
+			, Donor_First_Gift_To_Ldsbc_Amt MONEY
+			, Donor_First_Gift_To_Church_Amt MONEY
+			, Donor_First_Gift_To_Ldsp_Amt MONEY
+			, Donor_First_Gift_Date_Byu DATE
+			, Donor_First_Gift_Date_Byui DATE
+			, Donor_First_Gift_Date_Byuh DATE
+			, Donor_First_Gift_Date_Ldsbc DATE
+			, Donor_First_Gift_Date_Church DATE
+			, Donor_First_Gift_Date_Ldsp DATE
+			, Donor_Spouse_Middle_Name NVARCHAR(50)
+			, Donor_Spouse_Birth_Name NVARCHAR(100)
+			, Donor_Total_Giving_Current_Year_With_Matching MONEY
+			, Donor_Total_Giving_Current_Year_Minus_1_With_Matching MONEY
+			, Donor_Total_Giving_Current_Year_Minus_2_With_Matching MONEY
+			, Donor_Total_Giving_Current_Year_Minus_3_With_Matching MONEY
+			, Donor_Total_Giving_Current_Year_Minus_4_With_Matching MONEY
+			, Donor_Total_Giving_Current_Year_Minus_5_With_Matching MONEY
+			, Donor_Lds_TelefundNotes NVARCHAR(4000)
+			' -- Ext_Create_Fields_5
+		, ' , Current_Employer_Name
+			, Current_Job_Title
+			, Current_Job_Code
+			, Current_Job_Date_Started
+			, Current_Job_Work_Phone
+			, Current_Job_Work_Address
+			, Donor_Total_Giving_Current_Year
+			, Donor_Total_Giving_Current_Year_Minus_1
+			, Donor_Total_Giving_Current_Year_Minus_2
+			, Donor_Total_Giving_Current_Year_Minus_3
+			, Donor_Any_School_Current_Student
+			, Donor_BYU_Current_Student
+			, Donor_BYUI_Current_Student
+			, Donor_BYUH_Current_Student
+			, Donor_LDSBC_Current_Student
+			, Donor_Given_This_Year_To_Byu
+			, Donor_Given_This_Year_To_ByuI
+			, Donor_Given_This_Year_To_ByuH
+			, Donor_Given_This_Year_To_LDSBC
+			, Donor_Byu_Plc
+			, Donor_Byuh_Plc
+			, Donor_Nac
+			, Donor_Byu_Law_Grads
+			, Donor_Byu_Msm_Grads
+			, Donor_Open_Byu_Telefund_Pledge
+			, Donor_Open_Byui_Telefund_Pledge
+			, Donor_Open_Byuh_Telefund_Pledge
+			, Donor_Open_Ldsbc_Telefund_Pledge
+			, Donor_Byu_Recurring_Donor
+			, Donor_Byui_Recurring_Donor
+			, Donor_Byuh_Recurring_Donor
+			, Donor_Ldsbc_Recurring_Donor
+			, Donor_Ldsp_Text_Lines
+			, Donor_Largest_Gift_Amt_Byu
+			, Donor_Largest_Gift_Amt_Byui
+			, Donor_Largest_Gift_Amt_Byuh
+			, Donor_Largest_Gift_Amt_Ldsbc
+			, Donor_Retention_Type_Code_Byu
+			, Donor_Retention_Type_Code_Byui
+			, Donor_Retention_Type_Code_Byuh
+			, Donor_Retention_Type_Code_Ldsbc
+			, Donor_Total_Giving_To_Byu_Current_Year_Amt
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_1_Amt
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_2_Amt
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_3_Amt
+			, Donor_Total_Giving_To_Byui_Current_Year_Amt
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_1_Amt
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_2_Amt
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_3_Amt
+			, Donor_Total_Giving_To_Byuh_Current_Year_Amt
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_1_Amt
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_2_Amt
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_3_Amt
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Amt
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_1_Amt
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_2_Amt
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_3_Amt
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_4_Amt
+			, Donor_Total_Giving_To_Byu_Current_Year_Minus_5_Amt
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_4_Amt
+			, Donor_Total_Giving_To_Byui_Current_Year_Minus_5_Amt
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_4_Amt
+			, Donor_Total_Giving_To_Byuh_Current_Year_Minus_5_Amt
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_4_Amt
+			, Donor_Total_Giving_To_Ldsbc_Current_Year_Minus_5_Amt
+			, Donor_Total_Giving_Current_Year_Minus_4_Amt
+			, Donor_Total_Giving_Current_Year_Minus_5_Amt
+			, Donor_Total_Giving_Byu_High_Flag
+			, Donor_Total_Giving_Byui_High_Flag
+			, Donor_Total_Giving_Byuh_High_Flag
+			, Donor_Total_Giving_Ldsbc_High_Flag
+			, Current_Byu_Employment_Yn
+			, Current_Byui_Employment_Yn
+			, Current_Byuh_Employment_Yn
+			, Current_Ldsbc_Employment_Yn
+			, Informal_Mailing_Name
+			, Informal_Salutation
+			, Byu_Night_Society_Member
+			, Byui_Legacy_Society_Member
+			, Byuh_Cowley_Society_Member
+			, Ldsbc_Fox_Society_Member
+			, Donor_Spouse_Coordinating_Liaison
+			, Donor_Previously_Contacted_Byu_Yn
+			, Donor_Previously_Contacted_Byui_Yn
+			, Donor_Previously_Contacted_Byuh_Yn
+			, Donor_Previously_Contacted_Ldsbc_Yn
+			' -- Ext_Insert_Fields_2
+		, '	, Donor_Given_Last_3_Months_To_Byu
+			, Donor_Given_Last_3_Months_To_Byui
+			, Donor_Given_Last_3_Months_To_Byuh
+			, Donor_Given_Last_3_Months_To_Ldsbc
+			, Donor_Given_Last_3_Months_To_Church
+			, Donor_Liaison_Connections
+			, Donor_Total_Lifetime_Giving
+			, Donor_Total_Lifetime_Giving_Last_5_Years
+			, Donor_Total_Lifetime_Giving_Byu
+			, Donor_Total_Lifetime_Giving_Byui
+			, Donor_Total_Lifetime_Giving_Byuh
+			, Donor_Total_Lifetime_Giving_Ldsbc
+			, Donor_Total_Lifetime_Giving_Church
+			, Donor_Total_Lifetime_Giving_Pcc
+			, Donor_Total_Lifetime_Giving_Ces
+			, Donor_Most_Recent_Gift_Date_Ldsp
+			, Donor_Most_Recent_Gift_Date_Byu
+			, Donor_Most_Recent_Gift_Date_Byui
+			, Donor_Most_Recent_Gift_Date_Byuh
+			, Donor_Most_Recent_Gift_Date_Ldsbc
+			, Donor_Most_Recent_Gift_Date_Church
+			, Donor_Ldsp_Largest_Gift
+			, Donor_First_Gift_Post_Date_Byu
+			, Donor_First_Gift_Post_Date_Byui
+			, Donor_First_Gift_Post_Date_Byuh
+			, Donor_First_Gift_Post_Date_Ldsbc
+			, Donor_Furthest_Initiative_Stage
+			, Donor_Number_Of_Open_Initiatives
+			, Donor_Total_Lifetime_Giving_To_Byu_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Byui_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Byuh_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Ldsbc_Last_5_Years
+			, Donor_Total_Lifetime_Giving_To_Church_Last_5_Years
+			, Donor_Most_Recent_Gift_To_Ldsp_Amt
+			, Donor_Most_Recent_Gift_To_Byu_Amt
+			, Donor_Most_Recent_Gift_To_Byui_Amt
+			, Donor_Most_Recent_Gift_To_Byuh_Amt
+			, Donor_Most_Recent_Gift_To_Ldsbc_Amt
+			, Donor_Most_Recent_Gift_To_Church_Amt
+			, Donor_Last_F2F_Visit_Date
+			, Donor_Type_Code_Ldsp
+			, Donor_Largest_Gift_Amt_Church
+			, Donor_Largest_Gift_Date_Ldsp
+			, Donor_Largest_Gift_Date_Byu
+			, Donor_Largest_Gift_Date_Byui
+			, Donor_Largest_Gift_Date_Byuh
+			, Donor_Largest_Gift_Date_Ldsbc
+			, Donor_Largest_Gift_Date_Church
+			, Donor_Institution_Giving_Areas
+			, Donor_Byu_Giving_Areas
+			, Donor_Church_Giving_Areas
+			, Donor_Pledge_Reminder_Email_Content_Byu
+			, Donor_Pledge_Reminder_Email_Content_Byui
+			, Donor_Pledge_Reminder_Email_Content_Byuh
+			, Donor_Pledge_Reminder_Email_Content_Ldsbc
+			, Donor_Total_Name_Display
+			, Plus_CoordinatingLiaison_DomainName
+			, Plus_PendingLiaison_DomainName
+			, Plus_ConnectedLiaison_DomainName
+			, Donor_Gift_Count_Previous_5_Years
+			, Donor_Average_Single_Gift_Previous_5_Years
+			, Donor_Is_Qualified
+			, Donor_Qualified_On 
+			, Donor_Qualified_By
+			, Donor_First_Recurring_Rule_Date_Byu
+			, Donor_First_Recurring_Rule_Date_Byui
+			, Donor_First_Recurring_Rule_Date_Byuh
+			, Donor_First_Recurring_Rule_Date_Ldsbc
+			, Donor_Recurring_Total_Last_Month_Byu
+			, Donor_Recurring_Total_Last_Month_Byui
+			, Donor_Recurring_Total_Last_Month_Byuh
+			, Donor_Recurring_Total_Last_Month_Ldsbc
+			, Donor_Recurring_Total_Month_Before_Last_Byu
+			, Donor_Recurring_Total_Month_Before_Last_Byui
+			, Donor_Recurring_Total_Month_Before_Last_Byuh
+			, Donor_Recurring_Total_Month_Before_Last_Ldsbc
+			, Donor_Recurring_Gift_Upgrade_Byu
+			, Donor_Recurring_Gift_Upgrade_Byui
+			, Donor_Recurring_Gift_Upgrade_Byuh
+			, Donor_Recurring_Gift_Upgrade_Ldsbc
+			, Donor_Total_Giving_To_Church_Current_Year_Amt
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_1_Amt
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_2_Amt
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_3_Amt
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_4_Amt
+			, Donor_Total_Giving_To_Church_Current_Year_Minus_5_Amt
+			' -- Ext_Insert_Fields_3
+		, ' , Donor_Retention_Type_Code_Byu_Minus_1
+			, Donor_Retention_Type_Code_Byu_Minus_2
+			, Donor_Retention_Type_Code_Byu_Minus_3
+			, Donor_Retention_Type_Code_Byu_Minus_4
+			, Donor_Retention_Type_Code_Byu_Minus_5
+			, Donor_Retention_Type_Code_Byui_Minus_1
+			, Donor_Retention_Type_Code_Byui_Minus_2
+			, Donor_Retention_Type_Code_Byui_Minus_3
+			, Donor_Retention_Type_Code_Byui_Minus_4
+			, Donor_Retention_Type_Code_Byui_Minus_5
+			, Donor_Retention_Type_Code_Byuh_Minus_1
+			, Donor_Retention_Type_Code_Byuh_Minus_2
+			, Donor_Retention_Type_Code_Byuh_Minus_3
+			, Donor_Retention_Type_Code_Byuh_Minus_4
+			, Donor_Retention_Type_Code_Byuh_Minus_5
+			, Donor_Retention_Type_Code_Ldsbc_Minus_1
+			, Donor_Retention_Type_Code_Ldsbc_Minus_2
+			, Donor_Retention_Type_Code_Ldsbc_Minus_3
+			, Donor_Retention_Type_Code_Ldsbc_Minus_4
+			, Donor_Retention_Type_Code_Ldsbc_Minus_5
+			, Donor_First_Gift_To_Byu_Amt
+			, Donor_First_Gift_To_Byui_Amt
+			, Donor_First_Gift_To_Byuh_Amt
+			, Donor_First_Gift_To_Ldsbc_Amt
+			, Donor_First_Gift_To_Church_Amt
+			, Donor_First_Gift_To_Ldsp_Amt
+			, Donor_First_Gift_Date_Byu
+			, Donor_First_Gift_Date_Byui
+			, Donor_First_Gift_Date_Byuh
+			, Donor_First_Gift_Date_Ldsbc
+			, Donor_First_Gift_Date_Church
+			, Donor_First_Gift_Date_Ldsp
+			, Donor_Spouse_Middle_Name
+			, Donor_Spouse_Birth_Name
+			, Donor_Total_Giving_Current_Year_With_Matching
+			, Donor_Total_Giving_Current_Year_Minus_1_With_Matching
+			, Donor_Total_Giving_Current_Year_Minus_2_With_Matching
+			, Donor_Total_Giving_Current_Year_Minus_3_With_Matching
+			, Donor_Total_Giving_Current_Year_Minus_4_With_Matching
+			, Donor_Total_Giving_Current_Year_Minus_5_With_Matching
+			, Donor_Lds_TelefundNotes
+			' -- Ext_Insert_Fields_4
+		, NULL -- Ext_Insert_Fields_5
 		, NULL -- Extra_7
 		, NULL -- Extra_8
 		, NULL -- Extra_9
