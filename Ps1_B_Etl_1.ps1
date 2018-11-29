@@ -1373,98 +1373,98 @@ FUNCTION Insert-Alpha_Table_1
 						[STRING]$Ext_Select_Statement_3_Qry = "SELECT Ext_Select_Statement_3
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Select_Statement_3 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Select_Statement_3_Qry).Ext_Select_Statement_3
 		
 						[STRING]$Ext_Select_Statement_4_Qry = "SELECT Ext_Select_Statement_4
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Select_Statement_4 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Select_Statement_4_Qry).Ext_Select_Statement_4
 
 						[STRING]$Ext_Select_Statement_5_Qry = "SELECT Ext_Select_Statement_5
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Select_Statement_5 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Select_Statement_5_Qry).Ext_Select_Statement_5
 						
 						[STRING]$Ext_Select_Statement_6_Qry = "SELECT Ext_Select_Statement_6
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Select_Statement_6 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Select_Statement_6_Qry).Ext_Select_Statement_6
 						
 						[STRING]$Ext_Select_Statement_7_Qry = "SELECT Ext_Select_Statement_7
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Select_Statement_7 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Select_Statement_7_Qry).Ext_Select_Statement_7
 						
 						[STRING]$Ext_From_Statement_3_Qry = "SELECT Ext_From_Statement_3
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_From_Statement_3 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_From_Statement_3_Qry).Ext_From_Statement_3
 						
 						[STRING]$Ext_From_Statement_4_Qry = "SELECT Ext_From_Statement_4
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_From_Statement_4 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_From_Statement_4_Qry).Ext_From_Statement_4
 						
 						[STRING]$Ext_From_Statement_5_Qry = "SELECT Ext_From_Statement_5
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_From_Statement_5 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_From_Statement_5_Qry).Ext_From_Statement_5
 						
 						[STRING]$Ext_From_Statement_6_Qry = "SELECT Ext_From_Statement_6
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_From_Statement_6 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_From_Statement_6_Qry).Ext_From_Statement_6
 						
 						[STRING]$Ext_From_Statement_7_Qry = "SELECT Ext_From_Statement_7
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_From_Statement_7 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_From_Statement_7_Qry).Ext_From_Statement_7
 						
 						[STRING]$Ext_Where_Statement_4_Qry = "SELECT Ext_Where_Statement_4
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Where_Statement_4 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Where_Statement_4_Qry).Ext_Where_Statement_4
 						
 						[STRING]$Ext_Where_Statement_5_Qry = "SELECT Ext_Where_Statement_5
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Where_Statement_5 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Where_Statement_5_Qry).Ext_Where_Statement_5
 						
 						[STRING]$Ext_Where_Statement_6_Qry = "SELECT Ext_Where_Statement_6
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Where_Statement_6 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Where_Statement_6_Qry).Ext_Where_Statement_6
 						
 						[STRING]$Ext_Where_Statement_7_Qry = "SELECT Ext_Where_Statement_7
 																FROM Oa_Extract.Extract_Tables
 																WHERE 1 = 1
-																	AND Extract_Tables_Key = $Processing_Key_Coupler
+																	AND Extract_Tables_Key = $Processing_Key_Tier_2
 														  "                                                                                    
 								$Ext_Where_Statement_7 = (Invoke-Sqlcmd -ServerInstance $Dest_Instance -Database $Dest_Db -Query $Ext_Where_Statement_7_Qry).Ext_Where_Statement_7
 														
